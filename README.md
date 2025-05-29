@@ -39,27 +39,11 @@ Students are expected to **create**, and as such there is a large emphasis on th
 
 ## Coding Resources
 
-Resources that may be helpful for the technical aspects of this course
-
-* The whole shebang from FreeCodeCamp - [Web3 Ultimate Course](https://github.com/smartcontractkit/full-blockchain-solidity-course-js)
-* YouTube tutorial by [Nader Dabit](https://github.com/dabit3/full-stack-ethereum) - [Full-stack ethereum development](https://www.youtube.com/watchv=a0osIaAOFSE&ab_channel=NaderDabit)
-* Still one of the best - [CryptoZombies](https://cryptozombies.io/)
-
-## Docs & Libs
-* [Solidity Documentation](https://docs.soliditylang.org/en/latest/) - Official documentation for the Solidity programming language.
-* [Ethers.js Documentation](https://docs.ethers.org/v5/) - A complete Ethereum wallet implementation and utilities in JavaScript.
-* [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.7.0/) - Ethereum JavaScript API.
-* [Truffle Suite](https://trufflesuite.com/) - Development environment, testing framework, and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM). Includes Truffle, Ganache (personal blockchain for Ethereum development), and Drizzle.
-* [OpenZeppelin](https://openzeppelin.com/) - A library of secure smart contract implementations.
-* [Geth](https://geth.ethereum.org/docs/) - Go Ethereum, the official Go implementation of the Ethereum protocol.
-* [Chainlink](https://chain.link/developers) - Decentralized oracle network for connecting smart contracts with real-world data.
-
-* More listed [here](https://github.com/millecodex/COMP726/blob/master/tutorials/remix_1.md#developer-learning-tools--resources)
+See the list [here](resources.md)
 
 ## Links
 
 * [Distributed Systems Reading List](https://github.com/theanalyst/awesome-distributed-systems)
-
 * [Lopp's Bitcoin Resources](https://www.lopp.net/bitcoin-information.html)
 
 ## Other Academic Courses
@@ -67,25 +51,17 @@ Resources that may be helpful for the technical aspects of this course
 (Open Source only, of course \[and I hesitate to include Coursera links\])
 
 * [Cryptocurrency Engineering And Design](https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/) (MIT)
-
 * [Bitcoin and Cryptocurrency Technologies](https://bitcoinbook.cs.princeton.edu/) (Princeton)
-
 * [CS251: Blockchain Technologies](https://cs251.stanford.edu/syllabus.html) (Stanford)
 
 ## Other Academic Blockchain(esque) Groups
 
 * [Resistance Money](https://www.resistance.money/) (Wyoming)
-
 * [RMIT Blockchain Innovation Hub](https://rmitblockchain.io/) (Melbourne)
-
 * [Decentralized Systems Lab](https://decentralize.ece.illinois.edu/) (Illinois)
-
 * [digital currency initiative](https://dci.mit.edu/) (MIT)
-
 * [UZH Blockchain Center](https://www.blockchain.uzh.ch/) (Zurich)
-
 * [ETH Blockchain Initiative](https://blockchain.ethz.ch/) (ETH Zurich)
-
 * [UNIC Blockchain](https://www.unic.ac.cy/blockchain/) (Nicosia)
 
 ## Open Source Contributions
