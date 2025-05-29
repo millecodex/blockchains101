@@ -34,37 +34,24 @@ Students are expected to **create**, and as such there is a large emphasis on th
 ## Resources
 
 * [Course Discussion forum](https://rmit.instructure.com/courses/153071/discussion_topics) (you also earn participation credit here)
-
 * [ChatGPT](https://chat.openai.com/auth/login) - Get an account!
-
-* [Binance Academy](https://academy.binance.com/en) - Comprehensive free education on blockchain and cryptocurrency.
-
 * [Mastering Bitcoin by Andreas M. Antonopoulos](https://www.oreilly.com/library/view/mastering-bitcoin/9781491902639/) - A foundational technical guide to Bitcoin.
-
-* [Mastering Ethereum by Andreas M. Antonopoulos](https://www.oreilly.com/library/view/mastering-ethereum/9781491971932/) - A comprehensive technical guide to Ethereum.
 
 ## Coding Resources
 
 Resources that may be helpful for the technical aspects of this course
 
 * The whole shebang from FreeCodeCamp - [Web3 Ultimate Course](https://github.com/smartcontractkit/full-blockchain-solidity-course-js)
-
 * YouTube tutorial by [Nader Dabit](https://github.com/dabit3/full-stack-ethereum) - [Full-stack ethereum development](https://www.youtube.com/watchv=a0osIaAOFSE&ab_channel=NaderDabit)
-
 * Still one of the best - [CryptoZombies](https://cryptozombies.io/)
 
+## Docs & Libs
 * [Solidity Documentation](https://docs.soliditylang.org/en/latest/) - Official documentation for the Solidity programming language.
-
 * [Ethers.js Documentation](https://docs.ethers.org/v5/) - A complete Ethereum wallet implementation and utilities in JavaScript.
-
 * [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.7.0/) - Ethereum JavaScript API.
-
 * [Truffle Suite](https://trufflesuite.com/) - Development environment, testing framework, and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM). Includes Truffle, Ganache (personal blockchain for Ethereum development), and Drizzle.
-
 * [OpenZeppelin](https://openzeppelin.com/) - A library of secure smart contract implementations.
-
 * [Geth](https://geth.ethereum.org/docs/) - Go Ethereum, the official Go implementation of the Ethereum protocol.
-
 * [Chainlink](https://chain.link/developers) - Decentralized oracle network for connecting smart contracts with real-world data.
 
 * More listed [here](https://github.com/millecodex/COMP726/blob/master/tutorials/remix_1.md#developer-learning-tools--resources)
