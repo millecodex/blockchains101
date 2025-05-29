@@ -15,21 +15,22 @@ Blockchain and Cryptocurency Technology intends to introduce you to the technolo
 Students are expected to **create**, and as such there is a large emphasis on the project which is wide-ranging and open-ended. You are expected to show what you've done at the end of semester, this is via mixed methods of presentation/ video/ demonstration/ discussion/ and written reporting. To get credit, You 👏 Must 👏 SHOW 👏 What 👏 You've 👏 Done. Assignment structure and details are on [Canvas](https://rmit.instructure.com/courses/153071/assignments).
 
 ## Lecture Topics - Notes updated on the fly 🏃
+| Week | Topic | Tutorial | Case Study |
+| :--- | :--- | :--- | :--- |
+| 1 | Money & Bitcoin | | Bitcoin |
+| 2 | Cryptographic Foundations | | Bitcoin |
+| 3 | Anatomy of a Block and Transaction Flow | | Bitcoin |
+| 4 | Consensus Mechanisms - Proof of Work | | Bitcoin, Dogecoin |
+| 5 | Consensus Mechanisms - Proof of Other | | Ethereum |
+| 6 | Smart Contracts and Ethereum | | Ethereum |
+| 7 | Decentralized Applications (DApps) and Web3 | | Solana |
+| 8 | Token Standards and Tokenomics | | Solana |
+| 9 | Scalability | | StarkNet |
+| 10 | Privacy & Security | | Zcash |
+| 11 | Governance and Regulation | | Polkadot, Cosmos |
+| 12 | Alternative DLTs & Future Trends | | Sonic, Base |
 
- | Week | Lecture Topic | Tutorial |
-|------|---------------|----------|
-| 1    | [Introduction & Bitcoin](lectures/1-bitcoin.md) |          |
-| 2    | [Cryptography](lectures/2-cryptography.md) |          |
-| 3    | [Consensus Part I: Proof of Work](lectures/3-consensus-pow.md) |          |
-| 4    | [Consensus Part II: Proof of Stake & Alternatives](lectures/4-consensus-pos.md) |          |
-| 5    | [Scaling](lectures/5-scaling.md) |          |
-| 6    | [Wallets & Tokens](lectures/6-wallets.md) |          |
-| 7    | [Ethereum](lectures/7-ethereum.md) |          |
-| 8    | [Privacy](lectures/8-privacy.md) |          |
-| 9    | [Security](lectures/9-security.md) |          |
-| 10   | [Digital Assets](lectures/10-digital-assets.md) |          |
-| 11   | [Web3](lectures/11-web3.md) |          |
-| 12   | [The Return to Money](lectures/12.md) |          |
+---
 
 ## Resources
 
