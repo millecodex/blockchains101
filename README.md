@@ -1,6 +1,4 @@
-## INTE264\[1|2\] | Blockchain Technology Fundamentals
-
-### RMIT
+## INTE264\[1|2\] | Blockchain Technology Fundamentals @RMIT
 
 This crypto space moves fast :rocket: and so this is a work in progress 🚧
 
