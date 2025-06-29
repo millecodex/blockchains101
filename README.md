@@ -16,15 +16,15 @@ Students are expected to **create**, and as such there is a large emphasis on th
 ## Lecture Topics - Notes updated on the fly 🏃
 | Week | Topic | Tutorial | Case Study |
 | :--- | :--- | :--- | :--- |
-| 1 | Money & Bitcoin | | Bitcoin |
-| 2 | Cryptographic Foundations | | Bitcoin |
-| 3 | Anatomy of a Block and Transaction Flow | | Bitcoin |
-| 4 | Consensus Mechanisms - Proof of Work | | Bitcoin, Dogecoin |
-| 5 | Consensus Mechanisms - Proof of Other | | Ethereum |
-| 6 | Smart Contracts and Ethereum | | Ethereum |
-| 7 | Decentralized Applications (DApps) and Web3 | | Solana |
-| 8 | Token Standards and Tokenomics | | Solana |
-| 9 | Scalability | | StarkNet |
+| 01 | [Money & Bitcoin](notes/01_money_bitcoin.md) | | Bitcoin |
+| 02 | Cryptographic Foundations | | Bitcoin |
+| 03 | Anatomy of a Block and Transaction Flow | | Bitcoin |
+| 04 | Consensus Mechanisms - Proof of Work | | Bitcoin, Dogecoin |
+| 05 | Consensus Mechanisms - Proof of Other | | Ethereum |
+| 06 | Smart Contracts and Ethereum | | Ethereum |
+| 07 | Decentralized Applications (DApps) and Web3 | | Solana |
+| 08 | Token Standards and Tokenomics | | Solana |
+| 09 | Scalability | | StarkNet |
 | 10 | Privacy & Security | | Zcash |
 | 11 | Governance and Regulation | | Polkadot, Cosmos |
 | 12 | Alternative DLTs & Future Trends | | Sonic, Base |
