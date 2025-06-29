@@ -188,7 +188,7 @@ What began as an experiment has bootstrapped an entire financial system with glo
 * On the Shoulder of Giants - History of the tech: [*Bitcoin's Academic Pedigree*, Communications of the ACM](https://cacm.acm.org/magazines/2017/12/223058-bitcoins-academic-pedigree/fulltext)
 
 # Next Lecture
-* :point_right: [Secret Writing (Cryptography)](2-cryptography.md)
+* :point_right: [Secret Writing (Cryptography)](02_cryptography.md)
 
 # References
 1. Agha, A. 2017. *Money talk and conduct from cowries to bitcoin*. [(pdf)](https://cpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/1/494/files/2018/08/1Agha2017Money-1ridnhk.pdf)
