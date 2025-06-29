@@ -2,11 +2,12 @@
 
 ### RMIT
 
-As always this crypto space moves fast :rocket: and so this is a work in progress 🚧
+This crypto space moves fast :rocket: and so this is a work in progress 🚧
 
 The course website is hosted on Canvas (https://rmit.instructure.com/courses/153071), however you need to be an enrolled student to login. This site serves as the open-source version. (You will still need to login to Canvas to view the assessment criteria and participate in the course discussion.) 
 
-Lectures are online, with one lecture and one tutorial every week beginning June 30, 2025.
+Lecture on Tuesdays at 08:30 beginning July 01, 2025. 
+Tutorial on Thursdays at 12:30 beginning July 03, 2025.
 
 ## Overview & Expectations
 
@@ -34,8 +35,8 @@ Students are expected to **create**, and as such there is a large emphasis on th
 
 ## Resources
 
-* [Course Discussion forum](https://rmit.instructure.com/courses/153071/discussion_topics) (you also earn participation credit here)
-* [ChatGPT](https://chat.openai.com/auth/login) - Get an account!
+* [Course Discussion forum](https://rmit.instructure.com/courses/153071/discussion_topics) 
+* Gemini/Perplexity/Grok etc. - Get an account! RMIT Students have access to ChatGPT-4o through Val ([https://val.rmit.edu.au/](https://val.rmit.edu.au/))
 * [Mastering Bitcoin by Andreas M. Antonopoulos](https://www.oreilly.com/library/view/mastering-bitcoin/9781491902639/) - A foundational technical guide to Bitcoin.
 
 ## Coding Resources
