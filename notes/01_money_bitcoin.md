@@ -1,4 +1,4 @@
-[↰ back](../../)
+[↰ back](../../../)
 
 # Lecture 1: Money 💵 & Bitcoin 💻
 ## Contents
