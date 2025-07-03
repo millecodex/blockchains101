@@ -64,8 +64,14 @@ See the list [here](resources.md)
 * [ETH Blockchain Initiative](https://blockchain.ethz.ch/) (ETH Zurich)
 * [UNIC Blockchain](https://www.unic.ac.cy/blockchain/) (Nicosia)
 
-## Open Source Contributions
+## About This Course & Me 🧔‍♂️
+This course was started in 2018 in Auckland, New Zealand. I knocked on my colleague's door (later my PhD supervisor) and asked why we -- as a computer science department -- don't teach blockchains? He said, "I'm not sure, maybe we can do something about that." This spawned the first blockchain specific course in New Zealand which is still running at Auckland University of Technology. In 2024, I moved from Auckland to Hanoi. This is the first instance of the course running at RMIT University, Vietnam. My github has archived older versions of the course, which I actually first wrote as a module in a computer security course. I believe I swapped out smart card security in place of blockchain protocols at that time.
 
+In all these years, I've never felt like the course has been 'finished'. There's always something that I don't get to, or there's always some branch that I want to spend more time talking about in class. I think this is how university courses should be, particularly with topics involving modern computing and development. 
+
+I always look forward to what the students can teach me, and this year is no different.
+
+## Open Source Contributions
 Notice something that doesn't seem right? Could be explained better? Have an analogy that helps with your understanding? Want to include something new that I haven't? Feel free to fork and submit a pull-request. It can also be good practise (and an easy way) to build your contributions.
 
 ## License
