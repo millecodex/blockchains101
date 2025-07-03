@@ -16,7 +16,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 ## Lecture Topics - Notes updated on the fly 🏃
 | Week | Topic | Tutorial | Case Study |
 | :--- | :--- | :--- | :--- |
-| 01 | [Money & Bitcoin](notes/01_money_bitcoin.md) | | Bitcoin |
+| 01 | [Money & Bitcoin](notes/01_money_bitcoin.md) | [T01](tutorials/t01.md)| Bitcoin |
 | 02 | Cryptographic Foundations | | Bitcoin |
 | 03 | Anatomy of a Block and Transaction Flow | | Bitcoin |
 | 04 | Consensus Mechanisms - Proof of Work | | Bitcoin, Dogecoin |
