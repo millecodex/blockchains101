@@ -220,9 +220,9 @@ $$
 p=200516605485365833647237682354398056103622507001
 $$
 
-One drawback of this system is that to communicate there has to be some back-and-forth between participants to agree on a secret key which can be particularly cumbersome if one participant is offline. If a third person wants to communicate, then a another pair of exchanges must take place. Every pair that needs to communicate needs their own secret key. A group of 40 students in this class requires 780 keys[^US]. What if instead each person had their own key and everyone else could use that same key to communicate with them?
+One drawback of this system is that to communicate there has to be some back-and-forth between participants to agree on a secret key which can be particularly cumbersome if one participant is offline. If a third person wants to communicate, then another pair of exchanges must take place. Every pair that needs to communicate needs their own secret key. A group of 40 students in this class requires 780 keys[^US]. What if instead each person had their own key and everyone else could use that same key to communicate with them?
 
-[^US]: Key transport was a big problem in World War II. Uboats that were away for months at a time had to have an updated listing of keys to use to communicate with central command back at base. The Germans published key-books tied to a calendar so that subs could determine their key based on the day. Everything is fine as long as a code book doesn't fall into enemy hands.
+[^US]: Key transport was a big problem in World War II. Uboats that were away for months at a time had to have an updated listing of keys to use to communicate with central command back at base. The Germans published key-books linked to a calendar so that subs could determine their key based on the day. Everything is fine as long as a code book doesn't fall into enemy hands.
 
 ## Asymmetric Encryption
 ### Public-Key Cryptography
