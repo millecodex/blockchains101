@@ -329,8 +329,8 @@ echo -n "my name is Jeff" | shasum -a 256
 
 # Readings
 * New Directions in Cryptography by Whitfield Diffie and Martin Hellman [(pdf)](https://www-ee.stanford.edu/~hellman/publications/24.pdf)
-* WhatsApp Encryption Overview - Technical white paper [(pdf)](https://github.com/millecodex/COMP842/blob/master/papers/WhatsApp-Security-White-paper.pdf)
-* NIST specification for SHA-1 [(pdf)](https://github.com/millecodex/COMP842/blob/master/papers/NIST.FIPS.180-4.pdf) (download for proper font rendering)
+* WhatsApp Encryption Overview - Technical white paper [(pdf)](https://github.com/millecodex/blockchains101/blob/main/papers/WhatsApp%20Security%20White%20Paper.pdf)
+* NIST specification for SHA-1 [(pdf)](https://github.com/millecodex/blockchains101/blob/main/papers/NIST%20FIPS%20180-4.pdf) (download for proper font rendering)
 
 # Next Lecture
 * :point_right: [Anatomy of a Block and Transaction Flow](03-block.md)
