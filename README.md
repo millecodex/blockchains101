@@ -1,3 +1,4 @@
+![maintenance-status](https://img.shields.io/badge/maintenance-actively--developed-brightgreen.svg) ![GitHub](https://img.shields.io/github/license/millecodex/blockchains101) 
 ## INTE264\[1|2\] | Blockchain Technology Fundamentals @RMIT
 
 This crypto space moves fast :rocket: and so this is a work in progress 🚧
