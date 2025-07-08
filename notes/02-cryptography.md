@@ -17,6 +17,10 @@ Defined as the study of secret writing, cryptography has roots as old as history
 
 A basic encryption scheme is one used by school children where letters are substituted with an alternate according to a prescribed routine. Shifting letters by a set number of characters in the alphabet is known as a *Caesar cipher*. Without knowing how many letters were shifted, it would take an eavesdropper at most 25 attempts to decrypt an English message by brute force.
 
+<img src="https://github.com/user-attachments/assets/58f565b3-a812-47b8-983d-d1d9ef14e075" width="400">
+
+> Image: A cipher disk is an enciphering and deciphering tool developed in 1470 by the Italian architect and author Leon Battista Alberti ([Wikipedia](https://en.wikipedia.org/wiki/Cipher_disk))
+
 Other notable ciphers are the *Hill* cipher, [*Vigenere* cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher), and *one-time pad* cipher (Singh, 1999). Hill and Vigenere both have weaknesses and can be broken; a well-constructed one-time-pad cipher can never be broken. The one-time works by transposing a message using a random key the same length as the message. This prevents repetition in both within key and from common phrases of speech, such as '*the*', or context such as '*Russians*'. If the key is sufficiently random, only someone with knowledge of the key can decrypt the message. Each new message requires a new key, and thus the name one-time pad. This poses many practical problems such as production and finding good sources of entropy (randomness). The primary limiting factor for this type of encryption is distribution of the keys to both parties. Long message require longer keys, and many messages require many keys.
 
 ## Hash Functions
