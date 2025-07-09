@@ -317,7 +317,7 @@ Digital signatures allow a blockchain user to transfer ownership of a token by v
 # Exercises
 1. Find out what encryption your browser site is using. Now check a different site, do you notice any difference?
 2. SHA256 - Open a terminal window.\
-Windows: `windows key + R`, type `powershell`, press enter. Change where it says `YourString` to your message and paste in[^windows].
+Windows: `windows key + R`, type `powershell`, press enter. Change below where it says `YourString` to your message and paste it in.[^windows]
 ```powershell
 $stringAsStream = [System.IO.MemoryStream]::new()
 $writer = [System.IO.StreamWriter]::new($stringAsStream)
