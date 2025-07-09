@@ -296,6 +296,11 @@ If a sender encrypts a message with their *private* key, anyone with the public 
 ## Summary
 Today encryption is ubiquitous in digital communication. An inspection of the certificate of a secure website will often reveal one of two cryptosystems at work: RSA, or ECC. WhatsApp uses ECDH for key exchange and AES256 symmetric encryption for message sessions[^9]. Telegram uses 2048 bit RSA encryption and Diffie-Hellman key exchange with a symmetric protocol based on AES256[^10]. WeChat does not use end-to-end encryption and has been criticised for its lack of privacy features.
 
+[^9]: See the [WhatsApp security paper](/../papers/WhatsApp%20Security%20White%20Paper.pdf)
+
+[^10]: Albrecht, Martin R. et al. Analysis of the Telegram Key
+Exchange. [doi:10.3929/ethz-b-000737252](https://doi.org/10.3929/ethz-b-000737252)
+
 Contrary to popular belief there is no standardized encryption in the Bitcoin protocol. As a decentralized system of exchange, there is no need for encryption. All the transactions are stored in the blockchain, open and accessible to everyone. Access to the private keys controlling addresses is maintained solely through personal security of the user. 
 
 So can someone steal my coins? Not by hacking. Elliptical curve cryptography keeps keys safe from cryptanalysis via the difficulty in solving the discrete logarithm problem. The standard curve `secp256k1` was chosen by the designer of the Bitcoin protocol. This is a choice unique to Bitcoin, as the more common `secp256r1` is used in Transport Layer Security (TLS) for web browsing, email, etc. ECC was chosen because it provides the same level of relative security with smaller keys compared to RSA.
@@ -350,6 +355,6 @@ echo -n "my name is Jeff" | shasum -a 256
 9. Singh, S. 1999. "The Code Book." *Doubleday*.
 10. Stallings, W. 2017. Cryptography and Network Security: Principles and Practice. Pearson.
 
-# Video Lecture
-Here's Part I of this lecture recorded live March 08, 2024 on [YouTube](https://youtu.be/vLx0V_ZHTRM). See the playlist for the remaining parts.
-
+# Video Lectures
+* Part I of this lecture recorded live on March 08, 2024 on [YouTube](https://youtu.be/vLx0V_ZHTRM). (See the playlist for the remaining parts.)
+* Whole lecture recorded live on July 07, 2025 on [X](https://x.com/Japple/status/1942427307047612747)
