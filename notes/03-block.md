@@ -1,5 +1,5 @@
 [↰ back](../../..)
-# Lecture 2: Anatomy of a Block and Transaction Flow
+# Lecture 3: Anatomy of a Block and Transaction Flow
 ## Contents
 1. [Introduction](#introduction)
 2. [The Lifecycle of a Bitcoin Transaction](#the-lifecycle-of-a-bitcoin-transaction)
