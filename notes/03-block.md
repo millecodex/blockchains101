@@ -198,17 +198,18 @@ The full nodes physically store the blockchain in `blk*.dat` files and optimized
 4.  **Conceptual Question 2**: Based on the UTXO model, why might it be a bad privacy practice to combine UTXOs from many different sources (e.g., one from a friend, one from an exchange, one from a salary payment) into a single transaction?
 
 # Readings
-* [Block (Cryptocurrency) - Investopedia](https://www.investopedia.com/terms/b/block-crypto.asp)
-* [How does a blockchain work? - Consensys](https://consensys.io/knowledge-base/a-beginners-guide-to-blockchain-technology/)
-* [What Is a Mempool? - Ledger](https://www.ledger.com/academy/what-is-a-mempool)
-* [Bitcoin’s UTXO Model: What Is It and How To Manage UTXOs - River Financial](https://river.com/learn/bitcoins-utxo-model/)
+* [Block (Cryptocurrency)](https://www.investopedia.com/terms/b/block-crypto.asp)  (Investopedia)
+* [How does a blockchain work?](https://consensys.io/knowledge-base/a-beginners-guide-to-blockchain-technology/) (Consensys)
+* [What Is a Mempool?](https://www.ledger.com/academy/what-is-a-mempool) (Ledger)
+* [Bitcoin’s UTXO Model: What Is It and How To Manage UTXOs](https://river.com/learn/bitcoins-utxo-model/) (River Financial)
 
  
 # Next Lecture
 * :point_right: [Proof of Work Consensus](04-pow.md)
 
 # References
-1. 
+1. Narayanan, A., Bonneau, J., Felten, E., Miller, A., & Goldfeder, S. (2016). Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction. Princeton University Press.
+2. Antonopoulos, A. M. (2017). Mastering Bitcoin: Programming the Open Blockchain. O'Reilly Media.
 
 # Video Lectures
 * here on [YouTube]()
