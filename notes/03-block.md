@@ -212,5 +212,4 @@ The full nodes physically store the blockchain in `blk*.dat` files and optimized
 2. Antonopoulos, A. M. (2017). Mastering Bitcoin: Programming the Open Blockchain. O'Reilly Media.
 
 # Video Lectures
-* to be posted after lecture here on [YouTube]()
-* to be posted after lecture and here on [X]()
+* Recorded Live July 15, 2025 on [X](https://x.com/Japple/status/1944991348685520983)
