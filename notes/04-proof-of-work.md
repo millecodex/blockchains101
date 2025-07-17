@@ -123,8 +123,8 @@ The bits here should be randomly distributed, like a lottery, to prevent gaming 
 
 Figure is a plot of the mining difficulty showing an exponential increase. The slope roughly correlates to the growth of the network. As the bitcoin network has matured, dedicated hardware called ASICs (application specific integrated circuits) to solve the `SHA256` algorithm have dominated. It is no longer feasible for a single participant to mine bitcoin without dedicated hardware.
 
-> <img width="800" alt="Bitcoin mining difficulty plotted on a logarithmic scale." src="https://github.com/millecodex/COMP842/assets/39792005/a877855a-795f-431d-8d82-2c45b6b9cfe8">\
-> Bitcoin mining difficulty plotted on a logarithmic scale. Source: https://www.blockchain.com/explorer/charts/difficulty
+> <img width="800" alt="Bitcoin mining difficulty showing exponential growth" src="https://github.com/user-attachments/assets/79e38e50-b0bb-4bf1-bf4c-3b6e0022f1e2"/>\
+> Bitcoin mining difficulty showing exponential growth. Source: [blockchain.com](https://www.blockchain.com/explorer/charts/difficulty)
 
 
 Consider a simulation using an Intel Core i5 6400 looking for `SHA256` hashes with leading zeroes. The difficulty in this case is increasing by powers of 16. Five leading 0's were found in 8364 seconds and, as of writing this, six leading 0's are predicted to take `≈ 8364×16=133824` seconds, or 37 hours.
