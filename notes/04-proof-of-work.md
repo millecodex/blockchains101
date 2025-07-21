@@ -219,7 +219,7 @@ PoW consensus uses the random non-deterministic nature of hash functions to allo
 4. Write a script to calculate the total number of bitcoin that will ever be mined. How many halvings will there be?
 
 # Readings
-* SoK (Systemization of Knowledge) from 2015 by the authors of the Princeton Textbook. An oldie but goodie. [(pdf)](https://github.com/millecodex/COMP842/blob/master/papers/SoK_Research_Perspectives_and_Challenges_for_Bitcoin_and_Cryptocurrencies.pdf)
+* SoK (Systemization of Knowledge) from 2015 by the authors of the Princeton Textbook. An oldie but goodie. [(pdf)](/../../papers/SoK_Research_Perspectives_and_Challenges_for_Bitcoin_and_Cryptocurrencies.pdf)
 * The ‘Skull of Satoshi’ Proves Bitcoin Mining Discourse Isn’t Dead - [Coindesk](https://www.coindesk.com/consensus-magazine/2023/03/27/the-skull-of-satoshi-proves-bitcoin-mining-discourse-isnt-dead/)
 
 # Next Lecture
