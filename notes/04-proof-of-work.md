@@ -225,8 +225,9 @@ PoW consensus uses the random non-deterministic nature of hash functions to allo
 # Next Lecture
 * :point_right: [Proof-of-Stake Consensus]()
 
-# Video Lecture
-Here's this lecture recorded live August 01, 2023 on [YouTube](https://www.youtube.com/watch?v=LOGQ7C83tDc).
+# Video Lectures
+* Recorded live August 01, 2023 on [YouTube](https://www.youtube.com/watch?v=LOGQ7C83tDc).
+* Here's an update recorded July 22, 2025 on [X](https://x.com/Japple/status/1947541655902712123).
 
 # References
 1. Baran, P. 1964. On distributed communications: I. introduction to distributed communications networks. Santa Monica, CA: RAND Corporation. https://www.rand.org/pubs/research_memoranda/RM3420.html
