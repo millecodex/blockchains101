@@ -223,7 +223,7 @@ PoW consensus uses the random non-deterministic nature of hash functions to allo
 * The ‘Skull of Satoshi’ Proves Bitcoin Mining Discourse Isn’t Dead - [Coindesk](https://www.coindesk.com/consensus-magazine/2023/03/27/the-skull-of-satoshi-proves-bitcoin-mining-discourse-isnt-dead/)
 
 # Next Lecture
-* :point_right: [Proof-of-Stake Consensus]()
+* :point_right: [Proof-of-Stake Consensus](05-proof-of-other.md)
 
 # Video Lectures
 * Recorded live August 01, 2023 on [YouTube](https://www.youtube.com/watch?v=LOGQ7C83tDc).
