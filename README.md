@@ -21,7 +21,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 02 | [Cryptographic Foundations](notes/02-cryptography.md) |[T02](tutorials/t02.md) | Bitcoin |
 | 03 | [Anatomy of a Block and Transaction Flow](notes/03-block.md) | [T03](tutorials/t03.md)| Bitcoin |
 | 04 | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md) | [T04](tutorials/t04.md)| Bitcoin, Dogecoin |
-| 05 | Consensus Mechanisms - Proof of Other | | Ethereum |
+| 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) | Ethereum |
 | 06 | Smart Contracts and Ethereum | | Ethereum |
 | 07 | Decentralized Applications (DApps) and Web3 | | Solana |
 | 08 | Token Standards and Tokenomics | | Solana |
