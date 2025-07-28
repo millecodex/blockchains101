@@ -150,7 +150,7 @@ Understanding consensus mechanisms in blockchain technology is crucial for build
 * Tendermint: Consensus without Mining ([pdf](https://github.com/millecodex/COMP842/blob/master/papers/tendermint.pdf))
 
 # Resources
-* Watch Lera Nikolaenko (a16z crypto research partner, super smart) given you the deep dive into Proof of Stake blockchains ([Youtube](https://www.youtube.com/watch?v=mZ-Ya7NRDxM))
+* Watch Lera Nikolaenko (a16z crypto research partner) given you the deep dive into Proof of Stake blockchains ([Youtube](https://www.youtube.com/watch?v=mZ-Ya7NRDxM))
 
 # Next Lecture
 * :point_right: [Network Scaling]()
