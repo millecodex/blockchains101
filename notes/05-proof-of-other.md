@@ -156,7 +156,8 @@ Understanding consensus mechanisms in blockchain technology is crucial for build
 * :point_right: [Network Scaling]()
 
 # Video Lecture
-Here's this lecture recorded live August 08, 2023 on [YouTube](https://www.youtube.com/watch?v=vIMvtkeppaI).
+* Here's this lecture recorded live August 08, 2023 on [YouTube](https://www.youtube.com/watch?v=vIMvtkeppaI)
+* and recorded July 29, 2025 on [twitter/X](https://x.com/Japple/status/1950045504261542266)
 
 # References
 1. Blocki, J. & Zhou, H.-S. (2016). Designing proof of human-work puzzles for cryptocurrency and beyond. In Theory of cryptography (pp. 517–546). Springer Berlin Heidelberg. [PDF](https://eprint.iacr.org/2016/145.pdf). [DOI](https://doi.org/10.1007/978-3-662-53644-5_20).
