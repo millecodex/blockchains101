@@ -23,7 +23,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 04 | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md) | [T04](tutorials/t04.md)| Bitcoin, Dogecoin |
 | 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) | Ethereum |
 | 06 | [Guest Lecture 1](guest-lectures.md) | [T06](tutorials/t06.md) | Ethereum |
-| 07 | Smart Contracts and Ethereum | | Solana |
+| 07 | Smart Contracts and Ethereum |- | Solana |
 | 08 | Token Standards and Tokenomics | | Solana |
 | 09 | Scalability | | StarkNet |
 | 10 | Privacy & Security | | Zcash |
