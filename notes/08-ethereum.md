@@ -6,7 +6,6 @@
 2. [ICO](#initial-coin-offering)
 3. [Smart Contracts](#smart-contracts)
 4. [Ethereum Architecture](#ethereum-architecture)
-6. [Consensus](#consensus-from-poS-to-poW)
 5. [Ethereum Virtual Machine](#ethereum-virtual-machine)
 3. [Applications](#applications)
 4. [Characteristics and Quirks](#characteristics-and-quirks)
@@ -170,18 +169,6 @@ Once the beacon chain decides on the chain-head and has a block proposer, the no
 ### VMs
 Virtual machines (VMs) in computer science are emulations of a computer system that provide the functionality of a physical computer, operating on the basis of a host system and creating a separate environment known as the guest system. The main purpose of a VM is to enable multiple operating systems to share the same physical hardware resources, promoting flexibility and isolation for applications such as testing and development. 
 
-```bash
-VBoxHeadless --startvm "My_VM"
-VBoxManage createvm --name "my_blockchain_vm" --register
-VBoxManage modifyvm "my_blockchain_vm" --memory 1024 --acpi on --boot1 dvd
-VBoxManage createhd --filename "my_blockchain_vm.vdi" --size 10000
-VBoxManage storagectl "my_blockchain_vm" --name "IDE Controller" --add ide
-VBoxManage storageattach "my_blockchain_vm" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "my_blockchain_vm.vdi"
-VBoxManage storageattach "my_blockchain_vm" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium /path/to/iso
-VBoxHeadless --startvm "my_blockchain_vm"
-```
-> Bash commands to spin up a VM in linux: register, allocate 1 GB memory, 10 GB disc space, and point to the OS
-
 This concept of emulation is shared with the **EVM**, although they serve different purposes. While regular VMs simulate physical hardware, the EVM is a virtual runtime environment designed specifically for executing smart contracts on the Ethereum blockchain. The EVM operates independently of the underlying hardware, ensuring deterministic computation that yields the same result across all network nodes. Each full node runs a copy of the EVM to verify transactions and smart contract executions, playing a crucial role in the decentralisation and security of the Ethereum network.
 
 > <img width="800" alt="image" src="https://github.com/millecodex/COMP842/assets/39792005/9c3de5ff-de3f-44e9-bbb7-6a80abf43e4d">\
@@ -197,31 +184,36 @@ When processing a transaction, the EVM takes the following steps:
 
 In step 5, the actual execution, if the transaction's target is a contract address, the EVM executes the associated smart contract code. The smart contract code is compiled into EVM bytecode, which is a series of opcodes that the EVM understands. This execution takes place in individual nodes and uses the Ethereum world state for reading and writing data. The stack plays an essential role in EVM's computational model. It's a data structure that follows the Last-In, First-Out (LIFO) principle, and is used to store variables temporarily during the execution of opcodes. Operations like `ADD`, `MUL`, `DIV`, etc., typically pop operands off the stack and push the result back onto it. This stack-based execution model allows for deterministic and atomic operations, which is pivotal in maintaining the integrity and consistency of the blockchain state across nodes.
 
--------------------
 ## Applications
 ### So what are people doing with this decentralised state machine?
- Decentralised applications, or *dapps* just refer to smart contracts that are executed on a blockchain. When combined with a frontend these dapps can appear just like any other web application with the key difference being that that code and/or user data is stored on the blockchain. 
+Decentralised applications, or *dapps* just refer to smart contracts that are executed on a blockchain. When combined with a frontend these dapps can appear just like any other web application with the key difference being that that code and/or user data and token transfer information is stored on the blockchain. 
 
-The [most used dapps](https://dappradar.com/rankings/protocol/ethereum) on Ethereum in 2023 ranked by Unique active wallets (UaW):
+The [most used dapps](https://dappradar.com/rankings/protocol/ethereum) on Ethereum in 2025 ranked by Unique active wallets (UaW):
 
-| App            | Category                | UaW (m/30 days) |
+| App            | Category                | UaW (k/30 days) |
 |:-------------  |:-----                   |-------:|
-| Stargate      |  Bridge |    1.96 |
-| Lifeform  	|  Decentralized Identification |    1.19 |
-| Galaxe        |  Web3 credential data        |    1.1 |
-| Pankcake Swap	|  Decentralised Finance |  1.02    |
-| Uniswap     	| Decentralised Exchange| 0.722 |
+| Uniswap      | Decentralised Exchange  |    191 |
+| MataMask Swap  	|  Decentralised Exchange  |    156 |
+| 1inch Network |   Decentralised Exchange       |    133 |
+| Jumper Exchange	|  Decentralised Exchange |  99    |
+| OpenSea     	| NFT Marketplace | 89 |
 
-Now [ranking](https://dappradar.com/rankings/defi?range=24h) by total value locked (TVL)[^caution]:
-| App            | Category                | TVL ($B) |
-|:-------------  |:-----                   |-------:|
-| Lido            |  Ethereum Staking         |   13.8  |
-| Summer.fi        |    Decentralised Finance | 6.1    |
-| Maker DAO        |  Stablecoin             |   4.9  |
-| Uniswap        |  Decentralised Exchange | 3.2    |
-| Aave            |  Decentralised Lending |   2.6  |
+Now ranking by total value locked (TVL)
 
-[^caution]: Take these stats with some salt, I haven't looked into dappradar's methodology, and they are only representative as of August, 2023. Generally over the past few years, Maker, Uniswap, Aave, Curve have been relatively stable and popular protocols. 
+| Rank | Dapp               | Category          | TVL       |
+|-------|--------------------|-------------------|-----------|
+| 1     | Lido               | Liquid Staking    | $39.14B   |
+| 2     | Aave V3            | Lending           | $33.00B   |
+| 3     | EigenLayer         | Restaking         | $20.41B   |
+| 4     | Binance Staked ETH | Liquid Staking    | $13.18B   |
+| 5     | ether.fi           | Liquid Restaking  | $13.03B   |
+| 6     | Ethena             | Synthetic Dollar  | $12.76B   |
+| 7     | Pendle             | Yield Trading     | $8.58B    |
+| 8     | SparkLend          | Lending           | $7.94B    |
+| 9     | Sky                | Stablecoin Protocol | $6.70B  |
+| 10    | Rocket Pool        | Liquid Staking    | $6.02B    |
+
+> *Data compiled from DappRadar and DeFiLlama.* They are only representative as of August, 2025. Generally over the past many years, Maker, Uniswap, Aave, Curve have been relatively stable and popular protocols. Some figures represent the protocol's TVL on Ethereum specifically, while others may include multi-chain deployments. 
 
 # Characteristics and Quirks
 * Difficulty Bomb: Also known as the "Ice Age," the Ethereum network has a built-in difficulty bomb designed to make mining exponentially more challenging over time. This was originally introduced to motivate the network to transition from Proof of Work (PoW) to Proof of Stake (PoS). It's a fascinating mechanic that's deeply rooted in the network's consensus strategy.
@@ -247,4 +239,4 @@ Now [ranking](https://dappradar.com/rankings/defi?range=24h) by total value lock
 
 # Video Lecture
 * Here's this lecture recorded live August 28, 2023 on [YouTube](https://www.youtube.com/watch?v=bIWsS8o9VAE),
-* and (hopefully) an update on [August 19, 2025 on X]().
+* and (hopefully) an update on August 19, 2025 [on X]().
