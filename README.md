@@ -24,7 +24,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) | ~~Ethereum~~ |
 | 06 | [Guest Lecture 1](guest-lectures.md) | [T06](tutorials/t06.md) | ~~Ethereum~~ |
 | 07 | Personal Development Week |- |- |
-| 08 | [Smart Contracts and Ethereum](notes/07-ethereum.md) |[T08](tutorials/t08.md) | Ethereum! |
+| 08 | [Smart Contracts and Ethereum](notes/08-ethereum.md) |[T08](tutorials/t08.md) | Ethereum! |
 | 09 | [Guest Lecture 2](guest-lectures.md) |- | StarkNet |
 | 10 | Privacy & Security |- | Zcash |
 | 11 | Governance and Regulation |- | Polkadot, Cosmos |
