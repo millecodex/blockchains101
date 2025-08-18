@@ -26,7 +26,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 07 | Personal Development Week |- |- |
 | 08 | [Smart Contracts and Ethereum](notes/08-ethereum.md) |[T08](tutorials/t08.md) | Ethereum! |
 | 09 | [Guest Lecture 2](guest-lectures.md) |- | StarkNet |
-| 10 | Sclaing |- | Layer2s |
+| 10 | Scaling |- | Layer2s |
 | 11 | Privacy & Security |- | Zcash |
 | 12 | Governance, Regulation, Alternative DLTs & Future Trends | -| Sonic, Base |
 
