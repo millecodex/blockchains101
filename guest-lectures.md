@@ -7,6 +7,9 @@ Cross-listed with Blockchain Economy (ECON1558) from TBS\
 Date: Tuesday 26th August 2025, 08:45 - 10:00 (Vietnamese time)\
 Online via Teams - See Canvas announcement
 
+<img width="1600" alt="Guest Lecture Ryan Johnson-Hunt Blockchain & Crypto" src="https://github.com/user-attachments/assets/816d610d-8930-4924-bc4e-d39d683e440f" />
+
+
 ---
 ### Beyond Bitcoin: How Tokens and Stablecoins are Shaping the Future of Blockchain
 Guest's Profile: **Mr. Hung Tran** (Mr. Ken Tran) - Head of Business Development (Staking) - [Caliber Venture](https://caliber.build/) (Kyber Network) \
