@@ -139,8 +139,12 @@ contract InfiniteLoop {
 	jeff++
 } } }
  ```
-The simple code above continually updates the counter because the stop condition of `false` never occurs. To avoid this scenario all computation in the EVM needs gas. As a contract is executed gas is consumed and if the contract runs out of the gas then the update fails. All gas is paid in ether (`ETH`) and goes to the nodes that perform the calculations. A follow up question is what if I am wealthy and have enough gas to spam the network in this manner? To prevent this there is a gas limit on all transactions that is calculated based on how busy the network is. The  *London* upgrade to Ethereum changed the way that gas is distributed. Previously the miner would be compensated by receiving the entire gas fee in the transaction. Now, part of this fee is *burned*, and the validator gets the remainder. Burning some ETH offsets the overall issuance.
+The simple code above continually updates the counter because the stop condition of `false` never occurs. To avoid this scenario all computation in the EVM needs gas. As a contract is executed gas is consumed and if the contract runs out of the gas then the update fails. All gas is paid in ether (`ETH`) and goes to the nodes that perform the calculations. A follow up question is: "What if I am wealthy and have enough gas to spam the network in this manner?" To prevent this there is a gas-limit on all transactions that is calculated based on how busy the network is. The  *London* upgrade to Ethereum changed the way that gas is distributed. Previously the miner would be compensated by receiving the entire gas fee in the transaction. Now, part of this fee is *burned*, and the validator gets the remainder. Burning some ETH offsets the overall issuance of the token.
 
+> <img width="1200" alt="ultrasound money showing ETH issuance since the merge" src="https://github.com/user-attachments/assets/301de07f-d490-4708-b898-778a76913d3d" />\
+> Since the merge the issuance of Ether has stayed relatively flat due to the burning of fees. (BTC inflated due to the decreasing block reward.) Source: [Ultrasound.money](https://ultrasound.money/?timeFrame=since_merge)
+
+Gas fees are important for funding the network validators, preventing spam, but also for scaling. As more users need the blockspace, block fees will adapt to the increase in demand. This has resulted in many Layer-2s that process transactions for a cheaper cost, then batch-post back to the Ethereum base layer. More on this topic in the lecture on scaling.
 
 # Ethereum Architecture
 Looking at Ethereum from an individual node point of view there are three main clients that work together to (a) maintain consensus and (b) update the state.
@@ -150,10 +154,7 @@ Looking at Ethereum from an individual node point of view there are three main c
 ## Consensus: From PoS to PoW
 On September 15, 2022, the Ethereum network executed "[The Merge](https://ethereum.org/en/roadmap/merge/)" which transferred consensus from the main chain that was operating by proof of work to the beacon chain that was running (in parallel) proof of stake. It was always the ethos of the Ethereum community to transition the network to a fully stake-based validation mechanism. What was unknown at the time was how hard it would be; it took developers ~7 years to do it. 
 
-> <img width="600" alt="image" src="https://github.com/millecodex/COMP842/assets/39792005/047defb2-1617-4449-b2e2-c6a3fc31f749">\
-> Tweet: Tick-tock next block. The network switched consensus methods without missing a block. Source: https://twitter.com/pcaversaccio/status/1591744307215605764 
-
-In a PoS system consensus is handled by validators that maintain skin in the game by contributing a stake in ether and are rewarded in a similar fashion to miners. A validator's rewards are proportional to their stake in the system. The rules of the game dictate the validators must not be able to cheaply spam the network with multiple identities (Sybil resistance), which is enforced by a known list of validators with rewards in proportion to total stake. So multiple entites can join, but you must have >32 ETC to do so. 
+In a PoS system consensus is handled by validators that maintain skin in the game by contributing a stake in ether and are rewarded in a similar fashion to miners. A validator's rewards are proportional to their stake in the system. The rules of the game dictate the validators must not be able to cheaply spam the network with multiple identities (Sybil resistance), which is enforced by a known list of validators with rewards in proportion to total stake. So multiple entites can join, but you must have >32 ETH to do so. 
 
 > <img width="800" alt="image" src="https://github.com/millecodex/COMP842/assets/39792005/24925a07-ad77-46cc-a6d6-132359547d39">\
 > Figure: Ethereum consensus enforces sybil resistance by slashing penalties, and uses committee voting to determing the chain-head.
@@ -200,26 +201,25 @@ The [most used dapps](https://dappradar.com/rankings/protocol/ethereum) on Ether
 
 Now ranking by total value locked (TVL)
 
-| Rank | Dapp               | Category          | TVL       |
+| Rank | Dapp               | Category          | TVL ($B)      |
 |-------|--------------------|-------------------|-----------|
-| 1     | Lido               | Liquid Staking    | $39.14B   |
-| 2     | Aave V3            | Lending           | $33.00B   |
-| 3     | EigenLayer         | Restaking         | $20.41B   |
-| 4     | Binance Staked ETH | Liquid Staking    | $13.18B   |
-| 5     | ether.fi           | Liquid Restaking  | $13.03B   |
-| 6     | Ethena             | Synthetic Dollar  | $12.76B   |
-| 7     | Pendle             | Yield Trading     | $8.58B    |
-| 8     | SparkLend          | Lending           | $7.94B    |
-| 9     | Sky                | Stablecoin Protocol | $6.70B  |
-| 10    | Rocket Pool        | Liquid Staking    | $6.02B    |
+| 1     | Lido               | Liquid Staking    | 39   |
+| 2     | Aave V3            | Lending           | 33   |
+| 3     | EigenLayer         | Restaking         | 20   |
+| 4     | Binance Staked ETH | Liquid Staking    | 13.1   |
+| 5     | ether.fi           | Liquid Restaking  | 13.0   |
+| 6     | Ethena             | Synthetic Dollar  | 12.8   |
+| 7     | Pendle             | Yield Trading     | 8.6    |
+| 8     | SparkLend          | Lending           | 7.9    |
+| 9     | Sky                | Stablecoin Protocol | 6.7  |
+| 10    | Rocket Pool        | Liquid Staking    | 6.0    |
 
 > *Data compiled from DappRadar and DeFiLlama.* They are only representative as of August, 2025. Generally over the past many years, Maker, Uniswap, Aave, Curve have been relatively stable and popular protocols. Some figures represent the protocol's TVL on Ethereum specifically, while others may include multi-chain deployments. 
 
 # Characteristics and Quirks
 * Difficulty Bomb: Also known as the "Ice Age," the Ethereum network has a built-in difficulty bomb designed to make mining exponentially more challenging over time. This was originally introduced to motivate the network to transition from Proof of Work (PoW) to Proof of Stake (PoS). It's a fascinating mechanic that's deeply rooted in the network's consensus strategy.
 * The DAO hack was an important event in Ethereum's history. There was a bug, and a lot of money was lost, but then the *immutable* blockchain was rolled back, the community split, now there still exists Ethereum Classic (ETC) and an ongoing question over the decentralised nature of Ethereum. See Laura Shin's book [The Cryptoptians](https://laurashin.com/book/) for an excellent accounting of the events.
-* Self-Destruct and Resurrection: A quirky feature in Solidity is the selfdestruct function. When a contract self-destructs, it can send its remaining Ether to another address. Interestingly, if someone sends Ether to a self-destructed contract's address, and a new contract is created at the same address, the new contract will have the Ether sent to the "dead" contract. This resurrection quirk has potential security implications.
-* Uncle Blocks: Unlike other blockchain systems, Ethereum incorporates a mechanism to reward stale blocks, referred to as "uncle" blocks. (Bitcoin calls them orphans.) These are blocks that are valid but not included in the main blockchain. This promotes network security and inclusiveness by providing incentives for miners even if their mined blocks are not included in the main chain.
+* Self-Destruct and Resurrection: A quirky feature in Solidity is the selfdestruct function. When a contract self-destructs, it can send its remaining Ether to another address. Interestingly, if someone sends Ether to a self-destructed contract's address, and a new contract is created at the same address, the new contract will have the Ether sent to the "[dEaD](https://etherscan.io/address/0x000000000000000000000000000000000000dEaD)" address.
 
 # What did we miss?
 * [MEV](https://ethereum.org/en/developers/docs/mev/)
