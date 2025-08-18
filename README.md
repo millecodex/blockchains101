@@ -21,14 +21,14 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 02 | [Cryptographic Foundations](notes/02-cryptography.md) |[T02](tutorials/t02.md) | Bitcoin |
 | 03 | [Anatomy of a Block and Transaction Flow](notes/03-block.md) | [T03](tutorials/t03.md)| Bitcoin |
 | 04 | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md) | [T04](tutorials/t04.md)| Bitcoin, Dogecoin |
-| 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) | Ethereum |
-| 06 | [Guest Lecture 1](guest-lectures.md) | [T06](tutorials/t06.md) | Ethereum |
-| 07 | [Smart Contracts and Ethereum](notes/07-ethereum.md) |- | Solana(?maybe) |
-| 08 | Token Standards and Tokenomics | | Solana |
-| 09 | Scalability | | StarkNet |
-| 10 | Privacy & Security | | Zcash |
-| 11 | Governance and Regulation | | Polkadot, Cosmos |
-| 12 | Alternative DLTs & Future Trends | | Sonic, Base |
+| 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) | ~~Ethereum~~ |
+| 06 | [Guest Lecture 1](guest-lectures.md) | [T06](tutorials/t06.md) | ~~Ethereum~~ |
+| 07 | Personal Development Week |- |- |
+| 08 | [Smart Contracts and Ethereum](notes/07-ethereum.md) |[T08](tutorials/t08.md) | Ethereum! |
+| 09 | [Guest Lecture 2](guest-lectures.md) |- | StarkNet |
+| 10 | Privacy & Security |- | Zcash |
+| 11 | Governance and Regulation |- | Polkadot, Cosmos |
+| 12 | Alternative DLTs & Future Trends | -| Sonic, Base |
 
 ---
 
