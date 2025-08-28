@@ -25,7 +25,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 06 | [Guest Lecture 1](guest-lectures.md) | [T06](tutorials/t06.md) | ~~Ethereum~~ |
 | 07 | Personal Development Week |- |- |
 | 08 | [Smart Contracts and Ethereum](notes/08-ethereum.md) |[T08](tutorials/t08.md) | Ethereum! |
-| 09 | [Guest Lecture 2](guest-lectures.md) |[T09](tutorials/t08.md) |  |
+| 09 | [Guest Lecture 2](guest-lectures.md) |[T09](tutorials/t09.md) |  |
 | 10 | Scaling |- | Layer2s |
 | 11 | Privacy & Security |- | Zcash |
 | 12 | Governance, Regulation, Alternative DLTs & Future Trends | -| Sonic, Base |
