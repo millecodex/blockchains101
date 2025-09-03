@@ -8,9 +8,10 @@
 4. [Storage](#storage)
 5. [State Channels](#state-channels)
 6. [Side Chains](#side-chains)
-7. [What did we miss?](#what-did-we-miss)
-8. [Further Reading - the very short list](#further-reading---the-very-short-list)
-9. [Exercises](#exercises)
+7. [Rollups](#rollups)
+8. [What did we miss?](#what-did-we-miss)
+9. [Further Reading - the very short list](#further-reading---the-very-short-list)
+10. [Exercises](#exercises)
 
 ## Blockchain Stack
 A technology stack is a model to represent the sections and subsections of a complex system. A classic example can be seen in the internet. Underneath the application that we interface with there are many sub-layers to the entire technology. The internet standard defines four layers: application, transport, internet, and link[^1^]. Contrast this with the stack from[^2^] that has five divisions. There is no first-principles based ordering to the stack, and one may have more or fewer layers if sufficient to describe the system. This has been inspired by the OSI model (Open Systems Interconnection, see [link](https://en.wikipedia.org/wiki/OSI_model)).
@@ -109,8 +110,7 @@ Ethereum has a state channel scaling solution called [Raiden](https://raiden.net
 
 These networks add a settlement layer to the system to increase capacity but they still must only transact within the constraints of the original design.
 
-
-## Side Chains (Layer 2s)
+## Side Chains 
 Side chains are separate blockchains that can interact with a main chain. Interoperability is when two chains can exchange messages and tokens. If value is transferred away from chain A and appear on chain B then it must be settled on chain A and cannot reappear.
 
 This is different from a state channel where the off-chain transacting happens at network speed without the constraints of consensus inherited from the main chain. A side chain is subject to its own (new) design consensus rules. Plasma and Polkadot are example side chain projects. Plasma is a proposal to interact with Ethereum (in addition to Raiden) and Polkadot was conceived by Gavin Wood (co-founder of Ethereum) as a stand alone chain (Wood, 2017). Wood summarizes the approach:
@@ -118,6 +118,33 @@ This is different from a state channel where the off-chain transacting happens a
 > Scalability is addressed through a divide-and-conquer approach to [security and transport], scaling out of its bonded core through the incentivisation of untrusted public nodes. The heterogeneous nature of this architecture enables many highly divergent types of consensus systems interoperating in a trustless, fully decentralised "federation", allowing open and closed networks to have trust-free access to each other.
 
 The benefit of using a side chain is that you can have enhanced properties such as faster timing or lower fees and then only settle transactions on the main chain when necessary. The risk is that you are essentially outsourcing some portion of the protocol.
+
+### Rollups
+While side chains use their own consensus and security, a more modern and secure approach to Layer 2 scaling has emerged: rollups. Instead of creating an entirely separate security model, rollups inherit their security directly from the main Layer 1 chain (like Ethereum). 
+
+The core idea is simple:
+1. Execute Off-Chain: Rollups process hundreds or thousands of transactions in their own high-speed off-chain environment.
+2. Bundle and Compress: They then "roll up" these transactions into a single compressed batch.
+3. Post On-Chain: Finally, they post this compressed data to the Layer 1 chain.
+
+By doing this, the Layer 1 doesn't have to process every single transaction, but it still holds all the necessary data to verify what happened on the Layer 2. This allows rollups to offer significantly lower fees and faster speeds while borrowing the security of the mainnet.
+
+
+**Optimistic rollups** operate on a principle of trust but verify. They optimistically assume that all transactions bundled in a batch are valid and don't perform any upfront computation to prove it. This makes them fast and cheap. Think of it like a restaurant where the staff lets you run a tab, trusting that you'll pay for everything you ordered at the end of the night. 🧾
+
+The security of the system relies on a challenge period, which is a window of time (typically around 7 days) after a batch is posted to Layer 1. During this period, anyone on the network can act as a watchdog. If a watchdog finds a fraudulent transaction (e.g., someone trying to spend money they don't have), they can submit a fraud proof to the Layer 1.
+
+Fraud Proofs: This is a small piece of data that proves the L2 state was computed incorrectly. The Layer 1 contract then re-executes the transaction in question to verify the fraud. If the proof is valid, the fraudulent batch is reverted, and the L2's state is corrected. The watchdog who submitted the proof is rewarded, while the malicious party who submitted the batch is penalized (their staked funds are "slashed").
+
+The Downside (Withdrawal Time): The 7-day challenge period is why withdrawing funds from an optimistic rollup back to Layer 1 takes so long. You have to wait for the window to close to be 100% sure the transaction is final and can't be challenged. Because they don't need to perform complex cryptographic proofs, optimistic rollups are generally much easier to make EVM-compatible, allowing developers to migrate existing Ethereum applications with minimal effort. Arbitrum and Optimism are the most prominent examples of optimistic rollups.
+
+**Zero-Knowledge (ZK) Rollups:** take the opposite approach: they trust no one. They operate on a "guilty until proven innocent" model, where every single batch of transactions must be mathematically proven to be valid before it's even accepted by the Layer 1. This is achieved using  cryptography called zero-knowledge proofs.
+
+Validity Proofs: When a ZK-rollup submits a batch of transactions to Layer 1, it also submits a cryptographic proof (like a ZK-SNARK or ZK-STARK). This proof is a mathematical guarantee that all the transactions in the batch are valid and were executed correctly according to the rules. The Layer 1 smart contract just needs to verify this single, compact proof—a very quick process—instead of re-executing all the transactions.
+
+The Benefit (Instant Finality): Once the validity proof is verified on Layer 1, the transactions are instantly considered final. This means withdrawing funds from a ZK-rollup back to Layer 1 is almost instantaneous, as there's no need for a lengthy challenge period.
+
+Historically, the complexity of the cryptography made it difficult to build EVM-compatible ZK-rollups. However, recent advancements have led to the rise of zkEVMs, which are closing this gap. Because they offer faster finality and potentially higher security guarantees, many consider ZK-rollups to be the long-term scaling solution. Prominent examples include zkSync, Polygon zkEVM, and StarkNet.
 
 ## Modular Blockchain Stack
 Early blockchains were monolithic, meaning they handled all core functions on one main chain. This created a scalability bottleneck: as more users joined, the network became congested, and fees skyrocketed because every node had to process every single transaction, store the entire state, and participate in consensus.
@@ -148,6 +175,15 @@ This is arguably the most critical and often overlooked module. The DA layer's j
 > Figure: Pretty picture from Celestia, which as its core function provides the consensus and data availability 
 
 In this modular world, a Layer 2 processes transactions (execution), bundles them up, and posts the transaction data to a DA (data availability). It then posts a cryptographic proof of those transactions to Ethereum (settlement), which relies on its validators to order everything (consensus). This division of labor allows for massive scalability without sacrificing the core security and decentralization provided by the base layer.
+
+# Summary
+(some) scalability ~~solutions~~ help:
+| | Storage                  | State Channel      | Side Chains                          | Rollups                                   |
+|-|--------------------------|--------------------|--------------------------------------|-------------------------------------------|
+| | sharding; compression    | DIY off-chain; multisig | Child/Parent; two-way peg; detached security | Optimistic; ZK (zero-knowledge); inherited security |
+| ex:|Danksharding (with rollups, eth) | Lightning (btc) | • Liquid (btc)                       | Arbitrum (eth)                          |
+|  |segwit (btc)           | Raiden (eth)     | Polygon (eth)                      | Optimism (eth)                          |
+|  |taproot (btc)          |                    | Plasma (eth)                       |                                           |
 
 # What did we miss?
 * Rollups in Detail: We could spend an entire lecture comparing Optimistic Rollups (which assume transactions are valid and use a "fraud proof" system to catch errors) versus Zero-Knowledge (ZK) Rollups (which use complex cryptography to mathematically prove the validity of every transaction batch). This includes the trade-offs in security, cost, and EVM-compatibility.
