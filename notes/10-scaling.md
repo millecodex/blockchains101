@@ -157,6 +157,7 @@ In this modular world, a Layer 2 processes transactions (execution), bundles the
 # Further Reading - the very short list
 * Vitalik Buterin also influenced the modularity shift with his 2020 article, "[A Rollup Centric Ethereum Roadmap](https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698)," where he outlined a future where Ethereum's base layer would primarily serve as a data and settlement layer for Layer 2 rollups, effectively endorsing the modular approach for the entire Ethereum ecosystem.
 * [The Limits to Blockchain Scalability](https://vitalik.eth.limo/general/2021/05/23/scaling.html), another Vitalik piece
+* [Lazy Ledger](https://github.com/millecodex/blockchains101/blob/main/papers/AlBassam-LazyLedger-2019.pdf) the foundation of Celestia
 
 # Exercises
 1. Explain how the modular blockchain model (separating execution, settlement, consensus, and data availability) is an attempt to address the Blockchain Trilemma. Which of the three properties—-Decentralization, Security, or Scalability—-does this model prioritize enhancing the most?
