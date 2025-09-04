@@ -239,4 +239,4 @@ Now ranking by total value locked (TVL)
 
 # Video Lecture
 * Here's this lecture recorded live August 28, 2023 on [YouTube](https://www.youtube.com/watch?v=bIWsS8o9VAE),
-* and (hopefully) an update on August 19, 2025 [on X]().
+* and an update on August 19, 2025 on [X/Twitter](https://x.com/Japple/status/1963519909935399029).
