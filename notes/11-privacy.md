@@ -15,23 +15,30 @@
 
 
 ## What is Privacy?
-### A Definition
+### Privacy: A Definition
 In the digital age, privacy transcends its traditional boundaries to become a critical concern in the realm of computer science and information technology. As data becomes the new currency, the right to privacy stands at the intersection of ethical, legal, and technological debates. Within the context of blockchain technology, privacy takes on additional layers of complexity. While blockchain can enhance privacy through decentralisation and cryptographic techniques, its immutable nature also raises questions about data permanence and the right to be forgotten. Hence, understanding privacy as a basic human right is crucial for responsible technological advancement and policy-making.
 
 [Article 12](https://www.un.org/en/about-us/universal-declaration-of-human-rights) of the Universal Declaration of Human Rights (UDHR), adopted in 1948, states:
 > "No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks."
 
+### Privacy: In Context with Security and Anonymity
+
+> <img width="505" height="447" alt="image" src="https://github.com/user-attachments/assets/7a28f6b7-9898-4b1c-89f2-9014a848a0f1" />\
+> Figure: Privacy, Security, and Anonymity closely overlap and relate to each other. Each is, however, a distinct concept. Can you find real-world and digital examples for each intersection? Source: Nijsse.
+
 ### Privacy vs Security
 Privacy and security, while closely related, serve distinct roles in the digital landscape. Privacy is primarily concerned with the autonomy individuals have over their personal information—what data is collected, how it is used, and with whom it is shared. Security, on the other hand, focuses on safeguarding that data against unauthorized access and breaches. In the context of blockchain technology, the pseudonymous nature of transactions offers a level of privacy, but it is the blockchain's cryptographic security mechanisms that ensure this data cannot be easily tampered with. Both are indispensable in the construction of robust digital systems, but they address different facets of the information management and safeguarding process.
+
+### Privacy vs Anonymity
+
+### Security vs Anonymity
 
 ## Privacy Laws
 Laws and regulations designed to safeguard individual privacy vary significantly across national and international boundaries. In the digital realm, these legal frameworks dictate how personal data should be collected, stored, processed, and shared. They aim to strike a balance between technological innovation and the protection of individual rights, particularly in areas like e-commerce, social networking, and emerging technologies such as blockchain.
 
-### GDPR et al.
-The General Data Protection Regulation (GDPR) serves as a seminal piece of legislation that has set new global standards for data protection and privacy. Its impact extends beyond the European Union, affecting companies and technologies worldwide. Within the context of blockchain technology, GDPR presents both challenges and opportunities. While blockchain's immutable nature complicates the "right to be forgotten," the technology's built-in security features align well with GDPR's emphasis on data protection.
+The **General Data Protection Regulation** (GDPR) serves as a seminal piece of legislation that has set new global standards for data protection and privacy. Its impact extends beyond the European Union, affecting companies and technologies worldwide. Within the context of blockchain technology, GDPR presents both challenges and opportunities. While blockchain's immutable nature complicates the "right to be forgotten," the technology's built-in security features align well with GDPR's emphasis on data protection.
 
-### Data Sovereignty
-Data sovereignty relates to laws and regulations that dictate where data must be stored and processed. These laws vary by jurisdiction and can introduce significant complexities for global technologies like blockchain. For instance, a blockchain network that spans multiple countries must navigate a labyrinth of local and international laws about data residency, potentially affecting the efficiency and legality of cross-border transactions.
+**Data sovereignty** relates to laws and regulations that dictate where data must be stored and processed. These laws vary by jurisdiction and can introduce significant complexities for global technologies like blockchain. For instance, a blockchain network that spans multiple countries must navigate a labyrinth of local and international laws about data residency, potentially affecting the efficiency and legality of cross-border transactions.
 
 ## Blockchain Privacy
 Blockchain technology has emerged as a revolutionary paradigm for data storage and transactions, offering significant advantages such as decentralisation, transparency, and immutability. However, these strengths also introduce unique privacy challenges. For instance, the transparency and permanence of blockchain transactions can conflict with traditional notions of privacy, such as the ability to erase or modify personal data. Hence, while blockchain holds the promise of enhanced security and user control, it simultaneously raises complex questions concerning data privacy and individual rights.
@@ -54,7 +61,6 @@ Mixing services act as third-party intermediaries that mix different sets of cry
 ### Tornado Cash:
 Tornado Cash is a privacy-focused protocol built on the Ethereum blockchain, designed to break the on-chain link between the source and destination addresses. It uses a smart contract that accepts deposits of a fixed amount and can later make a withdrawal to a different address. Between the deposit and withdrawal steps, cryptographic commitments and zero-knowledge proofs are employed to ensure the process is secure yet untraceable. Thus, Tornado Cash makes it exceedingly difficult to establish any connection between the sending and receiving addresses, thereby enhancing transaction privacy on the Ethereum network.
 
-### How
 The principle behind many mixing services is based on algorithms like CoinJoin, which combines multiple payments from multiple spenders into a single transaction. In a typical CoinJoin transaction, it becomes unclear which input (spender) is associated with which output (receiver), making it difficult to trace the origin of the funds. However, it's important to note that while CoinJoin obfuscates the transaction path, it does not make it entirely untraceable. Advanced versions of CoinJoin, like CoinShuffle or CashFusion, add extra layers of privacy by further breaking down and randomly recombining payment amounts.
 
 ## Zero Knowledge
@@ -67,15 +73,18 @@ In blockchain contexts, ZKPs are often used to enhance transaction privacy. For 
 ### Alibaba's Cave
 The Alibaba's Cave analogy serves as an intuitive way to understand the concept of zero-knowledge proofs. Imagine a cave that is shaped like a 'T', with an entrance at one end and a fork inside that leads to two separate chambers. One chamber contains Alibaba's treasure, and the other is empty. The cave's door can only be opened with a special word, known to the prover but not to the verifier.
 
+> <img width="803" height="252" alt="image" src="https://github.com/user-attachments/assets/e38a1738-24aa-422b-b70c-89532ade27ee" />\
+> Figure: 1. The Prover (P) randomly choses a path. 2. The Verifier (V) asks the prover to return via a specific path. 3. If the Prover returns from the correct path it proves they knew the password. Repeat multiple times to defeat luck.
+
 In the zero-knowledge context, the prover wants to convince the verifier that they know the secret word to open the treasure chamber, without actually revealing the word itself. The prover enters the cave and chooses either the left or the right path at the fork. The verifier then enters just up to the fork and shouts which path the prover should come out from. If the prover knows the secret word, they can open the door and come out from the path specified by the verifier, proving they know the secret. Importantly, this happens without revealing what the secret word is.
 
 You may now say, "Sure, you just got lucky." This process may be repeated multiple times to reduce the chance of the prover successfully deceiving the verifier by mere luck. After several rounds, the verifier can become statistically convinced that the prover knows the secret, yet the prover hasn't revealed any information about what the secret actually is.
 
 ### Where's Waldo (Wally?)
-See demonstration.
+See demonstration in the lecture video. A 2-D image can hide a secret if its sufficiently large. The prover can visually show they know the location of the secret by hiding the context (coordinates). Although satisfying, this analogy gives up the secret itself and so is not zero-knowledge.
 
-### zk-SNARKs and zk-STARKs: 
-Advanced section. See the What did we miss? section.
+> <img width="2490" height="1442" alt="image" src="https://github.com/user-attachments/assets/f93ef4c4-bc65-4449-b57d-073f2728f5d5" />\
+> Figure: Knowledge of Waldo can be proven by pointing him out. This gives up the location *and* Waldo's identity.
 
 ## Other Tools
 - Homomorphic Encryption: Homomorphic encryption is a sophisticated cryptographic method that allows computations to be performed directly on encrypted data, without the need for decryption. This is particularly advantageous in cloud computing and data analysis scenarios where sensitive information needs to be processed but should not be exposed. For example, a medical research institute could use homomorphic encryption to securely analyse encrypted health data, generating results that can then be decrypted and interpreted, all while maintaining patient confidentiality.
