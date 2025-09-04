@@ -180,10 +180,10 @@ In this modular world, a Layer 2 processes transactions (execution), bundles the
 (some) scalability ~~solutions~~ help:
 | | Storage                  | State Channel      | Side Chains                          | Rollups                                   |
 |-|--------------------------|--------------------|--------------------------------------|-------------------------------------------|
-| | sharding; compression    | DIY off-chain; multisig | Child/Parent; two-way peg; detached security | Optimistic; ZK (zero-knowledge); inherited security |
-| ex:|Danksharding (with rollups, eth) | Lightning (btc) | • Liquid (btc)                       | Arbitrum (eth)                          |
-|  |segwit (btc)           | Raiden (eth)     | Polygon (eth)                      | Optimism (eth)                          |
-|  |taproot (btc)          |                    | Plasma (eth)                       |                                           |
+| tech.| sharding; compression    | DIY off-chain; multisig | Child/Parent; two-way peg; detached security | Optimistic; ZK (zero-knowledge); inherited security |
+| ex:|Danksharding (with rollups, eth) | Lightning (btc) | Liquid (btc)                       | Arbitrum (eth)                          |
+| ex: |segwit (btc)           | Raiden (eth)     | Polygon (eth)                      | Optimism (eth)                          |
+| ex: |taproot (btc)          |                    | Plasma (eth)                       |    Base (coinbase; eth)                                       |
 
 # What did we miss?
 * Rollups in Detail: We could spend an entire lecture comparing Optimistic Rollups (which assume transactions are valid and use a "fraud proof" system to catch errors) versus Zero-Knowledge (ZK) Rollups (which use complex cryptography to mathematically prove the validity of every transaction batch). This includes the trade-offs in security, cost, and EVM-compatibility.
@@ -201,5 +201,5 @@ In this modular world, a Layer 2 processes transactions (execution), bundles the
 
 # Video Lecture
 * Here's this lecture recorded live August 15, 2023 on [YouTube](https://www.youtube.com/watch?v=1r6_XS8zUZc)
-* This is the screen recorded update on September 04, 2025 on [X/Twitter]()
+* And updated on September 04, 2025 on [X/Twitter]()
 
