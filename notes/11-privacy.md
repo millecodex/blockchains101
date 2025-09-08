@@ -34,8 +34,10 @@ And closer to the point of *privacy* as a concept by Eric Hughes written in the 
 Privacy and security, while closely related, serve distinct roles in the digital landscape. Privacy is primarily concerned with the autonomy individuals have over their personal information—what data is collected, how it is used, and with whom it is shared. Security, on the other hand, focuses on safeguarding that data against unauthorized access and breaches. In the context of blockchain technology, the pseudonymous nature of transactions offers a level of privacy, but it is the blockchain's cryptographic security mechanisms that ensure this data cannot be easily tampered with. Both are indispensable in the construction of robust digital systems, but they address different facets of the information management and safeguarding process.
 
 ### Privacy vs Anonymity
+[TBC]
 
 ### Security vs Anonymity
+[TBC]
 
 ## Privacy Laws
 Laws and regulations designed to safeguard individual privacy vary significantly across national and international boundaries. In the digital realm, these legal frameworks dictate how personal data should be collected, stored, processed, and shared. They aim to strike a balance between technological innovation and the protection of individual rights, particularly in areas like e-commerce, social networking, and emerging technologies such as blockchain.
