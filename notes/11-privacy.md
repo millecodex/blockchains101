@@ -7,7 +7,6 @@
 3. [Blockchain Privacy](#blockchain-privacy)
 4. [Mixing](#mixing)
 5. [Zero Knowledge](#zero-knowledge)
-6. [Other Tools](#other-tools)
 7. [What did we miss?](#what-did-we-miss)
 8. [Further Reading - the very short list](#further-reading---the-very-short-list)
 9. [Exercises](#exercises)
@@ -19,7 +18,12 @@
 In the digital age, privacy transcends its traditional boundaries to become a critical concern in the realm of computer science and information technology. As data becomes the new currency, the right to privacy stands at the intersection of ethical, legal, and technological debates. Within the context of blockchain technology, privacy takes on additional layers of complexity. While blockchain can enhance privacy through decentralisation and cryptographic techniques, its immutable nature also raises questions about data permanence and the right to be forgotten. Hence, understanding privacy as a basic human right is crucial for responsible technological advancement and policy-making.
 
 [Article 12](https://www.un.org/en/about-us/universal-declaration-of-human-rights) of the Universal Declaration of Human Rights (UDHR), adopted in 1948, states:
-> "No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks."
+> No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks.
+
+And closer to the point of *privacy* as a concept by Eric Hughes written in the [Cypherpunk manifesto](https://activism.net/cypherpunk/manifesto.html) (1993):
+> Privacy is the power to selectively reveal oneself to the world.
+<img width="1920" height="1080" alt="Eric Hughes quote slide Cypherpunk's Manifesto by Jeff Nijsse" src="https://github.com/user-attachments/assets/d006e004-6348-4c66-a378-f2fae04059e8" />
+
 
 ### Privacy: In Context with Security and Anonymity
 
@@ -58,17 +62,16 @@ Chain analysis involves the scrutiny of blockchain data with the aim of tracing 
 ## Mixing
 Mixing services act as third-party intermediaries that mix different sets of cryptocurrency funds to make it more challenging to trace their original source. These services are particularly relevant in public blockchain networks where transactions are transparent and can be analysed to identify participants. The main objective of mixing services is to obfuscate transaction trails, thereby enhancing privacy and making it difficult to perform chain analysis.
 
-### Tornado Cash:
-Tornado Cash is a privacy-focused protocol built on the Ethereum blockchain, designed to break the on-chain link between the source and destination addresses. It uses a smart contract that accepts deposits of a fixed amount and can later make a withdrawal to a different address. Between the deposit and withdrawal steps, cryptographic commitments and zero-knowledge proofs are employed to ensure the process is secure yet untraceable. Thus, Tornado Cash makes it exceedingly difficult to establish any connection between the sending and receiving addresses, thereby enhancing transaction privacy on the Ethereum network.
+> <img width="622" height="243" alt="image" src="https://github.com/user-attachments/assets/73c994a6-b094-4f59-b317-96700507ef4b" />\
+> Figure: Bob and Alice join their transaction UTXOs together via CoinJoin. This still provides the correct output: 8 to Carol and 15 to Ted, however the outputs are mixed together and so we cannot assume which output corresponds with which input. In a large enough pool this become impractical to link outputs with inputs. 
 
-The principle behind many mixing services is based on algorithms like CoinJoin, which combines multiple payments from multiple spenders into a single transaction. In a typical CoinJoin transaction, it becomes unclear which input (spender) is associated with which output (receiver), making it difficult to trace the origin of the funds. However, it's important to note that while CoinJoin obfuscates the transaction path, it does not make it entirely untraceable. Advanced versions of CoinJoin, like CoinShuffle or CashFusion, add extra layers of privacy by further breaking down and randomly recombining payment amounts.
+The principle is to combine multiple payments from multiple spenders into a single transaction. In a typical CoinJoin transaction, it becomes unclear which input (spender) is associated with which output (receiver), making it difficult to trace the origin of the funds. However, it's important to note that while CoinJoin obfuscates the transaction path, it does not make it entirely untraceable. Advanced versions of CoinJoin, like CoinShuffle or CashFusion, add extra layers of privacy by further breaking down and randomly recombining payment amounts.
+
+**Tornado Cash** is a privacy-focused protocol built on the Ethereum blockchain, designed to break the on-chain link between the source and destination addresses. It uses a smart contract that accepts deposits of a fixed amount and can later make a withdrawal to a different address. Between the deposit and withdrawal steps, cryptographic commitments and zero-knowledge proofs are employed to ensure the process is secure yet untraceable. Thus, Tornado Cash makes it exceedingly difficult to establish any connection between the sending and receiving addresses, thereby enhancing transaction privacy on the Ethereum network. 
+
 
 ## Zero Knowledge
 Zero-knowledge proofs (ZKPs) are cryptographic techniques that allow one party, known as the prover, to demonstrate to another party, known as the verifier, that a particular statement is true without revealing any specific information about the statement itself. Originating in the late 1980s, ZKPs have become a cornerstone in the realm of cryptographic protocols, particularly in bolstering privacy and security in various applications, including blockchain technology. The fundamental characteristic of a zero-knowledge proof is its ability to maintain the confidentiality of the information being verified, a feature that is increasingly critical in an era of growing concerns about data privacy.
-
-In a zero-knowledge proof, three essential properties must be met: completeness, soundness, and zero-knowledge. Completeness ensures that if the statement is true, the honest verifier will be convinced of its truth by an honest prover. Soundness means that no cheating prover can convince the honest verifier of the truth of a false statement. Lastly, the zero-knowledge property ensures that the verifier gains no additional information from the interaction, apart from the validity of the statement.
-
-In blockchain contexts, ZKPs are often used to enhance transaction privacy. For example, they can prove that a transaction is valid without revealing the amount, sender, or receiver, thereby achieving a balance between transparency and privacy. Overall, zero-knowledge proofs represent a powerful tool for enhancing privacy in digital interactions.
 
 ### Alibaba's Cave
 The Alibaba's Cave analogy serves as an intuitive way to understand the concept of zero-knowledge proofs. Imagine a cave that is shaped like a 'T', with an entrance at one end and a fork inside that leads to two separate chambers. One chamber contains Alibaba's treasure, and the other is empty. The cave's door can only be opened with a special word, known to the prover but not to the verifier.
@@ -80,32 +83,35 @@ In the zero-knowledge context, the prover wants to convince the verifier that th
 
 You may now say, "Sure, you just got lucky." This process may be repeated multiple times to reduce the chance of the prover successfully deceiving the verifier by mere luck. After several rounds, the verifier can become statistically convinced that the prover knows the secret, yet the prover hasn't revealed any information about what the secret actually is.
 
+In a zero-knowledge proof, three essential properties must be met: completeness, soundness, and zero-knowledge. Completeness ensures that if the statement is true, the honest verifier will be convinced of its truth by an honest prover. Soundness means that no cheating prover can convince the honest verifier of the truth of a false statement. Lastly, the zero-knowledge property ensures that the verifier gains no additional information from the interaction, apart from the validity of the statement.
+
+In blockchain contexts, ZKPs are often used to enhance transaction privacy. For example, they can prove that a transaction is valid without revealing the amount, sender, or receiver, thereby achieving a balance between transparency and privacy. Overall, zero-knowledge proofs represent a powerful tool for enhancing privacy in digital interactions and are the primary method currently being persued by blockchain developers.
+
 ### Where's Waldo (Wally?)
-See demonstration in the lecture video. A 2-D image can hide a secret if its sufficiently large. The prover can visually show they know the location of the secret by hiding the context (coordinates). Although satisfying, this analogy gives up the secret itself and so is not zero-knowledge.
+This is another zero knowledge analogy such that I can prove knowledge of Wally's location without revealing the exact coordiates. A 2-D image can hide a secret if its sufficiently large. The prover can visually show they know the location of the secret by hiding the context (coordinates). Although satisfying, this analogy gives up the secret itself and so is not zero-knowledge. See demonstration in the lecture video. 
 
 > <img width="2490" height="1442" alt="image" src="https://github.com/user-attachments/assets/f93ef4c4-bc65-4449-b57d-073f2728f5d5" />\
 > Figure: Knowledge of Waldo can be proven by pointing him out. This gives up the location *and* Waldo's identity.
 
-## Other Tools
-- Homomorphic Encryption: Homomorphic encryption is a sophisticated cryptographic method that allows computations to be performed directly on encrypted data, without the need for decryption. This is particularly advantageous in cloud computing and data analysis scenarios where sensitive information needs to be processed but should not be exposed. For example, a medical research institute could use homomorphic encryption to securely analyse encrypted health data, generating results that can then be decrypted and interpreted, all while maintaining patient confidentiality.
-- Multi-Party Computation: MPC is a cryptographic technique that enables multiple parties to jointly compute a function over their inputs while keeping these inputs private from each other. This is extremely useful in scenarios such as secure voting systems, privacy-preserving data analytics, and collaborative scientific research. In essence, each party learns only the specific output and does not gain information about the other parties' individual inputs, thereby preserving privacy and data integrity throughout the computation process.
-- Secure Hardware Enclaves: provide isolated execution environments within a computer's hardware where code and data are securely loaded and executed. This isolation ensures that even if the broader system is compromised, the data and operations within the enclave remain inaccessible to outside processes. Such enclaves are often utilised in applications that require stringent security measures, such as digital rights management, secure data storage, and certain blockchain operations.
-- Ring Signatures: Used in cryptocurrencies like Monero, ring signatures allow a user to sign a message on behalf of a group. The signature proves the message was created by someone in the group, but it is computationally infeasible to determine which group member's key was used for the signature.
-- Confidential Transactions: This method allows for amounts, origins, and destinations of transactions to be obfuscated from the public, yet can be verified to be valid under the network's consensus rules.
-- Bulletproofs: These are short non-interactive zero-knowledge proofs that require no trusted setup, making them ideal for blockchain applications where privacy is a concern.
-- Schnorr Signatures: These offer a strong level of correctness, do not suffer from malleability, and are also linear, which allows for complex multi-signature schemes not possible with ECDSA.
+# Summary
+| Technology | Primary Goal | Privacy Guarantee | Key Implementations | Primary Trade-offs |
+| :--- | :--- | :--- | :--- | :--- |
+| **Coin Mixing** | Breaking Linkability | Obscures the on-chain link between deposit and withdrawal addresses by pooling funds from many users. | Tornado Cash (historical), various centralized and decentralized mixers. | Can have centralized trust points; anonymity set depends on the number of users; subject to intense regulatory action. |
+| **Ring Signatures** | Sender Anonymity | Plausible deniability; the true sender is hidden within a group (ring) of potential decoys. | Monero | Increases transaction data size; privacy depends on the quality and size of the ring; can attract regulatory scrutiny. |
+| **Stealth Addresses** | Receiver Anonymity | Generates a unique, one-time address for each transaction, preventing public linking of payments to a single recipient. | Monero, RAILGUN, Umbra Protocol | Primarily protects the receiver, not the sender or amount; requires additional cryptographic computation. |
+| **zk-SNARKs** | Transaction Confidentiality | Mathematical proof of transaction validity without revealing sender, receiver, or amount. | Zcash, Ethereum L2s (e.g., Aztec), dApps (e.g., RAILGUN) | High computational cost for proof generation; often requires a "trusted setup" for initial parameter creation. |
 
 # What did we miss?
-* Decentralised Identity Systems
-* zk-SNARKs and zk-STARKs
-* Network-level Privacy Dandelion++
+* Tools like **[RAILGUN](https://docs.railgun.org/wiki)** function as a system of smart contracts that create a shielded pool using zk-SNARKs. Users can deposit assets into the RAILGUN contract and then transact privately and interact with other DeFi protocols from within this shielded environment.
+* Coins like [FIRO](https://firo.org/guide/privacy-coin-comparison.html) (prev. [Zcoin](https://en.wikipedia.org/wiki/Firo_(cryptocurrency))) have been adopted in some real-world use cases (e.g., voting in Thailand's elections), which supports its uptake.
 
 # Further Reading - the very short list
-* Zcash: History, Privacy, and the Future of Web 3 (w/Zooko Wilcox-O'Hearn & Thomas Walton-Pocock) https://www.youtube.com/watch?v=ibA_4kwd_YI 
+* Zcash: History, Privacy, and the Future of Web 3 (w/Zooko Wilcox-O'Hearn & Thomas Walton-Pocock) ([YouTube](https://www.youtube.com/watch?v=ibA_4kwd_YI)) 
 * [zk-SNARKs: Under the Hood](https://medium.com/@VitalikButerin/zk-snarks-under-the-hood-b33151a013f6) by Vitalik Buterin: A deep dive into zk-SNARKs and their application in blockchain.
 * Blockchain Privacy and Regulatory Compliance: Towards a Practical Equilibrium by Vitalik Buterin et.al (2023). An exploration of privacy issues and solutions in blockchain. ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4563364)) ([pdf](https://github.com/millecodex/COMP842/blob/master/papers/Buterin-Privacy-SSRN-id4563364.pdf))
 * [The Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability](https://link.springer.com/content/pdf/10.1007/BF00206326.pdf) by David Chaum: Introduces the concept of anonymous communication.
-* Radiolab Podcast 'The Ceremony' about the ZCash trusted setup https://radiolab.org/podcast/ceremony 
+* Radiolab Podcast 'The Ceremony' about the ZCash trusted setup https://radiolab.org/podcast/ceremony
+* [Electronic Frontier Foundation](https://www.eff.org/issues/privacy)'s page with resources on digital privacy
 
 # Exercises
 1. a
