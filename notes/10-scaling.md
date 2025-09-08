@@ -201,5 +201,5 @@ In this modular world, a Layer 2 processes transactions (execution), bundles the
 
 # Video Lecture
 * Here's this lecture recorded live August 15, 2023 on [YouTube](https://www.youtube.com/watch?v=1r6_XS8zUZc)
-* And updated on September 04, 2025 on [X/Twitter]()
+* And updated on September 04, 2025 on [X/Twitter](https://x.com/Japple/status/1964904478555197761)
 
