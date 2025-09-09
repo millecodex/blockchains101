@@ -121,4 +121,4 @@ This is another zero knowledge analogy such that I can prove knowledge of Wally'
 
 # Video Lecture
 * Here's this lecture recorded live September 18, 2023 on [YouTube](https://www.youtube.com/watch?v=1pK6Iiw0fp0)
-* and updated on September 09, 2025 on [X/Twitter]()
+* and updated on September 09, 2025 on [X/Twitter](https://x.com/Japple/status/1965266378241581245)
