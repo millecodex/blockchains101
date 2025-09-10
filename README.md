@@ -28,7 +28,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 09 | [Guest Lecture 2](guest-lectures.md) |[T09](tutorials/t09.md) |  |
 | 10 | [Scaling](notes/10-scaling.md) |[T10](tutorials/t10.md) | Layer2s |
 | 11 | [Privacy](notes/11-privacy.md) |[T11](tutorials/t11.md) | Zcash |
-| 12 | [Security & Future Trends](notes/security.md) | [T12](tutorials/t12.md)| Sonic, Base |
+| 12 | [Security & Future Trends](notes/12-security.md) | [T12](tutorials/t12.md)| Sonic, Base |
 
 ---
 
