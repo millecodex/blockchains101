@@ -207,10 +207,11 @@ The main practical threat to a single entity controlling the majority of the has
 3. Mining blocks in secret, or withholding blocks, can be a mining strategy. What is the benefit to the miner for doing this? How is this harmful to the community?
 
 # Resources
-* Watch Micah Warren (math professor) lay out the Bitcoin security hashrate concerns [YouTube](https://www.youtube.com/watch?v=0bUpF0wJrxo)
-* Blockchain Security Vulnerabilities by Hackn https://hackn.gitbook.io/l1-security/
-* Watch Lera Nikolaenko (a16z crypto research partner) given you the deep dive into Proof of Stake blockchain attacks [YouTube](https://youtu.be/-uxHoEfxXC4)
+* Watch Micah Warren (math professor) lay out the Bitcoin security hashrate concerns ([YouTube](https://www.youtube.com/watch?v=0bUpF0wJrxo))
+* Blockchain Security Vulnerabilities by [Hackn](https://hackn.gitbook.io/l1-security/)
+* Watch Lera Nikolaenko (a16z crypto research partner) given you the deep dive into Proof of Stake blockchain attacks ([YouTube](https://youtu.be/-uxHoEfxXC4))
 
 # Video Lecture 
-Here's this lecture recorded live September 25, 2023 on [YouTube](https://www.youtube.com/watch?v=VexP2rKp83o)
+* Here's this lecture recorded live September 25, 2023 on [YouTube](https://www.youtube.com/watch?v=VexP2rKp83o)
+* and again on September 16, 2025 on [X/Twitter]()
 
