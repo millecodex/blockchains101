@@ -1,5 +1,5 @@
 [↰ back](../../..)
-# Week 12 Security & Future Trends
+# Week 12 Security
 ## Contents
 1. [Blockchain Security Taxonomy](#blockchain-security-taxonomy)
 2. [I Infrastructure Layer Security](#i-infrastructure-layer-security)
@@ -20,7 +20,7 @@ Taking inspiration from the blockchain tech stack, we will orgnaize the security
 2. [Data Layer Attacks](#ii-data-layer-attacks)
 3. [Network Layer Attacks](#iii-network-layer-attacks)
 4. [Protocol (Consensus) Layer Attacks](#iv-protocol-consensus-layer-attacks)
-   [Application Layer Attacks](#v-application-layer-attacks)
+5. [Application Layer Attacks](#v-application-layer-attacks)
 
 ## I. Infrastructure Layer Security
 
