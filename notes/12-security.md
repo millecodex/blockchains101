@@ -3,61 +3,39 @@
 ## Contents
 1. [Blockchain Security Taxonomy](#blockchain-security-taxonomy)
 2. [I Infrastructure Layer Security](#i-infrastructure-layer-security)
-3. [II Data Layer Attacks](#ii-data-layer-attacks)
-4. [III Network Layer Attacks](#iii-network-layer-attacks)
-5. [IV Protocol (Consensus) Layer Attacks](#iv-protocol-consensus-layer-attacks)
-6. [V Application Layer Attacks](#v-application-layer-attacks)
+4. [II Network Layer Attacks](#ii-network-layer-attacks)
+5. [III Protocol (Consensus) Layer Attacks](#iii-protocol-consensus-layer-attacks)
+6. [IV Application Layer Attacks](#iv-application-layer-attacks)
 7. [Case Studies (🏗️ Under Construction 👷‍♀️)](#case-studies-under-construction)
 1. [What did we miss?](#what-did-we-miss)
 1. [Further Reading - the very short list](#further-reading---the-very-short-list)
 1. [Exercises](#exercises)
 
-Divided into five layers, security of a blockchain involves being aware of different attacks from the infrastructure (hardware & physical security) to the social level (applications & phishing). This list is not exhaustive and only represents some of the main security considerations that must be made when evaluating blockchains. Not every attack mentioned will be described, but there is an excellent source for blockchains security considerations [here](https://hackn.gitbook.io/l1-security/).
+Divided into four layers, security of a blockchain involves being aware of different attacks from the infrastructure (hardware & physical security) to the social level (applications & phishing). This list is not exhaustive and only represents some of the main security considerations that must be made when evaluating blockchains. Not every attack mentioned will be described, but there is an excellent source for blockchains security considerations [here](https://hackn.gitbook.io/l1-security/).
 
 # Blockchain Security Taxonomy
 Taking inspiration from the blockchain tech stack, we will orgnaize the security threats according to layers:
-1. [Infrastructure Layer Security](#i-infrastructure-layer-security)
-2. [Data Layer Attacks](#ii-data-layer-attacks)
-3. [Network Layer Attacks](#iii-network-layer-attacks)
-4. [Protocol (Consensus) Layer Attacks](#iv-protocol-consensus-layer-attacks)
-5. [Application Layer Attacks](#v-application-layer-attacks)
+1. [Infrastructure/Physical Layer Security](#i-infrastructure-layer-security)
+2. [Network Layer Attacks](#ii-network-layer-attacks)
+3. [Protocol/Consensus Layer Attacks](#iii-protocol-consensus-layer-attacks)
+4. [Application Layer Attacks (incl. L2s)](#iv-application-layer-attacks)
+
+> <img width="470" height="163" alt="image" src="https://github.com/user-attachments/assets/0f43b30f-3987-44f7-b792-5de6c00f555a" />\
+> Figure: the blockchain tech stack is anchored from the term 'Layer-1' meaning a blockchain that runs its own settlement and execution.
 
 ## I. Infrastructure Layer Security
 
-| Blockchain | General |
-|---------------------|--|
-|  Validators (PoS) |  Routers   |
-|  Nodes  (PoW) | Cloud Services |
-|  Miners (PoW)  | Mobile Services |
+| | Blockchain Infrastructure | General Infrastructure |
+|--|---------------------|--|
+|example component|  Validators (PoS) |  Routers   |
+|ex.|  Nodes  (PoW) | Cloud Services |
+|ex.|  Miners/ASICs (PoW)  | Mobile Services |
 
-The infrastructure layer involves the hardware components that build up the network. For blockchains this could mining hardware, node hardware, and their secure components, both physical and digital. Mining attacks are discussed below as part of consensus. We will exclude discussions on securing routers, validators, and the communication between them. Any cloud services will have a security policy for their services. Similarly, mobile services that run light clients or wallets will also use inherited security policy.
+The infrastructure layer involves the hardware components that build up the network. For blockchains this could be mining hardware, node hardware, and their secure components, both physical and digital. Mining attacks are discussed below as part of consensus. We will exclude discussions on securing routers, validators, and the communication between them. Any cloud services will have a security policy for their services. Similarly, mobile services that run light clients or wallets will also use inherited security policies. These are not blockchain specific and not discussed here.
 
-## II. Data Layer Attacks
 
-| Cryptographic       | Transaction Related     |
-|---------------------|-------------------------|
-|General Cryptanalysis| Double Spending         | 
-|  Hash Collision     | Transaction Malleability | 
-|   Length Extension  | Time-Locked Transaction |
 
-Cryptanalysis and various cryptographic attacks will not be discussed here as they apply in general and are not specific to blockchain networks.
-
-### Double Spend Attack
-A transaction replay, or a double-spend attack is a type of fraudulent activity in which digital coins are spent more than once. Should someone be able to double spend, this will undermine the integrity and trust in the network, making it crucial for blockchain networks to have mechanisms to prevent this type of attack.
-
-PoW Mitigations:
-* Confirmation Time: In PoW blockchains like Bitcoin, transactions are considered secure after several block confirmations. This makes it increasingly difficult for an attacker to reverse a transaction as they would need to redo the work for the confirmed blocks and catch up with the network's ongoing mining efforts.
-* Economic Disincentives: Successfully executing a double-spend attack in a PoW system would require an attacker to control at least 51% of the network's hashing power. The cost of acquiring this much computational power makes such attacks economically unfeasible in well-established networks.
-* Network Propagation: Transactions and blocks are rapidly propagated across the network, making it difficult for an attacker to propagate a fraudulent transaction without other network nodes becoming aware of the inconsistency.
-
-PoS Mitigations:
-* Slashing: validators are required to "stake" or lock up a significant amount of cryptocurrency as collateral. Malicious actions can result in the loss of this stake, creating a financial disincentive for double spending.
-* Finality: introduce the concept of "finality," meaning that once a block has been confirmed to a certain degree, it can't be changed. This makes it impossible to double-spend without violating the protocol rules, which would lead to penalties.
-* Long-range Attacks Prevention: PoS systems often implement mechanisms like checkpoints or other finality-enforcing techniques to prevent attackers from forking the blockchain far back in history to double-spend.
-
-Transaction Malleability allows altering a transaction's ID without changing its effect, creating potential for fraud. Time-Locked Transactions execute after a condition is met but can be exploited to manipulate transaction order.
-
-## III. Network Layer Attacks
+## II. Network Layer Attacks
 
 | P2P Components  | Data Integrity  | Resource Exhaustion | Routing & IPs  |
 |-----------------|-----------------|---------------------|----------------|
@@ -90,14 +68,14 @@ BGP, Alien, and Timejacking highlight some vulnerabilities in routing, and time 
 
 An eclipse attack aims to isolate a target by controlling all the traffic directed at that node. Controlling the information a target gets from the network can then compel the node to be behave in certain ways.
 
-## IV. Protocol (Consensus) Layer Attacks
+## III. Protocol (Consensus) Layer Attacks
 
 | Proof Mechanisms | Transaction Validation | Chain Manipulation   | Mining-Related      |
 |------------------|------------------------|----------------------|---------------------|
-| 51% (PoW)        | Race*                   | Long Range         | Selfish Mining      |
-| $>\frac{1}{3}$ (PoS) | Finney*             |  Grinding           | Pool Hopping        |
-| Nothing at Stake | One-Confirmation*       | Chain Re-org        |  Bribery            |
-|                  |                         |                      | Block Discarding    |
+| 51% (PoW)        | Double Spend            | Long Range         | Selfish Mining      |
+| $>\frac{1}{3}$ (PoS) | Race*               |  Grinding           | Pool Hopping        |
+| Nothing at Stake |  Finney*                | Chain Re-org        |  Bribery            |
+|                  | One-Confirmation*       |                      | Block Discarding    |
 |                  |                         |                      | Block Withholding   |
 |                  |                         |                      | Fork After Withholding |
 |                  |                         |                      | Uncle-Block   |
@@ -114,6 +92,22 @@ An adversary doesn't necessarily need 51% of the hash power, but with a large nu
 
 [^eyal]: Eyal, I., & Sirer, E. G. (2014). Majority is not enough: Bitcoin mining is vulnerable.
 
+### Double Spend Attack
+A transaction replay, or a double-spend attack is a type of fraudulent activity in which digital coins are spent more than once. Should someone be able to double spend, this will undermine the integrity and trust in the network, making it necessary for blockchain networks to have mechanisms to prevent this type of attack at the protocol level.
+
+PoW Mitigations:
+* Confirmation Time: In PoW blockchains like Bitcoin, transactions are considered secure after several block confirmations. This makes it increasingly difficult for an attacker to reverse a transaction as they would need to redo the work for the confirmed blocks and catch up with the network's ongoing mining efforts.
+* Economic Disincentives: Successfully executing a double-spend attack in a PoW system would require an attacker to control at least 51% of the network's hashing power. The cost of acquiring this much computational power makes such attacks economically unfeasible in well-established networks.
+* Network Propagation: Transactions and blocks are rapidly propagated across the network, making it difficult for an attacker to propagate a fraudulent transaction without other network nodes becoming aware of the inconsistency.
+
+PoS Mitigations:
+* Slashing: validators are required to "stake" or lock up a significant amount of cryptocurrency as collateral. Malicious actions can result in the loss of this stake, creating a financial disincentive for double spending.
+* Finality: introduce the concept of "finality," meaning that once a block has been confirmed to a certain degree, it can't be changed. This makes it impossible to double-spend without violating the protocol rules, which would lead to penalties.
+* Long-range Attacks Prevention: PoS systems often implement mechanisms like checkpoints or other finality-enforcing techniques to prevent attackers from forking the blockchain far back in history to double-spend.
+
+Transaction Malleability allows altering a transaction's ID without changing its effect, creating potential for fraud. Time-Locked Transactions execute after a condition is met but can be exploited to manipulate transaction order.
+
+
 ### Nothing at Stake
 Given a fork in a proof of stake system, the user is incentivized to build on every branch. In a proof of work system, the user has a finite amount of hashpower that is most profitable if used to build on the main chain. This constraint is gone in a pure proof of stake system as the user can bid for blocks on any and all branches. The probability of finding a block remains constant. Here, the blockchain may never reach consensus as everyone is scrambling to build blocks rather than maintain the longest chain.
 
@@ -127,7 +121,7 @@ In the short term, an attacker can attempt a double-spend by incentivizing parti
 ### Grinding Attack
 In a grinding attack, the attacker increases their probability of being selected for block minting. For example, a validator could iterate through many combinations of block parameters searching for a favorable one to get published. Given enough computing power, the attacker could always "find" a suitable block. A general mitigation measure for this is to use a source of randomness that cannot be known in advance, like a random function that uses seeds from a group of validators. Of course, the validators could work together and collude. Workarounds for this can be found in Ethereum's Proof of Stake [FAQ](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/attack-and-defense/).
 
-## V. Application Layer Attacks
+## IV. Application Layer Attacks
 
 | User Interface           | Smart Contracts                 | Social  |
 |--------------------------|---------------------------------|--------------------------|
