@@ -52,6 +52,9 @@ In Proof of Work (PoW) systems, two economic factors act as natural deterrents t
 
 Preventive measures against DoS attacks include rate limiting to cap the number of requests from a single source and using a distributed architecture to make it harder for an attacker to target specific nodes. Additionally, decentralized peer discovery mechanisms can decrease the risk of DoS attacks by not relying on a central authority for network participation.
 
+> <img width="2488" height="1724" alt="image" src="https://github.com/user-attachments/assets/f5bebe19-b859-435e-b928-a628489a836c" />\
+> Figure: Distributed systems including blockchains must be resislient against DoS attacks which exhaust resources, isolate nodes, and affect consnesus, and also Sybil attacks which exhaust trust such as 1:many votes which can affect consensus, general elections, and reviews at your favourite noodle bar.
+
 ### Sybil
 In a Sybil[^sybil] attack on a blockchain network, a single adversary controls multiple nodes, essentially creating a large number of fake identities. This can undermine mechanisms that rely on redundancy and trust. For example, in peer-to-peer blockchain networks, nodes often share information based on a mutual trust assumption. A Sybil attacker could disseminate false information, manipulate transactions, or undermine mechanisms that rely on redundancy and trust, such as routing between nodes or the formation of quorums in consensus algorithms.
 
