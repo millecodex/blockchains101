@@ -17,18 +17,18 @@ Students are expected to **create**, and as such there is a large emphasis on th
 ## Lecture Topics - Notes updated on the fly 🏃
 | Week | Topic | Tutorial | Case Study |
 | :--- | :--- | :--- | :--- |
-| 01 | [Money & Bitcoin](notes/01-money-bitcoin.md) | [T01](tutorials/t01.md)| Bitcoin |
-| 02 | [Cryptographic Foundations](notes/02-cryptography.md) |[T02](tutorials/t02.md) | Bitcoin |
-| 03 | [Anatomy of a Block and Transaction Flow](notes/03-block.md) | [T03](tutorials/t03.md)| Bitcoin |
-| 04 | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md) | [T04](tutorials/t04.md)| Bitcoin, Dogecoin |
-| 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) | ~~Ethereum~~ |
-| 06 | [Guest Lecture 1](guest-lectures.md) | [T06](tutorials/t06.md) | ~~Ethereum~~ |
-| 07 | Personal Development Week |- |- |
-| 08 | [Smart Contracts and Ethereum](notes/08-ethereum.md) |[T08](tutorials/t08.md) | Ethereum! |
+| 01 | [Money & Bitcoin](notes/01-money-bitcoin.md) | [T01](tutorials/t01.md)|  |
+| 02 | [Cryptographic Foundations](notes/02-cryptography.md) |[T02](tutorials/t02.md) |  |
+| 03 | [Anatomy of a Block and Transaction Flow](notes/03-block.md) | [T03](tutorials/t03.md)|  |
+| 04 | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md) | [T04](tutorials/t04.md)|  |
+| 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) |  |
+| 06 | [Guest Lecture 1](guest-lectures.md) | [T06](tutorials/t06.md) |  |
+| 07 | Personal Development Week | | |
+| 08 | [Smart Contracts and Ethereum](notes/08-ethereum.md) |[T08](tutorials/t08.md) | |
 | 09 | [Guest Lecture 2](guest-lectures.md) |[T09](tutorials/t09.md) |  |
-| 10 | [Scaling](notes/10-scaling.md) |[T10](tutorials/t10.md) | Layer2s |
-| 11 | [Privacy](notes/11-privacy.md) |[T11](tutorials/t11.md) | Zcash |
-| 12 | [Security & Future Trends](notes/12-security.md) | [T12](tutorials/t12.md)| Sonic, Base |
+| 10 | [Scaling](notes/10-scaling.md) |[T10](tutorials/t10.md) |  |
+| 11 | [Privacy](notes/11-privacy.md) |[T11](tutorials/t11.md) |  |
+| 12 | [Security & Future Trends](notes/12-security.md) | [T12](tutorials/t12.md)|  |
 
 ---
 
