@@ -208,5 +208,5 @@ The main practical threat to a single entity controlling the majority of the has
 
 # Video Lecture 
 * Here's this lecture recorded live September 25, 2023 on [YouTube](https://www.youtube.com/watch?v=VexP2rKp83o)
-* and again on September 16, 2025 on [X/Twitter]()
+* and again on September 16, 2025 on [X/Twitter](https://x.com/Japple/status/1967863448102175119)
 
