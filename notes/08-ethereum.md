@@ -185,6 +185,11 @@ When processing a transaction, the EVM takes the following steps:
 
 In step 5, the actual execution, if the transaction's target is a contract address, the EVM executes the associated smart contract code. The smart contract code is compiled into EVM bytecode, which is a series of opcodes that the EVM understands. This execution takes place in individual nodes and uses the Ethereum world state for reading and writing data. The stack plays an essential role in EVM's computational model. It's a data structure that follows the Last-In, First-Out (LIFO) principle, and is used to store variables temporarily during the execution of opcodes. Operations like `ADD`, `MUL`, `DIV`, etc., typically pop operands off the stack and push the result back onto it. This stack-based execution model allows for deterministic and atomic operations, which is pivotal in maintaining the integrity and consistency of the blockchain state across nodes.
 
+## The Journey of a Smart Contract
+Now that we have some of the background information about the EVM we can appreciate this low-level view of a smart contract.
+> ![SmartContractJourney](https://github.com/user-attachments/assets/9fae4d0d-69d2-41c8-bca4-2ae3409a7f52)
+> Credit to [0xGojoArc](https://x.com/0xGojoArc)
+
 ## Applications
 ### So what are people doing with this decentralised state machine?
 Decentralised applications, or *dapps* just refer to smart contracts that are executed on a blockchain. When combined with a frontend these dapps can appear just like any other web application with the key difference being that that code and/or user data and token transfer information is stored on the blockchain. 
