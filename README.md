@@ -5,8 +5,7 @@ This crypto space moves fast :rocket: and so this is a work in progress 🚧
 
 The course website is hosted on Canvas (https://rmit.instructure.com/courses/153071), however you need to be an enrolled student to login. This site serves as the open-source version. (You will still need to login to Canvas to view the assessment criteria and participate in the course discussion.) 
 
-Lecture on Tuesdays at 08:30 beginning July 01, 2025. 
-Tutorial on Thursdays at 12:30 beginning July 03, 2025.
+Next Offering 🥳 in Semester 1 - 2026, Dates and Times to be announced.
 
 ## Overview & Expectations
 
