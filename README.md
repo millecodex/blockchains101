@@ -21,10 +21,10 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 03 | [Anatomy of a Block and Transaction Flow](notes/03-block.md) | [T03](tutorials/t03.md)|  |
 | 04 | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md) | [T04](tutorials/t04.md)|  |
 | 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) |  |
-| 06 | [Guest Lecture 1](guest-lectures.md) | [T06](tutorials/t06.md) |  |
+| 06 | [Guest Lecture 1 Slot] | [T06](tutorials/t06.md) |  |
 | 07 | Personal Development Week | | |
 | 08 | [Smart Contracts and Ethereum](notes/08-ethereum.md) |[T08](tutorials/t08.md) | |
-| 09 | [Guest Lecture 2](guest-lectures.md) |[T09](tutorials/t09.md) |  |
+| 09 | [Guest Lecture 2 Slot] |[T09](tutorials/t09.md) |  |
 | 10 | [Scaling](notes/10-scaling.md) |[T10](tutorials/t10.md) |  |
 | 11 | [Privacy](notes/11-privacy.md) |[T11](tutorials/t11.md) |  |
 | 12 | [Security & Future Trends](notes/12-security.md) | [T12](tutorials/t12.md)|  |
