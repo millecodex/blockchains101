@@ -34,7 +34,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 ## Resources
 
 * [Course Discussion forum](https://rmit.instructure.com/courses/153071/discussion_topics) 
-* Gemini/Perplexity/Grok etc. - Get an account! RMIT Students have access to ChatGPT-4o through Val ([https://val.rmit.edu.au/](https://val.rmit.edu.au/))
+* Gemini/Perplexity/Grok etc. - Get an account! RMIT Students have access to ChatGPT 5.2 (& Deepseek, Llama, Mistral) through Val ([https://val.rmit.edu.au/](https://val.rmit.edu.au/))
 * [Mastering Bitcoin by Andreas M. Antonopoulos](https://www.oreilly.com/library/view/mastering-bitcoin/9781491902639/) - A foundational technical guide to Bitcoin.
 
 ## Coding Resources
