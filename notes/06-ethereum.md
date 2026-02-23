@@ -1,6 +1,6 @@
 [↰ back](../../..)
 
-# Lecture 8: Ethereum
+# Lecture 06: Ethereum
 ## Contents
 1. [Motivation](#motivation)
 2. [ICO](#initial-coin-offering)
