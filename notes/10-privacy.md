@@ -1,6 +1,6 @@
 [↰ back](../../..)
 
-# Week 11: Privacy
+# Week 10: Privacy
 ## Contents
 1. [What is Privacy?](#what-is-privacy)
 2. [Privacy Laws](#privacy-laws)
