@@ -1,5 +1,5 @@
 [↰ back](../../..)
-# Week 12 Security
+# Week 11 Security
 ## Contents
 1. [Blockchain Security Taxonomy](#blockchain-security-taxonomy)
 2. [I Infrastructure Layer Security](#i-infrastructure-layer-security)
