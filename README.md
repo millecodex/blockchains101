@@ -5,8 +5,8 @@ This crypto space moves fast :rocket: and so this is a work in progress 🚧
 
 The course website is hosted on [Canvas](https://rmit.instructure.com/courses/168581), however you need to be an enrolled student to login. This site serves as the open-source version. (You will still need to login to Canvas to view the assessment criteria and participate in the course discussion.) 
 
-Now Offering 🥳 in Semester 1 - 2026
-Lectures Mondays @14:30 
+Now Offering 🥳 in Semester 1 - 2026\
+Lectures Mondays @14:30\
 Tutorials Wednesdays @10:30
 
 ## Overview & Expectations
