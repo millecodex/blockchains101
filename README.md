@@ -25,7 +25,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) |  |
 | 06 | [Smart Contracts and Ethereum](notes/06-ethereum.md) | [T06](tutorials/t06.md) |  |
 | 07 | Personal Development Week - No Lectures or Tutorials | | |
-| 08 | [Decentralisation & DeFi](08-decentral.md)|[T08](tutorials/t08.md) | |
+| 08 | [Decentralisation & DeFi](notes/08-decentral.md)|[T08](tutorials/t08.md) | |
 | 09 | [Scaling](notes/09-scaling.md)|[T09](tutorials/t09.md) |  |
 | 10 | [Privacy](notes/10-privacy.md) |[T10](tutorials/t10.md) |  |
 | 11 | [Security](notes/11-security.md)|[T11](tutorials/t11.md) |  |
