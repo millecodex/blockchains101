@@ -3,15 +3,17 @@
 
 This crypto space moves fast :rocket: and so this is a work in progress 🚧
 
-The course website is hosted on Canvas (https://rmit.instructure.com/courses/153071), however you need to be an enrolled student to login. This site serves as the open-source version. (You will still need to login to Canvas to view the assessment criteria and participate in the course discussion.) 
+The course website is hosted on [Canvas](https://rmit.instructure.com/courses/168581), however you need to be an enrolled student to login. This site serves as the open-source version. (You will still need to login to Canvas to view the assessment criteria and participate in the course discussion.) 
 
-Next Offering 🥳 in Semester 1 - 2026, Dates and Times to be announced.
+Now Offering 🥳 in Semester 1 - 2026
+Lectures Mondays @14:30 
+Tutorials Wednesdays @10:30
 
 ## Overview & Expectations
 
 Blockchain and Cryptocurency Technology intends to introduce you to the technology, beginning with Bitcoin, that makes peer-to-peer decentralised cash possible. Most of the topics will be applied to Bitcoin and Ethereum, and look into the solutions engineers are coming up with to build out these distributed systems. We will focus on the technological, but none of it is possible without the social and thus many topics have deep roots in the human societies we have constructed.
 
-Students are expected to **create**, and as such there is a large emphasis on the project which is wide-ranging and open-ended. You are expected to show what you've done at the end of semester, this is via mixed methods of presentation/ video/ demonstration/ discussion/ and written reporting. To get credit, You 👏 Must 👏 SHOW 👏 What 👏 You've 👏 Done. Assignment structure and details are on [Canvas](https://rmit.instructure.com/courses/153071/assignments).
+Students are expected to **create**, and as such there is a large emphasis on the project which is wide-ranging and open-ended. You are expected to show what you've done at the end of semester, this is via mixed methods of presentation/ video/ demonstration/ discussion/ and written reporting. To get credit, You 👏 Must 👏 SHOW 👏 What 👏 You've 👏 Done. Assignment structure and details are on [Canvas](https://rmit.instructure.com/courses/168581/assignments).
 
 ## Lecture Topics - Notes updated on the fly 🏃
 | Week | Topic | Tutorial | Case Study |
@@ -21,19 +23,19 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 03 | [Anatomy of a Block and Transaction Flow](notes/03-block.md) | [T03](tutorials/t03.md)|  |
 | 04 | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md) | [T04](tutorials/t04.md)|  |
 | 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) |  |
-| 06 | [Guest Lecture 1 Slot] | [T06](tutorials/t06.md) |  |
-| 07 | Personal Development Week | | |
-| 08 | [Smart Contracts and Ethereum](notes/08-ethereum.md) |[T08](tutorials/t08.md) | |
-| 09 | [Guest Lecture 2 Slot] |[T09](tutorials/t09.md) |  |
-| 10 | [Scaling](notes/10-scaling.md) |[T10](tutorials/t10.md) |  |
-| 11 | [Privacy](notes/11-privacy.md) |[T11](tutorials/t11.md) |  |
-| 12 | [Security & Future Trends](notes/12-security.md) | [T12](tutorials/t12.md)|  |
+| 06 | [Smart Contracts and Ethereum](notes/06-ethereum.md) | [T06](tutorials/t06.md) |  |
+| 07 | Personal Development Week - No Lectures or Tutorials | | |
+| 08 | [Decentralisation & DeFi](08-decentral.md)|[T08](tutorials/t08.md) | |
+| 09 | [Scaling](notes/09-scaling.md)|[T09](tutorials/t09.md) |  |
+| 10 | [Privacy](notes/10-privacy.md) |[T10](tutorials/t10.md) |  |
+| 11 | [Security](notes/11-security.md)|[T11](tutorials/t11.md) |  |
+| 12 | [Money Revisited & Future Trends](notes/12-moneyv2.md) | [T12](tutorials/t12.md)|  |
 
 ---
 
 ## Resources
 
-* [Course Discussion forum](https://rmit.instructure.com/courses/153071/discussion_topics) 
+* [Course Discussion forum](https://rmit.instructure.com/courses/168581/discussion_topics) 
 * Gemini/Perplexity/Grok etc. - Get an account! RMIT Students have access to ChatGPT 5.2 (& Deepseek, Llama, Mistral) through Val ([https://val.rmit.edu.au/](https://val.rmit.edu.au/))
 * [Mastering Bitcoin by Andreas M. Antonopoulos](https://www.oreilly.com/library/view/mastering-bitcoin/9781491902639/) - A foundational technical guide to Bitcoin.
 
