@@ -19,17 +19,17 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | Week | Topic | Tutorial | Case Study |
 | :--- | :--- | :--- | :--- |
 | 01 | [Money & Bitcoin](notes/01-money-bitcoin.md) | [T01](tutorials/t01.md)|  |
-| 02 | [Cryptographic Foundations](notes/02-cryptography.md) |[T02](tutorials/t02.md) |  |
-| 03 | [Anatomy of a Block and Transaction Flow](notes/03-block.md) | [T03](tutorials/t03.md)|  |
-| 04 | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md) | [T04](tutorials/t04.md)|  |
-| 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md) |  |
-| 06 | [Smart Contracts and Ethereum](notes/06-ethereum.md) | [T06](tutorials/t06.md) |  |
-| 07 | Personal Development Week - No Lectures or Tutorials | | |
-| 08 | [Decentralisation & DeFi](notes/08-decentral.md) - Under 🚧|[T08](tutorials/t08.md) | |
-| 09 | [Scaling](notes/09-scaling.md)|[T09](tutorials/t09.md) |  |
-| 10 | [Privacy](notes/10-privacy.md) |[T10](tutorials/t10.md) |  |
-| 11 | [Security](notes/11-security.md)|[T11](tutorials/t11.md) |  |
-| 12 | [Money Revisited & Future Trends](notes/12-moneyv2.md) - Under 🚧| [T12](tutorials/t12.md)|  |
+| 02 | [Cryptographic Foundations](notes/02-cryptography.md) | ⏲️|  |
+| 03 | [Anatomy of a Block and Transaction Flow](notes/03-block.md) | ⏲️|  |
+| 04 | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md) |⏲️ |  |
+| 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | ⏲️|  |
+| 06 | [Smart Contracts and Ethereum](notes/06-ethereum.md) | ⏲️ |  |
+| 07 | Personal Development Week - No Lectures or Tutorials | ⏲️| |
+| 08 | [Decentralisation & DeFi](notes/08-decentral.md) - Under 🚧|⏲️ | |
+| 09 | [Scaling](notes/09-scaling.md)| ⏲️|  |
+| 10 | [Privacy](notes/10-privacy.md) | ⏲️|  |
+| 11 | [Security](notes/11-security.md)| ⏲️|  |
+| 12 | [Money Revisited & Future Trends](notes/12-moneyv2.md) - Under 🚧| ⏲️|  |
 
 ---
 
