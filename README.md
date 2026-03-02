@@ -41,7 +41,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 
 ## Coding Resources
 
-See the list [here](resources.md)
+* See the list [here](resources.md). (Updated March 2026.)
 
 ## Links
 
@@ -58,12 +58,10 @@ See the list [here](resources.md)
 
 ## Other Academic Blockchain(esque) Groups
 
-* [Resistance Money](https://www.resistance.money/) (Wyoming)
-* [RMIT Blockchain Innovation Hub](https://rmitblockchain.io/) (Melbourne)
+* [Resistance Money](https://www.resistance.money/work/) (Wyoming)
 * [Decentralized Systems Lab](https://decentralize.ece.illinois.edu/) (Illinois)
 * [digital currency initiative](https://dci.mit.edu/) (MIT)
 * [UZH Blockchain Center](https://www.blockchain.uzh.ch/) (Zurich)
-* [ETH Blockchain Initiative](https://blockchain.ethz.ch/) (ETH Zurich)
 * [UNIC Blockchain](https://www.unic.ac.cy/blockchain/) (Nicosia)
 
 ## About This Course & Me 🧔‍♂️

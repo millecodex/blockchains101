@@ -1,4 +1,5 @@
 # Blockchain Developer Learning Tools & Resources
+(Updated March 2, 2026)\
 Some links that may be helpful:
 
 * [ethereum.org](https://ethereum.org/en/developers/learning-tools/) developer learning tools
