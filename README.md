@@ -41,7 +41,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 
 ## Coding Resources
 
-See the list [here](resources.md)
+* See the list [here](resources.md). (Updated March 2026.)
 
 ## Links
 
