@@ -3,7 +3,7 @@ Some links that may be helpful:
 
 * [ethereum.org](https://ethereum.org/en/developers/learning-tools/) developer learning tools
 * The whole shebang from FreeCodeCamp - [Web3 Ultimate Course](https://github.com/smartcontractkit/full-blockchain-solidity-course-js) (often uses Hardhat)
-* YouTube tutorial by Nader Dabit - [Full-stack ethereum development](https://www.youtube.com/watchv=a0osIaAOFSE&ab_channel=NaderDabit) (Original link, title/channel not verified by tool)
+* YouTube tutorial by Nader Dabit - [Full-stack ethereum development](https://www.youtube.com/watch?v=a0osIaAOFSE&ab_channel=NaderDabit)
 * Still one of the best is [CryptoZombies](https://cryptozombies.io/) - a tutorial for you to build a game similar to [CryptoKitties](https://www.cryptokitties.co/)
 * Official Remix [YouTube Playlist](https://www.youtube.com/@EthereumRemix/videos) 
 * Jeff lectures on YouTube:
@@ -20,9 +20,12 @@ Essential tools for building and interacting with Ethereum:
 * **Development Environments:**
     * [Hardhat](https://hardhat.org/) - A popular Ethereum development environment. Compile, deploy, test, and debug your smart contracts.
     * [Foundry](https://book.getfoundry.sh/) - A fast, portable, and modular toolkit for Ethereum application development written in Rust.
+    * [Scaffold-ETH 2](https://scaffoldeth.io/) - An open-source toolkit for building and prototyping decentralized applications on Ethereum.
 * **JavaScript Libraries:**
     * [Ethers.js](https://docs.ethers.org/v5/) - A complete Ethereum wallet implementation and utilities in JavaScript and TypeScript.
     * [Web3.js](https://web3js.readthedocs.io/) - Ethereum JavaScript API which connects to the Generic JSON RPC spec.
+    * [Viem](https://viem.sh/) - A TypeScript interface for Ethereum that provides low-level stateless primitives.
+    * [Wagmi](https://wagmi.sh/) - A collection of React Hooks for Ethereum, building on top of Viem.
 
 ---
 ## Smart Contract Security Resources
@@ -42,11 +45,12 @@ Critical for building robust and safe dApps:
 ## Layer 2 & Scaling Solutions (Ethereum Ecosystem)
 Resources for building on Ethereum's Layer 2 scaling solutions:
 
-* [Arbitrum Docs](https://developer.arbitrum.io/docs/welcome/welcome-to-arbitrum)
+* [Arbitrum Docs](https://docs.arbitrum.io/)
 * [Optimism Docs](https://community.optimism.io/docs/)
-* [Polygon Developer Portal](https://developer.polygon.technology/) (Covers PoS, zkEVM, and other scaling solutions)
+* [Polygon Developer Portal](https://docs.polygon.technology/) (Covers PoS, zkEVM, and other scaling solutions)
 * [zkSync Docs](https://docs.zksync.io/)
-* [StarkNet Docs](https://docs.starknet.io/documentation/)
+* [StarkNet Docs](https://docs.starknet.io/)
+* [Base Docs](https://docs.base.org/) - An Ethereum L2 incubated by Coinbase.
 
 ---
 ## Oracles & Decentralized Data
@@ -54,7 +58,7 @@ Connecting smart contracts to the real world:
 
 * [Chainlink Developer Hub](https://dev.chain.link/) - Documentation and resources for the most widely used oracle network.
 * [IPFS Docs](https://docs.ipfs.tech/concepts/what-is-ipfs/) - Decentralized storage for files and data.
-* [Arweave Developer Docs](https://cookbook.arweave.org/) - Permanent decentralized data storage.
+* [Arweave Developer Docs](https://docs.arweave.org/) - Permanent decentralized data storage.
 * [The Graph Docs](https://thegraph.com/docs/en/) - Indexing and querying blockchain data.
 
 ---
@@ -65,7 +69,7 @@ You may want to build on other blockchains, for example:
 * Substrate/Polkadot: [docs](https://docs.substrate.io/), [sample tutorials](https://wiki.polkadot.network/docs/learn-video-tutorials)
 * Solana: [docs](https://docs.solana.com/), [sample tutorials](https://github.com/solana-labs/example-helloworld)
 * Fantom: [docs](https://docs.fantom.foundation/), [sample tutorials](https://blog.chain.link/how-to-build-and-deploy-a-smart-contract-on-the-fantom-blockchain/)
-* BNB Chain: [docs](https://docs.bnbchain.org/docs/bnbIntro), [sample tutorials](https://docs.bnbchain.org/docs/bsc-tutorials/) (Updated name from BinanceBNB)
+* BNB Chain: [docs](https://docs.bnbchain.org/), [sample tutorials](https://github.com/bnb-chain/bnb-chain-tutorial) (Updated name from BinanceBNB)
 * Cosmos: [docs](https://docs.cosmos.network/), [sample tutorials](https://tutorials.cosmos.network/)
 
 ---
