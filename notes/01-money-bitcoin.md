@@ -186,6 +186,7 @@ What began as an experiment has bootstrapped an entire financial system with glo
 # Readings
 * The Whitepaper: [*Bitcoin: A Peer-to-Peer Electronic Cash System* ](https://bitcoin.org/bitcoin.pdf)
 * On the Shoulder of Giants - History of the tech: [*Bitcoin's Academic Pedigree*, Communications of the ACM](https://cacm.acm.org/magazines/2017/12/223058-bitcoins-academic-pedigree/fulltext)
+* New Era of Money: [MIT Technology Review](https://www.technologyreview.com/2022/04/12/1049307/money-is-about-to-enter-a-new-era-of-competition/) [[Archive.ph snapshot](https://archive.ph/0Gabt)]
 
 # Next Lecture
 * :point_right: [Secret Writing (Cryptography)](02-cryptography.md)
