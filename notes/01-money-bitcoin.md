@@ -199,7 +199,7 @@ What began as an experiment has bootstrapped an entire financial system with glo
 5. Dwork, C., Naor, M. 1993. *Pricing via processing or combatting junk mail*. [(pdf)](http://www.wisdom.weizmann.ac.il/~naor/PAPERS/pvp.pdf)
 6. Ferguson, N. 2008. *The Ascent of Money: A Financial History of the World*. Penguin.
 7. Graeber, D. 2011. *Debt: The First 5000 Years*. Melville House.
-8. Haber, S. & Stornetta, W. S. 1991. *How to time-stamp a digital document*. [(pdf)](https://www.anf.es/pdf/Haber_Stornetta.pdf)
+8. Haber, S. & Stornetta, W. S. 1991. *How to time-stamp a digital document*. [(pdf)](https://nakamotoinstitute.org/static/docs/how-to-time-stamp-a-digital-document.pdf)
 9. Nakamoto, S. 2008. *Bitcoin: A Peer-to-Peer Electronic Cash System*. [(pdf)](https://bitcoin.org/bitcoin.pdf)
 10. Narayanan, A., Bonneau, J., Felten, E., Miller, A., & Goldfeder, S. 2016. *Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction*. Princeton University Press. [(pdf)](https://d28rh4a8wq0iu5.cloudfront.net/bitcointech/readings/princeton_bitcoin_book.pdf)
 11. Wood, G. 2014. *Ethereum: A Secure Decentralised Generalised Transaction Ledger*. Yellow Paper. [(pdf)](https://ethereum.github.io/yellowpaper/paper.pdf)
