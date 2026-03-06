@@ -296,7 +296,7 @@ If a sender encrypts a message with their *private* key, anyone with the public 
 ## Summary
 Today encryption is ubiquitous in digital communication. An inspection of the certificate of a secure website will often reveal one of two cryptosystems at work: RSA, or ECC. WhatsApp uses ECDH for key exchange and AES256 symmetric encryption for message sessions[^9]. Telegram uses 2048 bit RSA encryption and Diffie-Hellman key exchange with a symmetric protocol based on AES256[^10]. WeChat does not use end-to-end encryption and has been criticised for its lack of privacy features.
 
-[^9]: See the [WhatsApp security paper](/../papers/WhatsApp%20Security%20White%20Paper.pdf)
+[^9]: See the [WhatsApp security paper](/../papers/pdfs/WhatsApp-Security-2016.pdf)
 
 [^10]: Albrecht, Martin R. et al. Analysis of the Telegram Key
 Exchange. [doi:10.3929/ethz-b-000737252](https://doi.org/10.3929/ethz-b-000737252)
@@ -337,8 +337,8 @@ echo -n "my name is Jeff" | shasum -a 256
 
 # Readings
 * New Directions in Cryptography by Whitfield Diffie and Martin Hellman [(pdf)](https://www-ee.stanford.edu/~hellman/publications/24.pdf)
-* WhatsApp Encryption Overview - Technical white paper [(pdf)](https://github.com/millecodex/blockchains101/blob/main/papers/WhatsApp%20Security%20White%20Paper.pdf)
-* NIST specification for SHA-1 [(pdf)](https://github.com/millecodex/blockchains101/blob/main/papers/NIST%20FIPS%20180-4.pdf) (download for proper font rendering)
+* WhatsApp Encryption Overview - Technical white paper [(pdf)](https://github.com/millecodex/blockchains101/blob/main/papers/pdfs/WhatsApp-Security-2016.pdf)
+* NIST specification for SHA-1 [(pdf)](https://github.com/millecodex/blockchains101/blob/main/papers/pdfs/NIST-FIPS180-2015.pdf) (download for proper font rendering)
 
 ## Supplementary: Web Articles & Video Tutorials
 * [SHA-256 Explained Step-by-Step Visually](https://sha256algorithm.com/) — Interactive visual walkthrough of each round of the SHA-256 algorithm
@@ -365,7 +365,7 @@ echo -n "my name is Jeff" | shasum -a 256
 2. Back, A. 2002. *Hashcash: A denial of service counter-measure*. http://www.hashcash.org/
 3. Brown, D. R. L. 2010. SEC 2: Recommended elliptic curve domain parameters. Standards for Efficient Cryptography (SEC) (Certicom Research). https://www.secg.org/sec2-v2.pdf
 4. Diffie, W., Hellman, M. 1976. "New Directions in Cryptography." *IEEE Transactions on Information Theory*. 22 (6): 644–654.
-5. Dwork, C., Naor, M. 1993. *Pricing via processing or combatting junk mail*. http://www.wisdom.weizmann.ac.il/~naor/PAPERS/pvp.pdf ⚠️ *Link broken as of 2026; see [local PDF](../../papers/Dwork-PricingViaProcessing-1993.pdf)*
+5. Dwork, C., Naor, M. 1993. *Pricing via processing or combatting junk mail*. http://www.wisdom.weizmann.ac.il/~naor/PAPERS/pvp.pdf ⚠️ *Link broken as of 2026; see [local PDF](../../papers/pdfs/Dwork-PricingViaProcessing-1993.pdf)*
 6. Hoffman, P. 2005. "Algorithms for Internet Key Exchange (IKEv2)." RFC 4109. Internet Engineering Task Force. https://tools.ietf.org/html/rfc4109
 7. Postel, J. 1982. "Simple Mail Transfer Protocol." RFC 821. Internet Engineering Task Force. https://www.rfc-editor.org/rfc/rfc821
 8. Rivest, R., Shamir, A., & Adleman, L. 1978. "A Method for Obtaining Digital Signatures and Public-Key Cryptosystems." *Communications of the ACM*. 21(2), 120-126.
