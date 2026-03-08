@@ -347,13 +347,11 @@ echo -n "my name is Jeff" | shasum -a 256
 * [Merkle Tree in Blockchain — GeeksforGeeks](https://www.geeksforgeeks.org/blockchain-merkle-trees/) — Illustrated introduction with worked examples
 * [Secret Key Exchange (Diffie-Hellman) — Computerphile (YouTube)](https://www.youtube.com/watch?v=NmM9HA2MQGI) — Classic visual explanation using paint-mixing analogy
 * [Diffie-Hellman Key Exchange — Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/diffie-hellman-key-exchange-part-2) — Step-by-step walkthrough using concrete numerical examples; includes discrete logarithm intuition
-* [RSA Encryption Steps 1–4 — Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/rsa-encryption-step-4) — Video series building RSA from first principles (modular arithmetic through key generation)
 * [Prime Numbers & RSA — Computerphile (YouTube)](https://youtu.be/JD72Ry60eP4) — Intuitive explanation of why large primes make RSA hard to break
 * [Elliptic Curve Cryptography: A Gentle Introduction — Andrea Corbellini](https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/) — Excellent four-part series with interactive tools and clear diagrams; covers group law, ECDH, and ECDSA
 * [ECC Explained — Cloudflare Blog](https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/) — Accessible primer comparing ECC to RSA, suitable for non-specialists
 * [Practical Cryptography with Python — nakov.com](https://cryptobook.nakov.com/asymmetric-key-ciphers/elliptic-curve-cryptography-ecc) — Free online book chapter with ECC worked examples in Python
 * [How Digital Signatures Work — Easy Crypto](https://easycrypto.com/nz/learn/how-do-digital-signatures-work-on-blockchains/) — Plain-English explanation with diagrams; specifically tailored to blockchain use cases
-* [Digital Signature Schemes — Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/digital-signatures) — Overview of the three properties (authentication, non-repudiation, integrity) with visual examples
 
 
 # Next Lecture
