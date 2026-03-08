@@ -338,13 +338,12 @@ echo -n "my name is Jeff" | shasum -a 256
 # Readings
 * New Directions in Cryptography by Whitfield Diffie and Martin Hellman [(pdf)](https://www-ee.stanford.edu/~hellman/publications/24.pdf)
 * WhatsApp Encryption Overview - Technical white paper [(pdf)](https://github.com/millecodex/blockchains101/blob/main/papers/pdfs/WhatsApp-Security-2016.pdf)
-* NIST specification for SHA-1 [(pdf)](https://github.com/millecodex/blockchains101/blob/main/papers/pdfs/NIST-FIPS180-2015.pdf) (download for proper font rendering)
+* NIST specification for SHA-1 [(pdf)](https://github.com/millecodex/blockchains101/blob/main/papers/pdfs/NIST-FIPS180-2015.pdf) 
 
 ## Supplementary: Web Articles & Video Tutorials
 * [SHA-256 Explained Step-by-Step Visually](https://sha256algorithm.com/) — Interactive visual walkthrough of each round of the SHA-256 algorithm
-* [What is SHA-256?](https://www.boot.dev/learn/cryptography) — Boot.dev's clear breakdown with step-by-step explanations of the avalanche effect and one-way properties
 * [How SHA-256 Works — Computerphile (YouTube)](https://www.youtube.com/watch?v=DMtFhACPnTY) — 10-minute video from the University of Nottingham's computer science channel
-* [Merkle Trees & Merkle Proofs — Cyfrin](https://www.cyfrin.io/blog/what-is-a-merkle-tree-in-blockchain) — Visual, beginner-friendly explanation with blockchain context and SPV walkthrough
+* [Merkle Trees & Merkle Proofs — Cyfrin](https://www.cyfrin.io/blog/what-is-a-merkle-tree-merkle-proof-and-merkle-root) — Visual, beginner-friendly explanation with blockchain context and SPV walkthrough
 * [Merkle Tree in Blockchain — GeeksforGeeks](https://www.geeksforgeeks.org/blockchain-merkle-trees/) — Illustrated introduction with worked examples
 * [Secret Key Exchange (Diffie-Hellman) — Computerphile (YouTube)](https://www.youtube.com/watch?v=NmM9HA2MQGI) — Classic visual explanation using paint-mixing analogy
 * [Diffie-Hellman Key Exchange — Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/diffie-hellman-key-exchange-part-2) — Step-by-step walkthrough using concrete numerical examples; includes discrete logarithm intuition
@@ -365,7 +364,7 @@ echo -n "my name is Jeff" | shasum -a 256
 2. Back, A. 2002. *Hashcash: A denial of service counter-measure*. http://www.hashcash.org/
 3. Brown, D. R. L. 2010. SEC 2: Recommended elliptic curve domain parameters. Standards for Efficient Cryptography (SEC) (Certicom Research). https://www.secg.org/sec2-v2.pdf
 4. Diffie, W., Hellman, M. 1976. "New Directions in Cryptography." *IEEE Transactions on Information Theory*. 22 (6): 644–654.
-5. Dwork, C., Naor, M. 1993. *Pricing via processing or combatting junk mail*. http://www.wisdom.weizmann.ac.il/~naor/PAPERS/pvp.pdf ⚠️ *Link broken as of 2026; see [local PDF](../../papers/pdfs/Dwork-PricingViaProcessing-1993.pdf)*
+5. Dwork, C., Naor, M. 1993. *Pricing via processing or combatting junk mail*. [PDF](../../papers/pdfs/Dwork-PricingViaProcessing-1993.pdf)
 6. Hoffman, P. 2005. "Algorithms for Internet Key Exchange (IKEv2)." RFC 4109. Internet Engineering Task Force. https://tools.ietf.org/html/rfc4109
 7. Postel, J. 1982. "Simple Mail Transfer Protocol." RFC 821. Internet Engineering Task Force. https://www.rfc-editor.org/rfc/rfc821
 8. Rivest, R., Shamir, A., & Adleman, L. 1978. "A Method for Obtaining Digital Signatures and Public-Key Cryptosystems." *Communications of the ACM*. 21(2), 120-126.
