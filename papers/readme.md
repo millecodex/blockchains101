@@ -28,6 +28,14 @@
 * Stallings, W. 2017. *Cryptography and Network Security: Principles and Practice*. Pearson. (Book)
 * WhatsApp. 2016. *WhatsApp Security White Paper*. [PDF](./pdfs/WhatsApp-Security-2016.pdf)
 
+## Lecture 3: Anatomy of a Block and Transaction Flow
+* Antonopoulos, A. M. 2017. *Mastering Bitcoin: Programming the Open Blockchain*. O'Reilly Media. (Book — see also Lecture 2)
+* Corallo, M. 2016. *BIP 152: Compact Block Relay*. Bitcoin Improvement Proposals. [Link](https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki)
+* Decker, C. & Wattenhofer, R. 2013. *Information Propagation in the Bitcoin Network*. IEEE P2P. [PDF](./pdfs/Decker-BlockPropagation-2013.pdf)
+* Lavi, R. et al. 2019. *Redesigning Bitcoin's Fee Market*. ACM Web Conference. [PDF](./pdfs/Lavi-RedesigningFeeMarket-2019.pdf)
+* Narayanan, A. et al. 2016. *Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction*. Princeton University Press. [PDF](./pdfs/Narayanan-BitcoinTech-2016.pdf) (Book — see also Lecture 1)
+* Pérez-Solà, C. et al. 2018. *Analysis of the Bitcoin UTXO Set*. Financial Cryptography. [PDF](./pdfs/PerezSola-UTXOSetAnalysis-2018.pdf)
+
 ## Other Papers
 * Al-Bassam, M. 2019. *LazyLedger*. [PDF](./pdfs/AlBassam-LazyLedger-2019.pdf)
 * Buterin, V. 2017. *Casper*. [PDF](./pdfs/Buterin-Casper-2017.pdf)
