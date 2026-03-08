@@ -1,3 +1,4 @@
 private/
 .agent/
 .DS_Store
+.venv/
