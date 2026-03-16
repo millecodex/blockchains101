@@ -12,12 +12,15 @@
 10. [Readings](#readings)
 
 ## Introduction
-A useful analogy for the blockchain is a physical ledger book. The entire blockchain is the book itself, representing the complete history of all transactions. Each block is a new page added to this book. The transactions are the individual lines written on each page, recording the transfer of value. A crucial property of this book is that once a page is filled, validated, and added, it is sealed. It cannot be erased or altered without invalidating all subsequent entries.
+To recap: a useful analogy for the blockchain is a physical ledger (book) for recording customer transactions. The entire blockchain is the book itself, representing the complete history of all transactions. Each block is a new page added to this book. The transactions are the individual lines written on each page, recording the transfer of value. A crucial property of this book is that once a page is filled, validated, and added, it is sealed. It cannot be erased or altered without invalidating all subsequent entries.
 
 
 ## The Lifecycle of a Bitcoin Transaction
 ### The UTXO Model vs. The Account Model
 Before we can build a transaction, we must understand what we are spending. Most of us are familiar with the account model, used in traditional banking (and by many other cryptocurrencies like Ethereum). In this model, the system tracks a balance. If your account holds $100 and you spend $10, the system simply debits your account, and your new balance is $90. The ledger tracks the state of each account's balance.
+
+> ![image](https://github.com/user-attachments/assets/)\
+> Account balance model in Ethereum. The native token (ETH) is maintained separate from other token balances. Source: [Etherscan](https://etherscan.io/address/0xfb493d4b693bf7e982153ff7a0d7a955d2f454a5#asset-tokens)
 
 Bitcoin takes a different, less intuitive, but powerful approach: the **Unspent Transaction Output (UTXO)** model. Bitcoin does not track account balances. Instead, the blockchain tracks individual, discrete chunks of bitcoin called UTXOs. Think of your Bitcoin wallet not as a bank account with a single balance, but as a physical wallet containing various bills and coins. You don't have a "balance" of $55; you might have two $20 bills, one $10 bill, and one $5 bill. These individual bills are your UTXOs.   
 
