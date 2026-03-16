@@ -141,7 +141,8 @@ Following the 80-byte header is the block body, which contains the list of trans
 ## Full Node Storage
 How does a full node physically store hundreds of gigabytes of blockchain data on its hard drive? The Bitcoin Core software uses a combination of flat files and a high-performance database to manage this data efficiently.  The main data is stored in a dedicated data directory, which contains several important subdirectories.    
 
-
+> ![image](https://github.com/user-attachments/assets/)\
+> Bitcoin blockchain full node size. In a few years the blockchain will be over 1TB. Source: [CoinLedger](https://coinledger.io/research/bitcoin-blockchain-size-and-growth-over-time)
 
 ### Raw Block and Undo Files (`blk*.dat`, `rev*.dat`)
 The raw data for every block received from the network is stored sequentially in a series of files named `blkNNNNN.dat` inside the `blocks/` subdirectory.  Each of these files is limited to a maximum size of 128 MB. Once a file is full, the node begins writing to the next one (e.g.,    
