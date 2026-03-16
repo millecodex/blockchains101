@@ -19,8 +19,8 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | Week | Topic | Tutorial | Case Study |
 | :--- | :--- | :--- | :--- |
 | 01 | [Money & Bitcoin](notes/01-money-bitcoin.md) | [T01](tutorials/t01.md)|  |
-| 02 | [Cryptographic Foundations](notes/02-cryptography.md) | [T02](tutorials/t02.md)⏲️|  |
-| 03 | [Anatomy of a Block and Transaction Flow](notes/03-block.md) | ⏲️|  |
+| 02 | [Cryptographic Foundations](notes/02-cryptography.md) | [T02](tutorials/t02.md)|  |
+| 03 | [Anatomy of a Block and Transaction Flow](notes/03-block.md) | [T03](tutorials/t03.md)⏲️|  |
 | 04 | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md) |⏲️ |  |
 | 05 | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | ⏲️|  |
 | 06 | [Smart Contracts and Ethereum](notes/06-ethereum.md) | ⏲️ |  |
