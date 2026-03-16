@@ -32,7 +32,7 @@ UTXOs are indivisible. If you want to pay for a $3 coffee with a $5 bill, you mu
 The lifecycle begins when a user decides to make a payment using their wallet application.
 
 > ![image](https://github.com/user-attachments/assets/2cb01b19-93dc-425f-8b55-cc24bd474266)\
-> UTXO design. Alex wants to send Bitcoin to Julia to total up 5.1. He needs to combine two UTXOs from his wallet, #1 and #2. This creates a new input in Julia's wallet for the required amount **and a new input** in Alex's wallet for the change. Source: [River](https://river.com/learn/bitcoins-utxo-model/)
+> UTXO design. Alex wants to send 5.1 Bitcoin to Julia. He needs to combine two UTXOs from his wallet, #1 and #2. This creates a new input in Julia's wallet for the required amount **and a new input** in Alex's wallet for the change. Source: [River](https://river.com/learn/bitcoins-utxo-model/)
 
 1. Inputs (Alex's bills)
 
@@ -49,6 +49,7 @@ The transaction then creates new UTXOs as outputs. Typically, a transaction will
 
 Bitcoin transactions do not have a dedicated field for the fee. Instead, the fee is implied. It is the total value of all inputs minus the total value of all outputs: $Fee = ∑(Inputs) − ∑(Outputs)$. This leftover amount, which is not assigned to any output address, is collected by the miner who eventually includes the transaction in a block. It serves as a direct economic incentive for the miner to process the transaction.
 
+> Question: Why would the wallet not aggregate *all* the UTXOs to send to Julia?\
 > Question: What is the fee in the example in the diagram?
 
 ### Signing: Cryptographic Proof of Ownership
@@ -126,7 +127,7 @@ The block header is a concise, 80-byte summary of the block's metadata. This sma
 | **Difficulty Target (nBits)** | 4 | `uint32_t` (compact format) | An encoded representation of the target threshold. The hash of this block's header must be less than or equal to this target to be valid. |
 | **Nonce** | 4 | `uint32_t` (little-endian) | A "**n**umber used **once**." This is the field miners change to alter the output of the hash function in search of a valid Proof of Work. |
 
-The Merkle Root is a particularly ingenious component. As we discussed in Lecture 2, a [Merkle tree](https://github.com/millecodex/blockchains101/blob/main/notes/02-cryptography.md#merkle-trees) is built by taking all the individual transaction IDs (TXIDs) in the block, placing them as leaves of a binary tree, and then recursively hashing pairs of nodes until a single root hash is produced. This single 32-byte hash provides a cryptographic commitment to the entire set of transactions. If a single bit in any transaction is altered, the final Merkle Root will change completely, thus invalidating the block header and the proof of work. This structure is also what enables Simple Payment Verification (SPV), allowing lightweight clients to confirm a transaction's inclusion in a block by downloading only the block headers and a small part of the tree (the Merkle proof), rather than the entire multi-megabyte block.
+The Merkle Root. As we discussed in Lecture 2, a [Merkle tree](https://github.com/millecodex/blockchains101/blob/main/notes/02-cryptography.md#merkle-trees) is built by taking all the individual transaction IDs (TXIDs) in the block, placing them as leaves of a binary tree, and then recursively hashing pairs of nodes until a single root hash is produced. This single 32-byte hash provides a cryptographic commitment to the entire set of transactions. If a single bit in any transaction is altered, the final Merkle Root will change completely, thus invalidating the block header and the proof of work. This structure is also what enables Simple Payment Verification (SPV), allowing lightweight clients to confirm a transaction's inclusion in a block by downloading only the block headers and a small part of the tree (the Merkle proof), rather than the entire multi-megabyte block.
 
 ### The Block Body: The Transaction Payload
 Following the 80-byte header is the block body, which contains the list of transactions that the block confirms.   
@@ -139,6 +140,8 @@ Following the 80-byte header is the block body, which contains the list of trans
 
 ## Full Node Storage
 How does a full node physically store hundreds of gigabytes of blockchain data on its hard drive? The Bitcoin Core software uses a combination of flat files and a high-performance database to manage this data efficiently.  The main data is stored in a dedicated data directory, which contains several important subdirectories.    
+
+
 
 ### Raw Block and Undo Files (`blk*.dat`, `rev*.dat`)
 The raw data for every block received from the network is stored sequentially in a series of files named `blkNNNNN.dat` inside the `blocks/` subdirectory.  Each of these files is limited to a maximum size of 128 MB. Once a file is full, the node begins writing to the next one (e.g.,    
