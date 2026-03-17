@@ -12,12 +12,15 @@
 10. [Readings](#readings)
 
 ## Introduction
-A useful analogy for the blockchain is a physical ledger book. The entire blockchain is the book itself, representing the complete history of all transactions. Each block is a new page added to this book. The transactions are the individual lines written on each page, recording the transfer of value. A crucial property of this book is that once a page is filled, validated, and added, it is sealed. It cannot be erased or altered without invalidating all subsequent entries.
+To recap: a useful analogy for the blockchain is a physical ledger (book) for recording customer transactions. The entire blockchain is the book itself, representing the complete history of all transactions. Each block is a new page added to this book. The transactions are the individual lines written on each page, recording the transfer of value. A crucial property of this book is that once a page is filled, validated, and added, it is sealed. It cannot be erased or altered without invalidating all subsequent entries.
 
 
 ## The Lifecycle of a Bitcoin Transaction
 ### The UTXO Model vs. The Account Model
 Before we can build a transaction, we must understand what we are spending. Most of us are familiar with the account model, used in traditional banking (and by many other cryptocurrencies like Ethereum). In this model, the system tracks a balance. If your account holds $100 and you spend $10, the system simply debits your account, and your new balance is $90. The ledger tracks the state of each account's balance.
+
+> ![image](https://github.com/user-attachments/assets/)\
+> Account balance model in Ethereum. The native token (ETH) is maintained separate from other token balances. Source: [Etherscan](https://etherscan.io/address/0xfb493d4b693bf7e982153ff7a0d7a955d2f454a5#asset-tokens)
 
 Bitcoin takes a different, less intuitive, but powerful approach: the **Unspent Transaction Output (UTXO)** model. Bitcoin does not track account balances. Instead, the blockchain tracks individual, discrete chunks of bitcoin called UTXOs. Think of your Bitcoin wallet not as a bank account with a single balance, but as a physical wallet containing various bills and coins. You don't have a "balance" of $55; you might have two $20 bills, one $10 bill, and one $5 bill. These individual bills are your UTXOs.   
 
@@ -29,7 +32,7 @@ UTXOs are indivisible. If you want to pay for a $3 coffee with a $5 bill, you mu
 The lifecycle begins when a user decides to make a payment using their wallet application.
 
 > ![image](https://github.com/user-attachments/assets/2cb01b19-93dc-425f-8b55-cc24bd474266)\
-> UTXO design. Alex wants to send Bitcoin to Julia to total up 5.1. He needs to combine two UTXOs from his wallet, #1 and #2. This creates a new input in Julia's wallet for the required amount **and a new input** in Alex's wallet for the change. Source: [River](https://river.com/learn/bitcoins-utxo-model/)
+> UTXO design. Alex wants to send 5.1 Bitcoin to Julia. He needs to combine two UTXOs from his wallet, #1 and #2. This creates a new input in Julia's wallet for the required amount **and a new input** in Alex's wallet for the change. Source: [River](https://river.com/learn/bitcoins-utxo-model/)
 
 1. Inputs (Alex's bills)
 
@@ -46,6 +49,7 @@ The transaction then creates new UTXOs as outputs. Typically, a transaction will
 
 Bitcoin transactions do not have a dedicated field for the fee. Instead, the fee is implied. It is the total value of all inputs minus the total value of all outputs: $Fee = ∑(Inputs) − ∑(Outputs)$. This leftover amount, which is not assigned to any output address, is collected by the miner who eventually includes the transaction in a block. It serves as a direct economic incentive for the miner to process the transaction.
 
+> Question: Why would the wallet not aggregate *all* the UTXOs to send to Julia?\
 > Question: What is the fee in the example in the diagram?
 
 ### Signing: Cryptographic Proof of Ownership
@@ -94,8 +98,9 @@ It is essential to understand that there is no single, global mempool. Every ful
 ### The Fee Market: How Miners Prioritize Transactions
 Miners are the ones who construct new blocks. To do this, they look at the transactions waiting in their own mempool and decide which ones to include. Their decision is driven by a simple economic incentive: they keep all the transaction fees from the transactions they include in their block (plus the block subsidy, more on the coinbase reward next lecture).
 
-To maximize their revenue, miners must use the limited space in a block as efficiently as possible. A block has a limit on its size (or more accurately, its "weight"). Therefore, a rational miner will not prioritize transactions based on the total value being sent, nor even the total fee amount. They prioritize based on the fee rate, which is measured in satoshis per virtual byte (sat/vB). A transaction that pays a higher fee for the amount of space it occupies is more profitable for the miner and will be selected first.   
+To maximize their revenue, miners must use the limited space in a block as efficiently as possible. A block has a limit on its size (or more accurately, its "weight"). Therefore, a rational miner will not prioritize transactions based on the total value being sent, nor even the total fee amount. They prioritize based on the fee rate, which is measured in satoshis per virtual byte (sat/vB). A transaction that pays a higher fee for the amount of space it occupies is more profitable for the miner and will be selected first.
 
+Formally, this resembles a **first-price sealed-bid auction**: each user submits a bid (their fee rate) competing for the scarce resource of block space, and miners — acting as auctioneers — greedily select the highest bidders to fill the block weight limit. Unlike a classical single-winner auction, many transactions win per block, making this a multi-unit pay-as-you-bid mechanism. The economic implications of this design — including whether it is incentive-compatible for users to bid their true value — are an active area of research (Lavi et al., 2019).
 
 ### Mempool Dynamics: Congestion and Competition
 This prioritization creates a dynamic, competitive market for block space. During times of high network usage, more transactions flow into mempools than can be accommodated in the next block (which is mined, on average, every 10 minutes). This causes the mempools across the network to fill up, creating a backlog of unconfirmed transactions.   
@@ -123,7 +128,9 @@ The block header is a concise, 80-byte summary of the block's metadata. This sma
 | **Difficulty Target (nBits)** | 4 | `uint32_t` (compact format) | An encoded representation of the target threshold. The hash of this block's header must be less than or equal to this target to be valid. |
 | **Nonce** | 4 | `uint32_t` (little-endian) | A "**n**umber used **once**." This is the field miners change to alter the output of the hash function in search of a valid Proof of Work. |
 
-The Merkle Root is a particularly ingenious component. As we discussed in Lecture 2, a [Merkle tree](https://github.com/millecodex/blockchains101/blob/main/notes/02-cryptography.md#merkle-trees) is built by taking all the individual transaction IDs (TXIDs) in the block, placing them as leaves of a binary tree, and then recursively hashing pairs of nodes until a single root hash is produced. This single 32-byte hash provides a cryptographic commitment to the entire set of transactions. If a single bit in any transaction is altered, the final Merkle Root will change completely, thus invalidating the block header and the proof of work. This structure is also what enables Simple Payment Verification (SPV), allowing lightweight clients to confirm a transaction's inclusion in a block by downloading only the block headers and a small part of the tree (the Merkle proof), rather than the entire multi-megabyte block.
+The Merkle Root. As we discussed in Lecture 2, a [Merkle tree](https://github.com/millecodex/blockchains101/blob/main/notes/02-cryptography.md#merkle-trees) is built by taking all the individual transaction IDs (TXIDs) in the block, placing them as leaves of a binary tree, and then recursively hashing pairs of nodes until a single root hash is produced. This single 32-byte hash provides a cryptographic commitment to the entire set of transactions. If a single bit in any transaction is altered, the final Merkle Root will change completely, thus invalidating the block header and the proof of work. This structure is also what enables Simple Payment Verification (SPV), allowing lightweight clients to confirm a transaction's inclusion in a block by downloading only the block headers and a small part of the tree (the Merkle proof), rather than the entire multi-megabyte block.
+
+> **SPV Security Caveats.** An SPV client trusts that the chain with the most accumulated proof of work is valid; it cannot independently verify that transactions in a block are themselves valid — only that they were *included*. This means SPV clients must trust the full nodes they query. They are also vulnerable to **eclipse attacks**, where an adversary isolates the client and feeds it a crafted view of the network, potentially hiding transactions or double-spends. SPV is a deliberate trade-off: reduced storage and bandwidth at the cost of reduced security guarantees.
 
 ### The Block Body: The Transaction Payload
 Following the 80-byte header is the block body, which contains the list of transactions that the block confirms.   
@@ -136,6 +143,9 @@ Following the 80-byte header is the block body, which contains the list of trans
 
 ## Full Node Storage
 How does a full node physically store hundreds of gigabytes of blockchain data on its hard drive? The Bitcoin Core software uses a combination of flat files and a high-performance database to manage this data efficiently.  The main data is stored in a dedicated data directory, which contains several important subdirectories.    
+
+> ![image](https://github.com/user-attachments/assets/)\
+> Bitcoin blockchain full node size. In a few years the blockchain will be over 1TB. Source: [CoinLedger](https://coinledger.io/research/bitcoin-blockchain-size-and-growth-over-time)
 
 ### Raw Block and Undo Files (`blk*.dat`, `rev*.dat`)
 The raw data for every block received from the network is stored sequentially in a series of files named `blkNNNNN.dat` inside the `blocks/` subdirectory.  Each of these files is limited to a maximum size of 128 MB. Once a file is full, the node begins writing to the next one (e.g.,    
@@ -163,9 +173,16 @@ Another LevelDB database is kept in the blocks/index/ subdirectory. This is the 
 5. Finally, the node processes the transactions in the raw block to Update Chainstate, the LevelDB database containing the UTXO set. It removes the inputs that were spent and adds the newly created outputs.
 
 ## Connecting the Blocks: The Chain of Trust
-The link betwen blocks is a simple hash pointer, but it is also so much more. It represents the current network's cumulative proof of computation effort that has been demonstrated in service to the blockchain. The `Previous Block Hash` field in the block header starts the ossification process that leads to immutable transactions.
+The link between blocks is a simple hash pointer, but it is also so much more. It represents the current network's cumulative proof of computation effort that has been demonstrated in service to the blockchain. The `Previous Block Hash` field in the block header starts the ossification process that leads to immutable transactions.
 
 The header of Block N contains the unique hash of Block N-1's header. The header of Block N-1 contains the hash of Block N-2's header, ..., all the way back to the very first block, the Genesis Block. This creates a direct, ordered, and cryptographically secured chain. This will be the topic of next lecture on Proof of Work consensus.
+
+### Block Propagation and Orphan Blocks
+Once a miner finds a valid block, it must propagate to the rest of the network via the gossip protocol. Propagation is not instantaneous. Empirical measurements (Decker & Wattenhofer, 2013) found that in the early Bitcoin network, the mean time for a block to reach 50% of nodes was approximately **6 seconds**, and 95% of nodes received it within **40 seconds**. Block size matters: each kilobyte above ~20 kB added roughly 80 ms of additional delay for the majority of nodes.
+
+This delay has a structural consequence. If two miners find a valid block at roughly the same time — before either block has propagated to the full network — a temporary **fork** occurs. Both blocks are valid, but only one chain will be extended by the next miner, causing the other to become a **stale block** (sometimes called an orphan block). The network discards the losing branch and any transactions unique to it return to the mempool. This represents wasted computational work for the miner whose block was orphaned.
+
+To mitigate this, Bitcoin introduced **Compact Block Relay** (BIP 152) in 2016. Rather than transmitting a full block (~1 MB+) when announcing a new block, a node sends only the block header plus short transaction IDs. Since the receiving node's mempool likely already contains most of those transactions, it can reconstruct the block locally, dramatically reducing transmission size and latency.
 
 
 ## Summary
@@ -178,7 +195,7 @@ The full nodes physically store the blockchain in `blk*.dat` files and optimized
 # What did we miss?
 * **Nonce** and **Difficulty Target** get a mention, but we have not yet explored the dynamic and competitive process of how a miner actually finds a valid nonce that satisfies the target.
 * Proof of Work **consensus** mechanism that allows a decentralized network to agree on a single version of history, and the process of difficulty adjustment are all critical topics that we will cover in our next lecture.
-* Transaction construction details like size and weight calculation introduced by Segregated Witness (**SegWit**) are shown in the mempool.space figure. This is an implementation efficiency.
+* **Transaction malleability** and its fix via Segregated Witness (**SegWit**, activated 2017): before SegWit, a third party could alter a transaction's signature data without invalidating the transaction, which also changed its TXID. This "malleability" made certain second-layer protocols (like payment channels) unreliable. SegWit fixed this by moving witness data (signatures) outside the core transaction data used to compute the TXID, decoupling the identifier from the signature. As a side effect, SegWit also introduced the "virtual byte" (vB) weight system visible in mempool.space fee rate calculations.
 
 # Exercises
 
@@ -198,18 +215,31 @@ The full nodes physically store the blockchain in `blk*.dat` files and optimized
 4.  **Conceptual Question 2**: Based on the UTXO model, why might it be a bad privacy practice to combine UTXOs from many different sources (e.g., one from a friend, one from an exchange, one from a salary payment) into a single transaction?
 
 # Readings
-* [Block (Cryptocurrency)](https://www.investopedia.com/terms/b/block-crypto.asp)  (Investopedia)
-* [How does a blockchain work?](https://consensys.io/knowledge-base/a-beginners-guide-to-blockchain-technology/) (Consensys)
+* [Block — A Container for Bitcoin Transactions](https://learnmeabitcoin.com/technical/block/) (Learn Me a Bitcoin)
+* [What Is a Cryptocurrency Block Header?](https://www.investopedia.com/terms/b/block-header-cryptocurrency.asp)
 * [What Is a Mempool?](https://www.ledger.com/academy/what-is-a-mempool) (Ledger)
 * [Bitcoin’s UTXO Model: What Is It and How To Manage UTXOs](https://river.com/learn/bitcoins-utxo-model/) (River Financial)
+
+## Supplementary: Web Articles & Video Tutorials
+* [Blockchain Demo — Anders Brownworth](https://andersbrownworth.com/blockchain/) — Live interactive demo: build blocks in your browser and see how any change cascades to break the chain
+* [Transactions — learnmeabitcoin.com](https://learnmeabitcoin.com/technical/transaction/) — Step-by-step walkthrough of inputs, outputs, locking/unlocking scripts, and TXID
+* [Mempool.space FAQ](https://mempool.space/docs/faq) — Explainer for the mempool visualiser used in this lecture; covers fee rate, sat/vB, and block templates
+* [Bitcoin Fees Explained — River Financial](https://river.com/learn/bitcoin-fees/) — Plain-English explainer on fee markets, sat/vB, and why fees fluctuate
+* [How Bitcoin Transactions Work — Computerphile (YouTube)](https://www.youtube.com/watch?v=em8nsl1iAfE) — 10-minute video covering signing, broadcasting, and UTXOs
 
  
 # Next Lecture
 * :point_right: [Proof of Work Consensus](04-pow.md)
 
 # References
-1. Narayanan, A., Bonneau, J., Felten, E., Miller, A., & Goldfeder, S. (2016). Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction. Princeton University Press.
-2. Antonopoulos, A. M. (2017). Mastering Bitcoin: Programming the Open Blockchain. O'Reilly Media.
+1. Corallo, M. (2016). *BIP 152: Compact block relay*. Bitcoin Improvement Proposals. https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki
+2. Dean, J., & Ghemawat, S. (2011). *LevelDB* [Computer software]. Google. https://github.com/google/leveldb
+3. Decker, C., & Wattenhofer, R. (2013). *Information propagation in the Bitcoin network*. Proceedings of the 13th IEEE International Conference on Peer-to-Peer Computing (P2P). https://tik-old.ee.ethz.ch/file/49318d3f56c1d525aabf7fda78b23fc0/P2P2013_041.pdf
+4. Lavi, R., Sattath, O., & Zohar, A. (2019). *Redesigning Bitcoin's fee market*. Proceedings of the ACM World Wide Web Conference (WWW). https://arxiv.org/abs/1709.08881
+5. Nakamoto, S. (2008). *Bitcoin: A peer-to-peer electronic cash system*. https://bitcoin.org/bitcoin.pdf
+6. Narayanan, A., Bonneau, J., Felten, E., Miller, A., & Goldfeder, S. (2016). *Bitcoin and cryptocurrency technologies: A comprehensive introduction*. Princeton University Press.
+7. Antonopoulos, A. M. (2017). *Mastering Bitcoin: Programming the open blockchain* (2nd ed.). O'Reilly Media.
+8. Pérez-Solà, C., Delgado-Segura, S., Navarro-Arribas, G., & Herrera-Joancomartí, J. (2019). *Double-spending prevention for bitcoin zero-confirmation transactions*. International Journal of Information Security. (See also: UTXO set analysis, Financial Cryptography 2018.) https://eprint.iacr.org/2017/1095.pdf
 
 # Video Lectures
 * Recorded Live July 15, 2025 on [X](https://x.com/Japple/status/1944991348685520983)
