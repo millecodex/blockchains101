@@ -19,7 +19,7 @@ To recap: a useful analogy for the blockchain is a physical ledger (book) for re
 ### The UTXO Model vs. The Account Model
 Before we can build a transaction, we must understand what we are spending. Most of us are familiar with the account model, used in traditional banking (and by many other cryptocurrencies like Ethereum). In this model, the system tracks a balance. If your account holds $100 and you spend $10, the system simply debits your account, and your new balance is $90. The ledger tracks the state of each account's balance.
 
-> ![ethaccount](https://github.com/user-attachments/assets/86d32a44-bdee-43a2-b566-72e156a872fa)\
+> <img src="https://github.com/user-attachments/assets/86d32a44-bdee-43a2-b566-72e156a872fa" alt="ethaccount" width="800">\
 > Account balance model in Ethereum. The native token (ETH) is maintained separate from other token balances. Source: [Etherscan](https://etherscan.io/address/0xfb493d4b693bf7e982153ff7a0d7a955d2f454a5#asset-tokens)
 
 Bitcoin takes a different, less intuitive, but powerful approach: the **Unspent Transaction Output (UTXO)** model. Bitcoin does not track account balances. Instead, the blockchain tracks individual, discrete chunks of bitcoin called UTXOs. Think of your Bitcoin wallet not as a bank account with a single balance, but as a physical wallet containing various bills and coins. You don't have a "balance" of $55; you might have two $20 bills, one $10 bill, and one $5 bill. These individual bills are your UTXOs.   
@@ -144,7 +144,7 @@ Following the 80-byte header is the block body, which contains the list of trans
 ## Full Node Storage
 How does a full node physically store hundreds of gigabytes of blockchain data on its hard drive? The Bitcoin Core software uses a combination of flat files and a high-performance database to manage this data efficiently.  The main data is stored in a dedicated data directory, which contains several important subdirectories.    
 
-> ![bitcoinsize](https://github.com/user-attachments/assets/1fd218fc-9c8f-4544-b2e8-34e971666c97)\
+> <img src="https://github.com/user-attachments/assets/1fd218fc-9c8f-4544-b2e8-34e971666c97" alt="bitcoinsize" width="800">\
 > Bitcoin blockchain full node size. In a few years the blockchain will be over 1TB. Source: [CoinLedger](https://coinledger.io/research/bitcoin-blockchain-size-and-growth-over-time)
 
 ### Raw Block and Undo Files (`blk*.dat`, `rev*.dat`)
