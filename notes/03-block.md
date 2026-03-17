@@ -19,7 +19,7 @@ To recap: a useful analogy for the blockchain is a physical ledger (book) for re
 ### The UTXO Model vs. The Account Model
 Before we can build a transaction, we must understand what we are spending. Most of us are familiar with the account model, used in traditional banking (and by many other cryptocurrencies like Ethereum). In this model, the system tracks a balance. If your account holds $100 and you spend $10, the system simply debits your account, and your new balance is $90. The ledger tracks the state of each account's balance.
 
-> ![image](https://github.com/user-attachments/assets/)\
+> ![ethaccount](https://github.com/user-attachments/assets/86d32a44-bdee-43a2-b566-72e156a872fa)\
 > Account balance model in Ethereum. The native token (ETH) is maintained separate from other token balances. Source: [Etherscan](https://etherscan.io/address/0xfb493d4b693bf7e982153ff7a0d7a955d2f454a5#asset-tokens)
 
 Bitcoin takes a different, less intuitive, but powerful approach: the **Unspent Transaction Output (UTXO)** model. Bitcoin does not track account balances. Instead, the blockchain tracks individual, discrete chunks of bitcoin called UTXOs. Think of your Bitcoin wallet not as a bank account with a single balance, but as a physical wallet containing various bills and coins. You don't have a "balance" of $55; you might have two $20 bills, one $10 bill, and one $5 bill. These individual bills are your UTXOs.   
@@ -144,7 +144,7 @@ Following the 80-byte header is the block body, which contains the list of trans
 ## Full Node Storage
 How does a full node physically store hundreds of gigabytes of blockchain data on its hard drive? The Bitcoin Core software uses a combination of flat files and a high-performance database to manage this data efficiently.  The main data is stored in a dedicated data directory, which contains several important subdirectories.    
 
-> ![image](https://github.com/user-attachments/assets/)\
+> ![bitcoinsize](https://github.com/user-attachments/assets/1fd218fc-9c8f-4544-b2e8-34e971666c97)\
 > Bitcoin blockchain full node size. In a few years the blockchain will be over 1TB. Source: [CoinLedger](https://coinledger.io/research/bitcoin-blockchain-size-and-growth-over-time)
 
 ### Raw Block and Undo Files (`blk*.dat`, `rev*.dat`)
@@ -221,11 +221,9 @@ The full nodes physically store the blockchain in `blk*.dat` files and optimized
 * [Bitcoin’s UTXO Model: What Is It and How To Manage UTXOs](https://river.com/learn/bitcoins-utxo-model/) (River Financial)
 
 ## Supplementary: Web Articles & Video Tutorials
-* [Blockchain Demo — Anders Brownworth](https://andersbrownworth.com/blockchain/) — Live interactive demo: build blocks in your browser and see how any change cascades to break the chain
+* [Blockchain Demo — Anders Brownworth](https://andersbrownworth.com/blockchain/blockchain) — Live interactive demo: build blocks in your browser and see how any change cascades to break the chain
 * [Transactions — learnmeabitcoin.com](https://learnmeabitcoin.com/technical/transaction/) — Step-by-step walkthrough of inputs, outputs, locking/unlocking scripts, and TXID
 * [Mempool.space FAQ](https://mempool.space/docs/faq) — Explainer for the mempool visualiser used in this lecture; covers fee rate, sat/vB, and block templates
-* [Bitcoin Fees Explained — River Financial](https://river.com/learn/bitcoin-fees/) — Plain-English explainer on fee markets, sat/vB, and why fees fluctuate
-* [How Bitcoin Transactions Work — Computerphile (YouTube)](https://www.youtube.com/watch?v=em8nsl1iAfE) — 10-minute video covering signing, broadcasting, and UTXOs
 
  
 # Next Lecture
@@ -234,7 +232,7 @@ The full nodes physically store the blockchain in `blk*.dat` files and optimized
 # References
 1. Corallo, M. (2016). *BIP 152: Compact block relay*. Bitcoin Improvement Proposals. https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki
 2. Dean, J., & Ghemawat, S. (2011). *LevelDB* [Computer software]. Google. https://github.com/google/leveldb
-3. Decker, C., & Wattenhofer, R. (2013). *Information propagation in the Bitcoin network*. Proceedings of the 13th IEEE International Conference on Peer-to-Peer Computing (P2P). https://tik-old.ee.ethz.ch/file/49318d3f56c1d525aabf7fda78b23fc0/P2P2013_041.pdf
+3. Decker, C., & Wattenhofer, R. (2013). *Information propagation in the Bitcoin network*. Proceedings of the 13th IEEE International Conference on Peer-to-Peer Computing (P2P). [PDF](../papers/pdfs/Decker-BlockPropagation-2013.pdf)
 4. Lavi, R., Sattath, O., & Zohar, A. (2019). *Redesigning Bitcoin's fee market*. Proceedings of the ACM World Wide Web Conference (WWW). https://arxiv.org/abs/1709.08881
 5. Nakamoto, S. (2008). *Bitcoin: A peer-to-peer electronic cash system*. https://bitcoin.org/bitcoin.pdf
 6. Narayanan, A., Bonneau, J., Felten, E., Miller, A., & Goldfeder, S. (2016). *Bitcoin and cryptocurrency technologies: A comprehensive introduction*. Princeton University Press.
