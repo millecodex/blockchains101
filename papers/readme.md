@@ -19,7 +19,7 @@
 * Back, A. 2002. *Hashcash: A denial of service counter-measure*. [Link](http://www.hashcash.org/)
 * Brown, D. R. L. 2010. *SEC 2: Recommended Elliptic Curve Domain Parameters*. Certicom Research. [PDF](./pdfs/Brown-SEC2EllipticCurve-2010.pdf) | [Link](https://www.secg.org/sec2-v2.pdf)
 * Diffie, W. & Hellman, M. 1976. *New Directions in Cryptography*. IEEE Transactions on Information Theory 22(6):644–654. [PDF](./pdfs/Diffie-NewDirectionsCryptography-1976.pdf) | [Link](https://www-ee.stanford.edu/~hellman/publications/24.pdf)
-* Dwork, C. & Naor, M. 1993. *Pricing via Processing or Combatting Junk Mail*. Crypto '92. [PDF](./pdfs/Dwork-PricingViaProcessing-1993.pdf) ⚠️ *Original URL (weizmann.ac.il) is broken*
+* Dwork, C. & Naor, M. 1993. *Pricing via Processing or Combatting Junk Mail*. Crypto '92. [PDF](./pdfs/Dwork-PricingViaProcessing-1993.pdf) 
 * Hoffman, P. 2005. *Algorithms for Internet Key Exchange (IKEv2)*. RFC 4109. IETF. [Link](https://tools.ietf.org/html/rfc4109)
 * NIST. 2015. *FIPS 180-4: Secure Hash Standard (SHA Family)*. [PDF](./pdfs/NIST-FIPS180-2015.pdf)
 * Postel, J. 1982. *Simple Mail Transfer Protocol*. RFC 821. IETF. [Link](https://www.rfc-editor.org/rfc/rfc821)
