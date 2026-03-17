@@ -220,7 +220,9 @@ PoW consensus uses the random non-deterministic nature of hash functions to allo
 
 # Readings
 * SoK (Systemization of Knowledge) from 2015 by the authors of the Princeton Textbook. An oldie but goodie. [(pdf)](/../../papers/pdfs/Bonneau-SoKBitcoin-2015.pdf)
-* The ‘Skull of Satoshi’ Proves Bitcoin Mining Discourse Isn’t Dead - [Coindesk](https://www.coindesk.com/consensus-magazine/2023/03/27/the-skull-of-satoshi-proves-bitcoin-mining-discourse-isnt-dead/)
+* The ‘Skull of Satoshi’ Proves Bitcoin Mining Discourse Isn’t Dead - [Coindesk](https://www.coindesk.com/opinion/2023/03/27/the-skull-of-satoshi-proves-bitcoin-mining-discourse-isnt-dead)
+* [The Byzantine Generals Problem Explained](https://river.com/learn/terms/b/byzantine-generals-problem/) - A beginner-friendly breakdown of why decentralized consensus is difficult by River.
+* [How Does Bitcoin Mining Work?](https://www.coindesk.com/learn/how-does-bitcoin-mining-work/) - CoinDesk's introductory guide to the mechanics and purpose of Bitcoin mining.
 
 # Next Lecture
 * :point_right: [Proof-of-Stake Consensus](05-proof-of-other.md)
@@ -231,10 +233,10 @@ PoW consensus uses the random non-deterministic nature of hash functions to allo
 
 # References
 1. Baran, P. 1964. On distributed communications: I. introduction to distributed communications networks. Santa Monica, CA: RAND Corporation. https://www.rand.org/pubs/research_memoranda/RM3420.html
-2. Chang, F., Dean, J., Ghemawat, S., Hsieh, W. C., Wallach, D. A., Burrows, M., Chandra, T., Fikes, A. & Gruber, R. E. 2006. Bigtable: A distributed storage system for structured data. In 7th USENIX symposium on operating systems design and implementation (osdi) (pp. 205–218). https://doi.org/10.1145/1365815.1365816
-3. Decandia, G., Hastorun, D., Jampani, M., Kakulapati, G., Lakshman, A., Pilchin, A., Sivasubramanian, S., Vosshall, P. & Vogels, W. 2007. Dynamo: Amazon’s highly available key-value store (Tech. Rep.). https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf
-4. Eyal, I., Sirer, E. G. (2014). Majority Is Not Enough: Bitcoin Mining Is Vulnerable. *Financial Cryptography and Data Security*, 436–454. https://doi.org/10.1007/978-3-662-45472-5_28
-5. Fischer, M. J., Lynch, N. A. & Paterson, M. S. 1985. Impossibility of distributed consensus with one faulty process. ACM, 32(2), 374–382. https://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf
-6. Lamport, L., Shostak, R., & Pease, M. 1982. The Byzantine Generals Problem. ACM Transactions on Programming Languages and Systems, Volume 4, Issue 3, pp. 382–401. https://doi.org/10.1145/357172.357176
-7. Lamport, L. 1998, May. The part-time parliament. ACM Trans. Comput. Syst., 16(2), 133–169. http://doi.acm.org/10.1145/279227.279229 doi: 10.1145/279227.279229
+2. Chang, F., Dean, J., Ghemawat, S., Hsieh, W. C., Wallach, D. A., Burrows, M., Chandra, T., Fikes, A. & Gruber, R. E. 2006. Bigtable: A distributed storage system for structured data. In 7th USENIX symposium on operating systems design and implementation (osdi) (pp. 205–218). [PDF](../papers/pdfs/Chang-Bigtable-2006.pdf)
+3. Decandia, G., Hastorun, D., Jampani, M., Kakulapati, G., Lakshman, A., Pilchin, A., Sivasubramanian, S., Vosshall, P. & Vogels, W. 2007. Dynamo: Amazon’s highly available key-value store (Tech. Rep.). [PDF](../papers/pdfs/Decandia-Dynamo-2007.pdf)
+4. Eyal, I., Sirer, E. G. (2014). Majority Is Not Enough: Bitcoin Mining Is Vulnerable. *Financial Cryptography and Data Security*, 436–454. [PDF](../papers/pdfs/Eyal-MajorityIsNotEnough-2014.pdf)
+5. Fischer, M. J., Lynch, N. A. & Paterson, M. S. 1985. Impossibility of distributed consensus with one faulty process. ACM, 32(2), 374–382. [PDF](../papers/pdfs/Fischer-ImpossibilityConsensus-1985.pdf)
+6. Lamport, L., Shostak, R., & Pease, M. 1982. The Byzantine Generals Problem. ACM Transactions on Programming Languages and Systems, Volume 4, Issue 3, pp. 382–401. [PDF](../papers/pdfs/Lamport-ByzantineGenerals-1982.pdf)
+7. Lamport, L. 1998, May. The part-time parliament. ACM Trans. Comput. Syst., 16(2), 133–169. [PDF](../papers/pdfs/Lamport-PartTimeParliament-1998.pdf)
 
