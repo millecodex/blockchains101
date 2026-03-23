@@ -26,12 +26,17 @@ In the parliament-nodes metaphor, each MP needs to be aware of the proposed upda
 On the right in the figure is a distributed (mesh) network which shows a high degree of decentralisation. If any node goes offline, the remainder of the network is largely unaffected. Compare with the middle figure where certain nodes can have large effects in the network should they be compromised or need to be repaired. 
 
 ### Centralised Consensus
-Lets consider the case of withdrawing money from an ATM. The bank operates a network of ATM machines that maintain connection to a central server. A user requests \$100 from her local ATM. The machine must connect to the bank's server and query the database for an account balance, confirm that it is greater than the requested amount and respond to the ATM. The machine now sends a second request for withdrawal (step 3 in figure below) and the server will debit the users account, sending a message back to the ATM. It is only at this point that the \$100 can be dispensed; *after* the account has been debited. This is known as a **two-phase commit**; the first phase is a request, and the second phase is an action.
+Lets consider the case of withdrawing money from an ATM. The bank operates a network of ATM machines that maintain connection to a central server. A user requests \$100 from her local ATM. The machine must connect to the bank's server and query the database for an account balance, confirm that it is greater than the requested amount and respond to the ATM. The machine now sends a second request for withdrawal (step 3 in figure below) and the server will debit the user's account, sending a message back to the ATM. It is only at this point that the \$100 can be dispensed; *after* the account has been debited. This is known as a **two-phase commit**; the first phase is a request, and the second phase is an action.
 
 > <img width="800" alt="A single node simplified ATM network" src="https://github.com/millecodex/COMP842/assets/39792005/1fc47f55-f2d3-459a-8447-4a7f595eed3e">\
 > Figure: A simplified ATM network and the steps required to withdraw money. This is an example of a client-server relationship. If communication fails at step 4 this could be a problem.
 
-However, in a mutli-user environment it is feasible that two people can debit from the same account from two different locations, causing the database to be **inconsistent**. This can occur because the two transactions are able to alter the originating account value because the first transaction has had the chance write an update to the database. The solution to this problem is **two-phase commit**, which requires that the account record is locked when the first transaction starts and the resources progressively unlocked when they are no longer required. In the meantime, the second transaction waits until the record is fully unlocked or until it times out if the first transaction takes too long. It is only at this point that the $100 can be dispensed; after the account has been debited. 
+However, in a mutli-user environment it is feasible that two people can debit from the same account from two different locations, causing the database to be **inconsistent**. This can occur because the two transactions are able to alter the originating account value because the first transaction has had the chance write an update to the database. The solution to this problem is **two-phase commit**, which requires that the account record is locked when the first transaction starts and the resources progressively unlock when they are no longer required. 
+
+> ![2pc](https://github.com/user-attachments/assets/649d57a5-7bb9-4983-8add-10f7175b8fa1)\
+> Figure: Two-phase commit requires resources to First decide what to do - allow the withdrawal - then locking the record so other nodes cannot access it until the first transaction is complete. Second 2PC will act by committing the update to the database (-100). Only at this stage can it unlock the record. 
+
+So, if two people are withdrawing from the same account, the bank will order the requests. The second transaction waits until the record is fully unlocked or until it times out if the first transaction takes too long. It is only at this point that the $100 can be dispensed. 
 
 > <img width="800" alt="Multiple nodes in a simplified ATM network" src="https://github.com/millecodex/COMP842/assets/39792005/e9795dc1-f495-4a7d-af17-1363cdba6f59)">\
 > Figure: Multiple nodes in the network. If a simultaneous request comes from 1 and 2, the server needs to order the events and make sure it has heard from every node before responding at 4. Additionally, information may be stuck at 3 if there is a fault or a delay in the network communication and 4 will have to wait.
@@ -225,8 +230,8 @@ PoW consensus uses the random non-deterministic nature of hash functions to allo
 * [How Does Bitcoin Mining Work?](https://www.coindesk.com/learn/how-does-bitcoin-mining-work/) - CoinDesk's introductory guide to the mechanics and purpose of Bitcoin mining.
 
 ## Supplementary: Web Articles & Video Tutorials
-* [Proof of Work Explained](https://changelly.com/blog/proof-of-work-explained/) - A gentle introduction by Changelly on how Proof of Work functions.
-* [What is Proof of Work?](https://www.coinbase.com/learn/crypto-basics/what-is-proof-of-work) - Coinbase's beginner-friendly guide to PoW consensus.
+* [Proof of Work Explained](https://changelly.com/blog/proof-of-work/) - A gentle introduction by Changelly on how Proof of Work functions.
+* [What is Proof of Work? (vs Proof of Stake)](https://www.coinbase.com/learn/crypto-basics/what-is-proof-of-work-or-proof-of-stake) - Coinbase's beginner-friendly guide to PoW consensus.
 
 # Next Lecture
 * :point_right: [Proof-of-Stake Consensus](05-proof-of-other.md)
