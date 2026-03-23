@@ -224,6 +224,10 @@ PoW consensus uses the random non-deterministic nature of hash functions to allo
 * [The Byzantine Generals Problem Explained](https://river.com/learn/terms/b/byzantine-generals-problem/) - A beginner-friendly breakdown of why decentralized consensus is difficult by River.
 * [How Does Bitcoin Mining Work?](https://www.coindesk.com/learn/how-does-bitcoin-mining-work/) - CoinDesk's introductory guide to the mechanics and purpose of Bitcoin mining.
 
+## Supplementary: Web Articles & Video Tutorials
+* [Proof of Work Explained](https://changelly.com/blog/proof-of-work-explained/) - A gentle introduction by Changelly on how Proof of Work functions.
+* [What is Proof of Work?](https://www.coinbase.com/learn/crypto-basics/what-is-proof-of-work) - Coinbase's beginner-friendly guide to PoW consensus.
+
 # Next Lecture
 * :point_right: [Proof-of-Stake Consensus](05-proof-of-other.md)
 
@@ -239,4 +243,4 @@ PoW consensus uses the random non-deterministic nature of hash functions to allo
 5. Fischer, M. J., Lynch, N. A. & Paterson, M. S. 1985. Impossibility of distributed consensus with one faulty process. ACM, 32(2), 374–382. [PDF](../papers/pdfs/Fischer-ImpossibilityConsensus-1985.pdf)
 6. Lamport, L., Shostak, R., & Pease, M. 1982. The Byzantine Generals Problem. ACM Transactions on Programming Languages and Systems, Volume 4, Issue 3, pp. 382–401. [PDF](../papers/pdfs/Lamport-ByzantineGenerals-1982.pdf)
 7. Lamport, L. 1998, May. The part-time parliament. ACM Trans. Comput. Syst., 16(2), 133–169. [PDF](../papers/pdfs/Lamport-PartTimeParliament-1998.pdf)
-
+8. Pease, M., Shostak, R., & Lamport, L. 1980. Reaching Agreement in the Presence of Faults. Journal of the ACM, 27(2), 228-234. [PDF](../papers/pdfs/Pease-ReachingAgreement-1980.pdf)

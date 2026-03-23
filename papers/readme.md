@@ -37,12 +37,14 @@
 * Pérez-Solà, C. et al. 2018. *Analysis of the Bitcoin UTXO Set*. Financial Cryptography. [PDF](./pdfs/PerezSola-UTXOSetAnalysis-2018.pdf) | [DOI](https://doi.org/10.1007/978-3-662-58820-8_6)
 
 ## Lecture 4: Consensus Part I: Proof of Work
+* Baran, P. 1964. *On distributed communications*. RAND Corporation. [Link](https://www.rand.org/pubs/research_memoranda/RM3420.html)
 * Chang, F. et al. 2006. *Bigtable: A distributed storage system for structured data*. OSDI. [PDF](./pdfs/Chang-Bigtable-2006.pdf) | [DOI](https://doi.org/10.1145/1365815.1365816)
 * Decandia, G. et al. 2007. *Dynamo: Amazon’s highly available key-value store*. Tech. Rep. [PDF](./pdfs/Decandia-Dynamo-2007.pdf) | [DOI](https://doi.org/10.1145/1294261.1294281)
 * Eyal, I., Sirer, E. G. 2014. *Majority Is Not Enough: Bitcoin Mining Is Vulnerable*. FC. [PDF](./pdfs/Eyal-MajorityIsNotEnough-2014.pdf) | [DOI](https://doi.org/10.1007/978-3-662-45472-5_28)
 * Fischer, M. J., Lynch, N. A. & Paterson, M. S. 1985. *Impossibility of distributed consensus with one faulty process*. ACM. [PDF](./pdfs/Fischer-ImpossibilityConsensus-1985.pdf) | [DOI](https://doi.org/10.1145/588058.588060)
 * Lamport, L., Shostak, R., & Pease, M. 1982. *The Byzantine Generals Problem*. ACM. [PDF](./pdfs/Lamport-ByzantineGenerals-1982.pdf) | [DOI](https://doi.org/10.1145/357172.357176)
 * Lamport, L. 1998. *The part-time parliament*. ACM. [PDF](./pdfs/Lamport-PartTimeParliament-1998.pdf) | [DOI](https://doi.org/10.1145/279227.279229)
+* Pease, M., Shostak, R. & Lamport, L. 1980. *Reaching agreement in the presence of faults*. JACM. [PDF](./pdfs/Pease-ReachingAgreement-1980.pdf)
 
 ## Other Papers
 * Al-Bassam, M. 2019. *LazyLedger*. [PDF](./pdfs/AlBassam-LazyLedger-2019.pdf)
