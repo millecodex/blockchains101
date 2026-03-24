@@ -33,13 +33,13 @@ def mine_worker(start_nonce, step, log_mode, shared_best_zeros, shared_best_val,
                             shared_best_zeros.value = zeros
                             elapsed = time.time() - start_time
                             print(f" [Core {start_nonce:02d} | {elapsed:>8.2f}s] 🚀 16x Improvement (Zeros: {zeros}) | Hash: {hash_result}")
-            elif log_mode == '1%':
+            elif log_mode == 'any':
                 val = float(int(hash_result, 16))
-                if val < 0.99 * float(local_best_val):
+                if val < float(local_best_val):
                     local_best_val = val
                     with shared_best_val.get_lock():
                         old_val = float(shared_best_val.value)
-                        if val < 0.99 * old_val:
+                        if val < old_val:
                             pct_str = "100.000" if old_val == float('inf') else f"{(old_val - val) / old_val * 100:.3f}"
                             shared_best_val.value = val
                             elapsed = time.time() - start_time
@@ -47,7 +47,7 @@ def mine_worker(start_nonce, step, log_mode, shared_best_zeros, shared_best_val,
             
             nonce += step
 
-def mine_multicore(num_cores, log_mode='1%'):
+def mine_multicore(num_cores, log_mode='any'):
     start_time = time.time()
     
     shared_best_zeros = mp.Value('i', -1)
@@ -81,10 +81,10 @@ if __name__ == "__main__":
     cores = mp.cpu_count()
     print(f"Starting multi-core mining simulation using {cores} parallel CPU cores...\n")
     
-    mode = '1%'
+    mode = 'any'
     if len(sys.argv) > 1 and sys.argv[1] == '16x':
         mode = '16x'
         
-    print(f"Logging mode selected: {mode} (Pass '16x' or '1%' as argument to change)\n")
+    print(f"Logging mode selected: {mode} (Pass '16x' or 'any' as argument to change)\n")
     
     mine_multicore(cores, log_mode=mode)
