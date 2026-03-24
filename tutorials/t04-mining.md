@@ -85,17 +85,23 @@ It removes the concept of an arbitrary target, running indefinitely. You can cho
 import hashlib
 import time
 import multiprocessing as mp
+import os
 
 def mine_worker(start_nonce, step, log_mode, shared_best_zeros, shared_best_val, start_time):
     nonce = start_nonce
-    base_text = "COMP842_Mining_Simulation_" 
+    salt = os.urandom(4).hex()
+    base_text = f"Jeff_gets_1_million_coins_{salt}_" 
     
     # Track local bests for logging
-    local_best_zeros = shared_best_zeros.value
-    local_best_val = shared_best_val.value
+    local_best_zeros = int(shared_best_zeros.value)
+    local_best_val = float(shared_best_val.value)
     
     # Run indefinitely
     while True:
+        # Periodically sync local targets with the global best to avoid stale goals
+        local_best_zeros = max(local_best_zeros, int(shared_best_zeros.value))
+        local_best_val = min(local_best_val, float(shared_best_val.value))
+
         # Inner loop runs hot without checking shared memory
         for _ in range(50000):
             text = f"{base_text}{nonce}"
@@ -110,16 +116,18 @@ def mine_worker(start_nonce, step, log_mode, shared_best_zeros, shared_best_val,
                         if zeros > shared_best_zeros.value:
                             shared_best_zeros.value = zeros
                             elapsed = time.time() - start_time
-                            print(f" [Core {start_nonce:02d} | {elapsed:.2f}s] \U0001f680 16x Improvement (Zeros: {zeros}) | Hash: {hash_result}")
+                            print(f" [Core {start_nonce:02d} | {elapsed:>8.2f}s] \U0001f680 16x Improvement (Zeros: {zeros}) | Hash: {hash_result}")
             elif log_mode == '1%':
-                val = int(hash_result, 16)
-                if val < 0.99 * local_best_val:
+                val = float(int(hash_result, 16))
+                if val < 0.99 * float(local_best_val):
                     local_best_val = val
                     with shared_best_val.get_lock():
-                        if val < 0.99 * shared_best_val.value:
-                            shared_best_val.value = float(val)
+                        old_val = float(shared_best_val.value)
+                        if val < 0.99 * old_val:
+                            pct_str = "100.000" if old_val == float('inf') else f"{(old_val - val) / old_val * 100:.3f}"
+                            shared_best_val.value = val
                             elapsed = time.time() - start_time
-                            print(f" [Core {start_nonce:02d} | {elapsed:.2f}s] \U0001f4c9 1% Improvement! | Hash: {hash_result}")
+                            print(f" [Core {start_nonce:02d} | {elapsed:>8.2f}s] \U0001f4c9 {pct_str:>7}% Improvement! | Hash: {hash_result}")
             
             nonce += step
 
@@ -170,6 +178,8 @@ if __name__ == "__main__":
 1. **Shared State (`mp.Value`)**: Since each core has its own isolated memory space, typical variables aren't shared. We use `mp.Value` memory locks to track the global `shared_best_zeros` and `shared_best_val`, allowing threads to continuously chase the absolute lowest hash.
 2. **Infinite Runtime (`while True`)**: The main process blocks on `for p in processes: p.join()` while the individual workers loop endlessly. It relies on a `try / except KeyboardInterrupt` to gracefully cancel the operation when `Ctrl+C` is pressed.
 3. **Local Caching for Speed**: To maintain high throughput and avoid excessive lock contention, each core checks the mathematical `< 0.99` threshold on its local cached copy *first*. Only if it succeeds does it fetch the costly `get_lock()` to verify if it is a true global improvement.
+4. **Periodic Target Synchronization**: To prevent cores from inefficiently chasing outdated targets for too long, the local caches are synchronized with the global best every 50,000 iterations.
+5. **Randomized Salts**: Each worker process generates a random 4-byte hex salt to mix into its assigned base string. This completely eliminates the microscopic chance that two cores accidentally compute the same hash due to overlapping string concatenations.
 
 ### Sample Output
 When you run the script, it will continue to output new findings until interrupted:
@@ -182,30 +192,32 @@ Logging mode selected: 1% (Pass '16x' or '1%' as argument to change)
 Mining indefinitely... Press Ctrl+C to stop.
 
 ------------------------------------------------------------
- [Core 00 | 000.13s] 📉 1% Improvement! | Hash: 9fa5fe0c87706be9d7a7e3e2649d336e14eea5b703f04d272c009e7b51990bf8
- [Core 00 | 000.13s] 📉 1% Improvement! | Hash: 23a148f1512a1e7221d92db32b6e8f5267e38689c38ae164181cfa359a3bc8e4
- [Core 00 | 000.13s] 📉 1% Improvement! | Hash: 09222c810be99f89e2e7c1aa7c5600182a037758f97a7556a35e7559d6c4e916
- [Core 00 | 000.13s] 📉 1% Improvement! | Hash: 07a947b62b0570d8d087fb8432aef379797cc8e07061c0a2598ac1a6fac5dcb5
- [Core 00 | 000.13s] 📉 1% Improvement! | Hash: 0535c9ed92f607b33f136780dddb6e7d1b155a5fdb03921742f838afd87e30be
- [Core 00 | 000.13s] 📉 1% Improvement! | Hash: 00608a854b251e2b19aa6d9b3273618a5e49b7711241ec47cfaadf7dc0b9e0ba
- [Core 01 | 000.13s] 📉 1% Improvement! | Hash: 001428f2fb657f89f2122ab2b7aa546588a6b262d3a2df51f3703c5eff6638fb
- [Core 01 | 000.13s] 📉 1% Improvement! | Hash: 0006da180b134e8a9248a231d1271bdf34f8ab9fabe34bc3a3399b28986f1399
- [Core 01 | 000.14s] 📉 1% Improvement! | Hash: 00067ef0abe68da15586b3a47d9823db777713db32bececa1729ba48bb8f910c
- [Core 01 | 000.14s] 📉 1% Improvement! | Hash: 000439537bc6d4be4fae97428d43fe4fa5e685e6c632542caffc7fc40bf90837
- [Core 02 | 000.15s] 📉 1% Improvement! | Hash: 000055d2aed2376f959c0468721915b100b47948c0bcd93efe34f8b2fc079287
- [Core 03 | 000.15s] 📉 1% Improvement! | Hash: 00002461e4a3dcd7cf3ab2d185fcf1fc9232fc712eefaf2c62b8f420e8284ced
- [Core 05 | 000.21s] 📉 1% Improvement! | Hash: 000018e806ce3cee449f6fc0a0f02708646efdebef4284604147ce533f443e58
- [Core 00 | 000.29s] 📉 1% Improvement! | Hash: 00000ab96ef29be2104d64a765fe53ba2af67aece6fef6e363a44dc0436cf39e
- [Core 02 | 000.42s] 📉 1% Improvement! | Hash: 00000a1b3b9662ca5f2461da649305a70318ea5b7bf8e4460d03df1ffdfdda2e
- [Core 03 | 000.73s] 📉 1% Improvement! | Hash: 00000916584e7e12a1dbd848d3bd00dcee9497aa2fb95cd80bc794a28182a7f0
- [Core 05 | 001.09s] 📉 1% Improvement! | Hash: 000004a547252cb6335a216eb068cce6b49bdaebb724acc555bc2db284935551
- [Core 02 | 001.16s] 📉 1% Improvement! | Hash: 000000d87d1bbac7e3f832a42a3854d4ee55f459401f63c85fcf8b652e9e8f88
- [Core 09 | 006.18s] 📉 1% Improvement! | Hash: 000000c13fb53de0d57646812075e147351f29b32f83a5185ce266267ad8f685
- [Core 08 | 006.67s] 📉 1% Improvement! | Hash: 0000007a05761cc59cedd225f69bc070de42705ffcb93c049af71c26ac81d28d
- [Core 10 | 007.89s] 📉 1% Improvement! | Hash: 0000000859bafc5c25544d7b75495a26ec4846702f9146793689745b17f91340
- [Core 04 | 070.70s] 📉 1% Improvement! | Hash: 0000000717f1764f7aaace41f438f74caeeafb304bc178da603383c5f9d85250
- [Core 06 | 100.39s] 📉 1% Improvement! | Hash: 0000000403bccf9ca99bd80fcd1a0c8d7ee1a0b969f5e0e64d5832a073b4c17b
- [Core 06 | 120.59s] 📉 1% Improvement! | Hash: 00000001080f435982aa037ae9b0a03e33e2217c92429af832f2f204a9deb682
+ [Core 00 |     0.14s] 📉 100.000% Improvement! | Hash: 2ac1c88ad27f2a386e76516b5f78532fa14a9db0a1e2f15f24e9be980e60e0d3
+ [Core 00 |     0.14s] 📉   9.437% Improvement! | Hash: 26b8d5964145241848e6e33d33751c71acc7b6c749bce778fd0f3f37add076ab
+ [Core 00 |     0.14s] 📉  45.260% Improvement! | Hash: 153251a9742d741fb3844b7b77d8d4772c53ee9b0fd341244014e387c4551888
+ [Core 00 |     0.14s] 📉  13.521% Improvement! | Hash: 1254a06ad4756375a1f4087f61335a13b01c12c95e6c3bf61eb9c19d4be9635b
+ [Core 00 |     0.14s] 📉  70.744% Improvement! | Hash: 055ce4d5f2e0bce6c933e1d1e9646c8588527c9f39bfc4c7f400a95cbfe09bd0
+ [Core 00 |     0.14s] 📉  44.475% Improvement! | Hash: 02fa4e15dd27c44a9f68be85355adbda5406cdec501e5cb2e46ef4a9215f6e18
+ [Core 00 |     0.14s] 📉  17.598% Improvement! | Hash: 0274271569127135cb5ea5f4154fda91342961fb0eeedae8041436541ec14e13
+ [Core 00 |     0.14s] 📉  53.698% Improvement! | Hash: 0122d9634e899fd70efe7f77cb343ae09bf8f0512336d5e82b26b12e647c9ab5
+ [Core 00 |     0.14s] 📉  94.234% Improvement! | Hash: 0010c54315ac8d984d667a9593357ba3ecc548dffef87885b80e4ec322b54e57
+ [Core 00 |     0.14s] 📉  26.363% Improvement! | Hash: 000c59687d5d47f2f812c30c8f1c355784bea7eb76c3b764d72a1ebac5de11c1
+ [Core 00 |     0.14s] 📉   3.772% Improvement! | Hash: 000be22a1db8cdcfd003f2118a83aa16fb0b7194d92b73cc90f1ae8cdf09e8da
+ [Core 02 |     0.14s] 📉  17.315% Improvement! | Hash: 0009d367b0f7b102e095d1cc16c789977f0715884d1b7ba02a70dad0ace6578b
+ [Core 04 |     0.15s] 📉  85.914% Improvement! | Hash: 00016252ddf592fbfd5b5fff95995755a2a3aa366ba076faca03c533f88a203d
+ [Core 02 |     0.15s] 📉   2.213% Improvement! | Hash: 00015a7b594baf68d1a4c8019ed0a6f0d28b6bf87bc75d164950bfca173e952a
+ [Core 09 |     0.16s] 📉  15.485% Improvement! | Hash: 000124d48105e175e436cc999f9f1f42c557c602f56c4aebc0c206bc95fc8560
+ [Core 04 |     0.16s] 📉  65.002% Improvement! | Hash: 0000667c6dba22ccac760b5f98bdc78b4eded6dda3eebedaa65279487412dcee
+ [Core 03 |     0.17s] 📉  76.050% Improvement! | Hash: 0000188b85f21241abd6c9141cc5370d54fc04d17450b362a6901e6b80d0473d
+ [Core 10 |     0.22s] 📉  37.229% Improvement! | Hash: 00000f684201ff81f43bd32c40f03c07e0a44c2a654d583fbd0e143ecd56a026
+ [Core 02 |     0.22s] 📉  87.938% Improvement! | Hash: 000001dbc386de80b64046005e4f2c8e7587f5b7be6972c7ff0496c2c6e4930d
+ [Core 04 |     0.99s] 📉  27.367% Improvement! | Hash: 000001598fc2944c647a9041d03f4362bf1a806e6f8c23fe76f68a9ea649b60e
+ [Core 10 |     1.65s] 📉  41.186% Improvement! | Hash: 000000cb3d512c799c8db0d2d41eebb1caef388c4b5b5c64622a5e3364912efa
+ [Core 03 |     1.79s] 📉  50.663% Improvement! | Hash: 000000644578b104d96513b2ee60ceeee7bf791839ae12bcebd6ae8799d40be3
+ [Core 06 |     6.02s] 📉  15.144% Improvement! | Hash: 000000551636f895f245e3ba2a20e5cb5bfe31a6d8cb802a94b9ae35a3bc0c90
+ [Core 01 |     8.43s] 📉   7.789% Improvement! | Hash: 0000004e758331237fd6614cb7e1e8701a2425041bf2fb7346bf178158dd4df8
+ [Core 09 |     9.75s] 📉  54.585% Improvement! | Hash: 00000023a1dc8a47e2c315120fe7274bd5c57457832e9b7c1a032d34f68373bf
+ [Core 05 |    12.26s] 📉  98.179% Improvement! | Hash: 00000000a61d1c8a042885906e0d4ebd4bf0068c5dfc51bcaa6b3d90f522a70e
 
 \U0001f6d1 Mining interrupted by user. Shutting down worker cores...
 Shutdown complete.
