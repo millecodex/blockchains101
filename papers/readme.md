@@ -46,9 +46,16 @@
 * Lamport, L. 1998. *The part-time parliament*. ACM. [PDF](./pdfs/Lamport-PartTimeParliament-1998.pdf) | [DOI](https://doi.org/10.1145/279227.279229)
 * Pease, M., Shostak, R. & Lamport, L. 1980. *Reaching agreement in the presence of faults*. JACM. [PDF](./pdfs/Pease-ReachingAgreement-1980.pdf)
 
+## Lecture 5: Consensus Part II: Proof of Stake & Alternatives
+* Blocki, J. & Zhou, H.-S. 2016. *Designing Proof of Human-Work Puzzles for Cryptocurrency and Beyond*. Theory of Cryptography, Springer. [PDF](./pdfs/Blocki-ProofOfHumanWork-2016.pdf) | [DOI](https://doi.org/10.1007/978-3-662-53644-5_20)
+* Bouraga, S. 2021. *A taxonomy of blockchain consensus protocols: A survey and classification framework*. Expert Systems with Applications, 168, 114384. [DOI](https://doi.org/10.1016/j.eswa.2020.114384)
+* Buterin, V. 2014. *Slasher: A Punitive Proof-of-Stake Algorithm*. Ethereum Foundation Blog. [Link](https://blog.ethereum.org/2014/01/15/slasher-a-punitive-proof-of-stake-algorithm)
+* Buterin, V. & Griffith, V. 2017. *Casper the Friendly Finality Gadget*. [PDF](./pdfs/Buterin-Casper-2017.pdf) | [arXiv](https://arxiv.org/abs/1710.09437)
+* Kiayias, A., Russell, A., David, B. & Oliynykov, R. 2017. *Ouroboros: A Provably Secure Proof-of-Stake Blockchain Protocol*. CRYPTO 2017. [PDF](./pdfs/Kiayias-Ouroboros-2017.pdf) | [DOI](https://doi.org/10.1007/978-3-319-63688-7_12)
+* King, S. & Nadal, S. 2012. *PPCoin: Peer-to-Peer Crypto-Currency with Proof-of-Stake*. [PDF](./pdfs/King-Peercoin-2012.pdf)
+* Kwon, J. 2014. *Tendermint: Consensus without Mining*. [PDF](./pdfs/Kwon-Tendermint-2014.pdf)
+* Nijsse, J. & Litchfield, A. 2020. *A Taxonomy of Blockchain Consensus Methods*. Cryptography, 4(4), 32. [Link](https://www.mdpi.com/2410-387X/4/4/32) | [DOI](https://doi.org/10.3390/cryptography4040032)
+
 ## Other Papers
 * Al-Bassam, M. 2019. *LazyLedger*. [PDF](./pdfs/AlBassam-LazyLedger-2019.pdf)
-* Buterin, V. 2017. *Casper*. [PDF](./pdfs/Buterin-Casper-2017.pdf) | [DOI](https://doi.org/10.1109/bloc.2019.8751241)
-* King, S. & Nadal, S. 2012. *Peercoin*. [PDF](./pdfs/King-Peercoin-2012.pdf)
-* Kwon, J. 2014. *Tendermint*. [PDF](./pdfs/Kwon-Tendermint-2014.pdf)
 * Bonneau, J. et al. 2015. *SoK: Research Perspectives and Challenges for Bitcoin and Cryptocurrencies*. [PDF](./pdfs/Bonneau-SoKBitcoin-2015.pdf) | [DOI](https://doi.org/10.1109/sp.2015.14)
