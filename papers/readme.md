@@ -54,7 +54,7 @@
 * Kiayias, A., Russell, A., David, B. & Oliynykov, R. 2017. *Ouroboros: A Provably Secure Proof-of-Stake Blockchain Protocol*. CRYPTO 2017. [PDF](./pdfs/Kiayias-Ouroboros-2017.pdf) | [DOI](https://doi.org/10.1007/978-3-319-63688-7_12)
 * King, S. & Nadal, S. 2012. *PPCoin: Peer-to-Peer Crypto-Currency with Proof-of-Stake*. [PDF](./pdfs/King-Peercoin-2012.pdf)
 * Kwon, J. 2014. *Tendermint: Consensus without Mining*. [PDF](./pdfs/Kwon-Tendermint-2014.pdf)
-* Nijsse, J. & Litchfield, A. 2020. *A Taxonomy of Blockchain Consensus Methods*. Cryptography, 4(4), 32. [Link](https://www.mdpi.com/2410-387X/4/4/32) | [DOI](https://doi.org/10.3390/cryptography4040032)
+* Nijsse, J. & Litchfield, A. 2020. *A Taxonomy of Blockchain Consensus Methods*. Cryptography, 4(4), 32. [PDF](./pdfs/Nijsse-TaxonomyConsensus-2020.pdf) | [DOI](https://doi.org/10.3390/cryptography4040032)
 
 ## Other Papers
 * Al-Bassam, M. 2019. *LazyLedger*. [PDF](./pdfs/AlBassam-LazyLedger-2019.pdf)

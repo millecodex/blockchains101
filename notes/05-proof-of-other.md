@@ -192,5 +192,5 @@ Understanding consensus mechanisms in blockchain technology is crucial for build
 5. Kiayias, A., Russell, A., David, B. & Oliynykov, R. (2017). Ouroboros: A provably secure proof-of-stake blockchain protocol. In *Advances in Cryptology – CRYPTO 2017*. Springer. [PDF](../papers/pdfs/Kiayias-Ouroboros-2017.pdf). [DOI](https://doi.org/10.1007/978-3-319-63688-7_12).
 6. King, S. & Nadal, S. (2012). PPCoin: Peer-to-peer crypto-currency with proof-of-stake. *Self-published whitepaper*. [PDF](../papers/pdfs/King-Peercoin-2012.pdf).
 7. Kwon, J. (2014). Tendermint: Consensus without mining. *Draft v.0.6*. [PDF](../papers/pdfs/Kwon-Tendermint-2014.pdf).
-8. Nijsse, J. & Litchfield, A. (2020). A taxonomy of blockchain consensus methods. *Cryptography*, 4(4), 32. [Link](https://www.mdpi.com/2410-387X/4/4/32). [DOI](https://doi.org/10.3390/cryptography4040032).
+8. Nijsse, J. & Litchfield, A. (2020). A taxonomy of blockchain consensus methods. *Cryptography*, 4(4), 32. [PDF](../papers/pdfs/Nijsse-TaxonomyConsensus-2020.pdf). [DOI](https://doi.org/10.3390/cryptography4040032).
 
