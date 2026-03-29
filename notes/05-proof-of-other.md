@@ -24,7 +24,7 @@ Recall the state diagram from Lecture 3. A distributed computing system has node
 
 [^oss]: Governance in distributed open-source systems is another area of study. It is theoretically possible to change the rules of bitcoin by modifying the core client because anyone can fork the [repo](https://github.com/bitcoin/bitcoin) and make changes. Distributing the `new' version and having it gain acceptance is another matter.
 
-### ⏸️🕐 
+### ⏸️🕐
 Its worth a pause here to think about **How can you chose someone (a node) to make updates?**
 
 > <img width="800" alt="" src="https://github.com/millecodex/COMP842/assets/39792005/031d091a-5329-48f7-a9aa-4e37019d79e6">\
