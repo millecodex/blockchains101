@@ -4,7 +4,7 @@
 ## Contents
 - [Lecture 5: Consensus Part II: Proof of Stake \& Alternatives](#lecture-5-consensus-part-ii-proof-of-stake--alternatives)
   - [Contents](#contents)
-    - [⏸️🕐](#️)
+    - [Question: ⏸️🕐](#question-️)
   - [Proof of Stake](#proof-of-stake)
   - [Digital Scarcity](#digital-scarcity)
   - [PoX](#pox)
@@ -15,7 +15,6 @@
 - [Exercises](#exercises)
 - [Readings](#readings)
   - [Supplementary](#supplementary)
-- [Resources](#resources)
 - [Next Lecture](#next-lecture)
 - [Video Lecture](#video-lecture)
 - [References](#references)
@@ -24,7 +23,7 @@ Recall the state diagram from Lecture 3. A distributed computing system has node
 
 [^oss]: Governance in distributed open-source systems is another area of study. It is theoretically possible to change the rules of bitcoin by modifying the core client because anyone can fork the [repo](https://github.com/bitcoin/bitcoin) and make changes. Distributing the `new' version and having it gain acceptance is another matter.
 
-### ⏸️🕐
+### Question: ⏸️🕐
 Its worth a pause here to think about **How can you chose someone (a node) to make updates?**
 
 > <img width="800" alt="" src="https://github.com/millecodex/COMP842/assets/39792005/031d091a-5329-48f7-a9aa-4e37019d79e6">\
@@ -173,8 +172,6 @@ Understanding consensus mechanisms in blockchain technology is crucial for build
 * **Ethereum.org** — [Proof of Stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/): Deep dive into how Ethereum's PoS works, including validators, attestations, and slashing.
 * **Ethereum.org** — [Staking on Ethereum](https://ethereum.org/en/staking/): Practical guide to participating in Ethereum's PoS network as a solo validator, via staking pools, or liquid staking.
 * **Coinbase Learn** — [Proof of Work (PoW) vs. Proof of Stake (PoS): what's the difference?](https://www.coinbase.com/learn/crypto-basics/proof-of-work-pow-vs-proof-of-stake-pos-what-is-the-difference): Accessible, non-technical explainer on consensus — good for newcomers.
-
-# Resources
 * Watch Lera Nikolaenko (a16z crypto research partner) give you the deep dive into Proof of Stake blockchains ([Youtube](https://www.youtube.com/watch?v=mZ-Ya7NRDxM))
 
 # Next Lecture
