@@ -56,6 +56,13 @@
 * Kwon, J. 2014. *Tendermint: Consensus without Mining*. [PDF](./pdfs/Kwon-Tendermint-2014.pdf)
 * Nijsse, J. & Litchfield, A. 2020. *A Taxonomy of Blockchain Consensus Methods*. Cryptography, 4(4), 32. [PDF](./pdfs/Nijsse-TaxonomyConsensus-2020.pdf) | [DOI](https://doi.org/10.3390/cryptography4040032)
 
+## Lecture 6: Ethereum
+* Antonopoulos, A. M. & Wood, G. 2018. *Mastering Ethereum: Building Smart Contracts and DApps*. O'Reilly Media. (Book — free online: [GitHub](https://github.com/ethereumbook/ethereumbook))
+* Buterin, V. 2014. *Ethereum: A Next-Generation Smart Contract and Decentralised Application Platform*. [PDF](./pdfs/Buterin-Ethereum-2014.pdf) (see also Lecture 1)
+* Buterin, V. et al. 2020. *Combining GHOST and Casper*. arXiv:2003.03052. [PDF](./pdfs/Buterin-CombiningGHOSTCasper-2020.pdf) | [arXiv](https://arxiv.org/abs/2003.03052)
+* Humiston, I. 2018. *Attacks and Incidents*. In Ethereum Smart Contract Development (pp. 81–94). Apress. <!-- TODO: PDF not downloadable — Apress book chapter behind paywall -->
+* Wood, G. 2014. *Ethereum: A Secure Decentralised Generalised Transaction Ledger* (Yellow Paper). [PDF](./pdfs/Wood-EthereumYellowPaper-2014.pdf) (see also Lecture 1)
+
 ## Other Papers
 * Al-Bassam, M. 2019. *LazyLedger*. [PDF](./pdfs/AlBassam-LazyLedger-2019.pdf)
 * Bonneau, J. et al. 2015. *SoK: Research Perspectives and Challenges for Bitcoin and Cryptocurrencies*. [PDF](./pdfs/Bonneau-SoKBitcoin-2015.pdf) | [DOI](https://doi.org/10.1109/sp.2015.14)
