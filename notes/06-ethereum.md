@@ -264,9 +264,9 @@ I'll highlight a few things:
 ### So what are people doing with this decentralised state machine?
 Decentralised applications, or *dapps* just refer to smart contracts that are executed on a blockchain. When combined with a frontend these dapps can appear just like any other web application with the key difference being that that code and/or user data and token transfer information is stored on the blockchain. 
 
-The most used dapps on Ethereum in April 2026 ranked by Unique Active Wallets (UAW, 30-day):
+The most used dApps on Ethereum in April 2026 ranked by Unique Active Wallets (UAW, 30-day):
 
-| Rank | App             | Category               | UAW (k/30 days) |
+| Rank | dApp            | Category               | UAW (k/30 days) |
 | ---: | :-------------- | :--------------------- | --------------: |
 |    1 | Uniswap V2      | Decentralised Exchange |           129.4 |
 |    2 | OpenSea         | NFT Marketplace        |           123.9 |
@@ -281,7 +281,7 @@ The most used dapps on Ethereum in April 2026 ranked by Unique Active Wallets (U
 
 Now ranking by total value locked (TVL)
 
-| Rank | Dapp               | Category         | TVL ($B) |
+| Rank | dApp               | Category         | TVL ($B) |
 | ---: | :----------------- | :--------------- | -------: |
 |    1 | Aave               | Lending          |     19.6 |
 |    2 | Lido               | Liquid Staking   |     19.0 |
