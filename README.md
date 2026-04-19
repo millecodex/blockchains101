@@ -16,20 +16,20 @@ Blockchain and Cryptocurency Technology intends to introduce you to the technolo
 Students are expected to **create**, and as such there is a large emphasis on the project which is wide-ranging and open-ended. You are expected to show what you've done at the end of semester, this is via mixed methods of presentation/ video/ demonstration/ discussion/ and written reporting. To get credit, You 👏 Must 👏 SHOW 👏 What 👏 You've 👏 Done. Assignment structure and details are on [Canvas](https://rmit.instructure.com/courses/168581/assignments).
 
 ## Lecture Topics - Notes updated on the fly 🏃
-| Week | Topic                                                               | Tutorial                 |
-| :--- | :------------------------------------------------------------------ | :----------------------- |
-| 01   | [Money & Bitcoin](notes/01-money-bitcoin.md)                        | [T01](tutorials/t01.md)  |
-| 02   | [Cryptographic Foundations](notes/02-cryptography.md)               | [T02](tutorials/t02.md)  |
-| 03   | [Anatomy of a Block and Transaction Flow](notes/03-block.md)        | [T03](tutorials/t03.md)  |
-| 04   | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md)   | [T04](tutorials/t04.md)  |
-| 05   | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | ⏲️[T05](tutorials/t05.md) |
-| 06   | [Smart Contracts and Ethereum](notes/06-ethereum.md)                | ⏲️                        |
-| 07   | Personal Development Week - No Lectures or Tutorials                | -                        |
-| 08   | [Decentralisation & DeFi](notes/08-decentral.md) - Under 🚧          | ⏲️                        |
-| 09   | [Scaling](notes/09-scaling.md)                                      | ⏲️                        |
-| 10   | [Privacy](notes/10-privacy.md)                                      | ⏲️                        |
-| 11   | [Security](notes/11-security.md)                                    | ⏲️                        |
-| 12   | [Money Revisited & Future Trends](notes/12-moneyv2.md) - Under 🚧    | ⏲️                        |
+| Week | Topic                                                               | Tutorial                       |
+| :--- | :------------------------------------------------------------------ | :----------------------------- |
+| 01   | [Money & Bitcoin](notes/01-money-bitcoin.md)                        | [T01](tutorials/t01.md)        |
+| 02   | [Cryptographic Foundations](notes/02-cryptography.md)               | [T02](tutorials/t02.md)        |
+| 03   | [Anatomy of a Block and Transaction Flow](notes/03-block.md)        | [T03](tutorials/t03.md)        |
+| 04   | [Consensus Mechanisms - Proof of Work](notes/04-proof-of-work.md)   | [T04](tutorials/t04.md)        |
+| 05   | [Consensus Mechanisms - Proof of Other](notes/05-proof-of-other.md) | [T05](tutorials/t05.md)        |
+| 06   | [Smart Contracts and Ethereum](notes/06-ethereum.md)                | ⏲️[T06](tutorials/t06.md)       |
+| 07   | Personal Development Week - No Lectures or Tutorials                | -                              |
+| 08   | [Decentralisation & DeFi](notes/08-decentral.md)                    | ⏲️[T08](tutorials/t08.md)       |
+| 09   | [Scaling](notes/09-scaling.md)                                      | ⏲️                              |
+| 10   | [Guest Lecture 1]()                                                 | [Privacy](notes/10-privacy.md) |
+| 11   | [Security](notes/11-security.md)                                    | ⏲️                              |
+| 12   | [Money Revisited & Future Trends](notes/12-moneyv2.md) - Under 🚧    | ⏲️                              |
 
 ---
 
