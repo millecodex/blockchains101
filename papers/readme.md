@@ -65,7 +65,8 @@
 
 ## Lecture 8: Decentralisation & DeFi
 * Buterin, V. (2017). *The Meaning of Decentralization*. Medium. [Link](https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274)
-* Eskandari, S. et al. 2020. *A First Look into DeFi Oracles*. arXiv:2005.04377. [PDF](./pdfs/Eskandari-DeFiOracles-2020.pdf) | [arXiv](https://arxiv.org/abs/2005.04377)
+* Eskandari, S. et al. 2020. *A First Look into DeFi Oracles*. arXiv:2005.04377. [PDF](./pdfs/Eskandari-DeFiOracles-2020.pdf) | [arXiv](https://arxiv.org/abs/2005.04377) *(superseded — see Zhou et al. 2023)*
+* Zhou, L. et al. 2023. *SoK: Decentralized Finance (DeFi) Attacks*. IEEE Symposium on Security and Privacy (S&P). [PDF](./pdfs/2208.13035v3.pdf) | [arXiv:2208.13035](https://arxiv.org/abs/2208.13035)
 * Halaburda, H. & Bakos, Y. 2025. *The Hidden Danger of Re-centralization in Blockchain Platforms*. Brookings Institution. [Link](https://www.brookings.edu/articles/the-hidden-danger-of-re-centralization-in-blockchain-platforms/)
 * Harvey, C. R., Ramachandran, A. & Santoro, J. 2021. *DeFi and the Future of Finance*. Wiley. (Book)
 * "The Blockchain Trilemma: A Formal Proof." 2024. *Applied Sciences*, 15(1), 19. [Link](https://www.mdpi.com/2076-3417/15/1/19)

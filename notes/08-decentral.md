@@ -10,7 +10,11 @@
   - [Mining Concentration and 51% Attacks](#mining-concentration-and-51-attacks)
   - [The Re-centralisation Problem](#the-re-centralisation-problem)
 - [Decentralised Finance (DeFi)](#decentralised-finance-defi)
-  - [Automated Market Makers](#automated-market-makers)
+  - [The Asset Landscape](#the-asset-landscape)
+  - [Stablecoins](#stablecoins)
+  - [Decentralised Exchanges (DEXs)](#decentralised-exchanges-dexs)
+    - [Pools](#pools)
+    - [Automated Market Makers (AMMs)](#automated-market-makers-amms)
     - [The Constant Product Formula](#the-constant-product-formula)
     - [Liquidity Providers and Impermanent Loss](#liquidity-providers-and-impermanent-loss)
     - [DEX Landscape](#dex-landscape)
@@ -18,12 +22,9 @@
     - [Overcollateralisation](#overcollateralisation)
     - [Liquidation](#liquidation)
     - [Flash Loans](#flash-loans)
-    - [Key Protocols](#key-protocols)
-  - [Stablecoins](#stablecoins)
-  - [Yield Farming and Liquidity Mining](#yield-farming-and-liquidity-mining)
   - [Governance Tokens and DAOs](#governance-tokens-and-daos)
+    - [Governance Attacks](#governance-attacks)
 - [Oracles: Bridging On-Chain and Off-Chain Data](#oracles-bridging-on-chain-and-off-chain-data)
-  - [Centralised vs. Decentralised Oracles](#centralised-vs-decentralised-oracles)
   - [Oracle Attack Vectors](#oracle-attack-vectors)
 - [Risks and Challenges](#risks-and-challenges)
   - [Smart Contract Vulnerabilities](#smart-contract-vulnerabilities)
@@ -110,7 +111,7 @@ A rational attacker would hesitate, though: a successful 51% attack would probab
 
 
 ## The Re-centralisation Problem
-Here is where the blockchain story gets genuinely complicated: even when systems start genuinely decentralised, market forces push them back toward centralisation.
+Recentralisation is an interesting social phenomena: even when systems start decentralised, market forces push them back toward centralisation.
 
 Tim O'Reilly observed that blockchain "turned out to be the most rapid recentralization of a decentralized technology that I've seen in my lifetime." Economists at the Bank for International Settlements have described a "decentralisation illusion" — apparent decentralisation masking an inescapable need for centralised governance, and a tendency for consensus mechanisms to concentrate power.[^BIS]
 
@@ -123,12 +124,14 @@ The mechanisms are structural:
 - **Liquid staking concentration:** Lido Finance controls ~30% of all staked ETH. If Lido's operators acted maliciously in concert, they would be the largest single validator bloc on Ethereum.
 - **DAO governance in practice:** Research has found that in protocols like Compound, eight addresses control approximately 50% of voting power.[^DAO] Voting rights in decentralised autonomous organisations tend toward concentration faster than in traditional financial markets.
 
-[^DAO]: "Governance of Decentralized Autonomous Organizations" (2024). arXiv:2407.10945. [Link](https://arxiv.org/html/2407.10945v1)
+[^DAO]: "Governance of Decentralized Autonomous Organizations: Voter characteristics, engagement and power concentration" (2024). arXiv:2407.10945. [Link](https://arxiv.org/html/2407.10945v1)
 
-None of this means blockchain decentralisation is impossible or fraudulent — it means it's a moving target that requires active work to maintain. The DeFi governance section later in this lecture will explore what that looks like in practice.
+This means blockchain decentralisation is a moving target that requires active work to maintain. The DeFi governance section later in this lecture will explore what that looks like in practice.
 
 
 # Decentralised Finance (DeFi)
+Why DeFi at all? In one word: trust. Or, ironically, trustlessness. For the same reason Bitcoin works without a central party — you can transact with a perfect stranger in a foreign country by trusting the protocol, not the person — the cascade of financial products that can be built on digital money is an ideal fit for blockchains. Anything you can do at a bank, an investment bank, a hedge fund, or a stock exchange can be built in code and run on a blockchain. More practical reasons to be interested include higher yields, lower fees, transparency, easier access to foreign markets, and more fine-grained programmable control.
+
 Decentralised Finance — DeFi — refers to financial services built on public blockchains (primarily Ethereum) using smart contracts, without relying on traditional intermediaries like banks, brokers, or clearing houses.[^Schar2021]
 
 [^Schar2021]: Schär, F. (2021). Decentralized Finance: On Blockchain- and Smart Contract-Based Financial Markets. *Federal Reserve Bank of St. Louis Review*, 103(2), 153–174. [PDF](../papers/pdfs/Schar-DeFi-2021.pdf)
@@ -140,18 +143,71 @@ The key properties that distinguish DeFi from traditional finance:
 - **Composable:** Protocols can call other protocols. A single transaction can borrow from Aave, swap on Uniswap, deposit into a yield vault, and return the loan — all atomically. This has been called "money legos."
 - **Transparent:** All code and all transactions are publicly visible on-chain. Anyone can audit the smart contract logic and verify balances in real time.
 
-**Total Value Locked (TVL)** is the primary metric used to measure the size of DeFi. It is the total USD value of assets deposited into DeFi smart contracts — think of it as "how much money has been entrusted to these protocols." TVL is useful but imperfect: it's denominated in USD, so it can fall simply because crypto prices fall even if no assets were actually withdrawn. DeFi TVL peaked at over $180B in late 2021, collapsed to under $40B during the 2022 bear market, and was around $50B in mid-2024.
+DeFi replicates most traditional financial services: trading, lending, borrowing, insurance, derivatives, asset management. The question is not whether these services can be built on-chain — they clearly can — but whether the benefits (permissionless, composable, transparent) outweigh the risks (smart contract bugs, oracle manipulation, regulatory uncertainty, no deposit insurance).
 
-DeFi replicates most traditional financial services: trading, lending, borrowing, insurance, derivatives, asset management. The question isn't whether these services can be built on-chain — they clearly can — but whether the benefits (permissionless, composable, transparent) outweigh the risks (smart contract bugs, oracle manipulation, regulatory uncertainty, no deposit insurance). That's genuinely contested, and the honest answer depends on what you're trying to do.
+**Total Value Locked (TVL)** is the primary metric used to measure the size of DeFi — the total USD value of assets deposited into DeFi smart contracts. TVL is useful but imperfect: it is denominated in USD, so it can fall simply because crypto prices fall even if no assets were actually withdrawn. DeFi TVL peaked at over $180B in late 2021, collapsed to under $40B during the 2022 bear market, and was around $50B in mid-2024.
 
-## Automated Market Makers
+## The Asset Landscape
+> <img width="800" alt="image" src="https://github.com/millecodex/COMP842/assets/39792005/335a3ecd-849b-4af7-bae3-8d91dddc3407">\
+> Figure: The asset landscape. Assets can be digital, real, or crossover with both fungible and non-fungible traits.
 
-Traditional financial exchanges use an **order book**: buyers post bids ("I'll pay $X for Y shares"), sellers post asks ("I'll sell Y shares for $Z"), and the exchange matches them. This works well when there are enough buyers and sellers to create liquid markets, but thin markets suffer from wide bid-ask spreads and low volume.
+DeFi lives largely in the fungible-digital box — although stablecoins are also considered DeFi, as they only became possible once blockchain technology made them so.
 
-DeFi introduced a different model: the **Automated Market Maker (AMM)**. Instead of matching individual buyers and sellers, an AMM uses a *liquidity pool* — a smart contract holding reserves of two tokens — and a mathematical formula to determine prices automatically.
+## Stablecoins
+Stablecoins solve a fundamental problem: cryptocurrency prices are volatile, but most financial applications require stability. The primary advantage of a fiat currency on a blockchain is mapping value from the traditional world to the crypto-digital world without exposure to token price volatility. I can exchange $1 for 1 USD-Coin (`USDC`) and be assured that 1:1 mapping will hold. For business operations, valuations, and projections this is crucial. Secondary advantages come from the benefits of a crypto-native platform: low fees, fast settlement, auditability, programmability, and censorship resistance.
+
+It is hard to ignore the growth of stablecoins. In 2021 the total value of stablecoins rose from ~$28B to $150B USD, today its about double at $300B. DeFi has been largely responsible for this demand as stablecoins are useful for liquidity provision, yield farming, lending/borrowing, and short-term settlement.
+
+> <img width="1952" height="584" alt="image" src="https://github.com/user-attachments/assets/d5b96da0-049e-41fd-9c3f-d2292e6e3361" />
+> Figure: Total stablecoin supply 2018–-2026. Growth was largely driven by DeFi demand. Source: [TheBlock](https://www.theblockcrypto.com/data/decentralized-finance/stablecoins).
+
+There are three main mechanisms for maintaining a peg:
+
+| Type                      | Examples                    | How Peg Is Maintained                              | Primary Risk                          |
+| :------------------------ | :-------------------------- | :------------------------------------------------- | :------------------------------------ |
+| **Fiat-backed**           | USDC, USDT                  | Issuer holds $1 in a bank for every token          | Counterparty risk; regulatory seizure |
+| **Crypto-collateralised** | DAI                         | Smart contract holds >$1 of crypto for every token | Volatility; liquidation cascades      |
+| **Algorithmic**           | TerraUSD *(collapsed 2022)* | Protocol mechanism; no external collateral         | Death spiral                          |
+
+Here is a partial listing of stablecoins, the currency they are pegged to, the collateral backing the peg, and the chains they operate on:
+
+| Stablecoin          | Currency Peg | Backing                                                                                                                | Blockchains                                                      |
+| :------------------ | :----------- | :--------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
+| `USDT`              | USD          | [mix of assets](https://www.bloombergquint.com/business/tether-gives-more-details-on-assets-backing-crypto-stablecoin) | Ethereum, Algorand, Tron, BSC, Solana, Fantom, etc.              |
+| `USDC`              | USD          | USD                                                                                                                    | Bitcoin (Liquid), Ethereum, Algorand, BSC, Solana, Stellar, etc. |
+| `AUDT`              | AUD          | AUD                                                                                                                    | Ethereum                                                         |
+| `NZDS`              | NZD          | NZD                                                                                                                    | Ethereum                                                         |
+| `XSGD`              | SGD          | SGD                                                                                                                    | Ethereum, Zilliqa                                                |
+| `EURS`              | EUR          | EUR                                                                                                                    | Ethereum, Polygon, Algorand                                      |
+| `DAI`               | USD          | crypto collateral                                                                                                      | Ethereum, Polygon, BSC, Fantom, Gnosis                           |
+| `PAXG` — Paxos Gold | 1 oz of gold | physical gold                                                                                                          | Ethereum                                                         |
+
+Fiat-backed stablecoins are the most widely used. USDC (issued by Circle) publishes monthly reserve attestations and is considered the most transparent. USDT (Tether) is the largest by volume but has historically been opaque about reserve composition.
+
+DAI is crypto-collateralised and genuinely non-custodial: you deposit ETH into a MakerDAO vault, lock at least $1.50 of collateral per $1 of DAI minted, and the protocol liquidates your position automatically if collateral falls too far. This decentralisation has costs — DAI is vulnerable to rapid market crashes that cause collateral shortfalls before liquidations can clear.
+
+> **See Appendix** — The Terra/Luna collapse (May 2022) is a detailed case study in algorithmic stablecoin failure and death spirals. [Jump to case study ↓](#appendix-case-study---the-terraluna-collapse-may-2022)
+
+## Decentralised Exchanges (DEXs)
+Most crypto (and all stock) exchanges are centralised and use an **order book** to match trades — the central limit order book (CLOB) model. This works well for a corporate structure like the NZX that can centrally manage events, but it doesn't scale to a blockchain: all bids and asks would need to be written to the chain, and the latency on price feed updates (especially during liquidations) would be unacceptable.
+
+The decentralised way to run an exchange requires three things: a **swap** method for users to exchange assets, a **pool** of each of the assets to draw from, and a method to determine and set the price — an **automated market maker**. A swap is a direct exchange between two assets at one time, e.g. `ETH ↔ USDT`, although protocols can route trades through multiple hops to find the best price.
+
+### Pools
+The assets are drawn from existing pools of *same asset pairings*, e.g. `ETH-USDT` or `DAI-USDC`. There is no broker behind the scenes — if you want to swap DAI for ETH you need a pool for that specific pairing.
+
+This creates a bootstrapping problem: you need a pool before users can swap, but why would someone deposit assets to create a pool? They are incentivised by the protocol — paid by earning a share of transaction fees, or extra tokens, or both. Ideally this is self-reinforcing: if fees are profitable, people add liquidity, which attracts users, which generates more fees.
+
+> <p align="center"><img width="800" alt="Uniswap pool schematic" src="https://user-images.githubusercontent.com/39792005/149413404-3bc2ea73-43a7-4aff-bb23-cefdc785be14.PNG"></p>
+>
+> Figure: Creating a pool (from the [Uniswap docs](https://docs.uniswap.org/protocol/V2/concepts/core-concerns/pools)) — the Deposit function takes 10 of Token A and 1 of Token B in a 10:1 ratio. The provider receives LP share tokens (`A-B-LP`). On the right, a trader accesses the reserve pool to swap A for B.
+
+To create a pool, deposit two assets into the protocol's smart contract in equivalent values. You are issued an **LP (liquidity provider) token** representing the combined assets — e.g. `USDC-ETH-LP-v2` — which is your receipt. You must hold this token to withdraw liquidity and claim rewards. Because you hold a single combined token, you are exposed to second-degree market effects if the ratio of the two assets changes — more on this under *impermanent loss* below.
+
+### Automated Market Makers (AMMs)
+The third piece is the automated market maker: it algorithmically ensures every bid can be matched with an ask, making a market for any token pairing. With a large enough pool the price remains stable and will match the wider market. However, if the pool runs thin it becomes difficult to place large orders without significant price movement — **slippage**.
 
 ### The Constant Product Formula
-
 Uniswap, the most widely-used AMM, uses the **constant product formula**:
 
 > **x × y = k**
@@ -172,7 +228,6 @@ Now suppose you want to buy 1 ETH. You're removing 1 ETH from the pool, leaving 
 The pool currently holds 20,000 USDC, so you must deposit **2,222 USDC** to receive 1 ETH. The effective price you paid was **$2,222** per ETH, not $2,000. The extra $222 is **price impact** — the cost of your trade moving the pool price. Larger trades in shallower pools move the price more dramatically, which is why *slippage* matters in DeFi. Split a large trade into smaller pieces, and each piece causes less impact.
 
 ### Liquidity Providers and Impermanent Loss
-
 Who supplies the tokens to the pool in the first place? **Liquidity providers (LPs)** — users who deposit equal value of both tokens in return for LP tokens representing their ownership share of the pool. They earn a fraction of every trading fee (typically 0.3% on Uniswap v2) proportional to their share.
 
 But LPs face a risk unique to AMMs: **impermanent loss**. If the price of one token changes significantly, the AMM's constant rebalancing leaves the LP with less value than if they had simply held the tokens in a wallet.
@@ -190,19 +245,26 @@ If the LP had simply *held* the original 10 ETH and 20,000 USDC:
 The impermanent loss is $60,000 − $56,568 = **$3,432** (~5.7%). If trading fees earned during this period exceed the loss, providing liquidity is profitable. The loss is called "impermanent" because if prices return to the original ratio, the loss disappears entirely — but if the LP exits while prices are different, the loss is realised.
 
 ### DEX Landscape
+> <img width="2194" height="886" alt="image" src="https://github.com/user-attachments/assets/38b8a529-9c1a-4379-8746-327f51cdc73f" />\
+> Figure: [Uniswap](https://uniswap.org/) is the leader in decentralised exchange volume. Source: [TheBlock](https://www.theblockcrypto.com/data/decentralized-finance/dex-non-custodial).
 
-Uniswap dominates DEX volume, but several alternatives have distinct designs worth knowing:
+There are now four major versions of Uniswap. This version history illustrates a key constraint of decentralised development: once a smart contract is deployed it is effectively set — it cannot be edited or patched. A new version requires deploying an entirely new contract, which means liquidity must migrate and integrators must update their code.
 
-- **Curve Finance** — optimised for swaps between assets that *should* trade near parity (e.g., USDC/USDT, stETH/ETH). Uses a hybrid formula that dramatically reduces slippage between similarly-priced assets.
+- **v2** (2020) — the canonical AMM. Introduced direct ERC-20/ERC-20 token pairs and became the industry template for the `x × y = k` model. The [contract code](https://github.com/Uniswap/v2-core/blob/master/contracts/UniswapV2Pair.sol) is still live and used today.
+- **v3** (2021) — introduced *concentrated liquidity*. LPs can specify a price range in which they provide liquidity, dramatically increasing capital efficiency for those who correctly predict the trading range — but they earn nothing if the price moves outside it.
+- **v4** (January 2025) — introduced a *singleton contract* architecture and a system of **hooks**: custom smart contract logic that can be attached at key points in the swap lifecycle (before/after a swap, before/after LP positions change). This allows developers to build features like dynamic fees, on-chain limit orders, or custom oracle integrations directly into a pool, without forking the protocol. The singleton design also reduces gas costs for multi-hop swaps significantly.
+
+Other notable DEXs:
+- **Curve Finance** — optimised for swaps between assets that *should* trade near parity (e.g., USDC/USDT, stETH/ETH). Uses a hybrid bonding curve that dramatically reduces slippage between similarly-priced assets.
 - **Balancer** — allows pools with more than two assets and custom weight ratios (e.g., 80% ETH / 20% USDC), enabling passive index-like portfolios.
-- **Uniswap v3** — introduced *concentrated liquidity*, allowing LPs to provide liquidity only within a specified price range. An LP who correctly predicts ETH will trade between $1,800 and $2,200 earns fees as if their capital were many times larger — but earns nothing if the price leaves their range.
+
+The AMM model aligns well with a decentralised ethos — users can create their own trading pairs, self-custody their assets, and trade globally 24/7 with nothing but an internet connection. The main drawbacks are **slippage** (large orders in thin pools move the price significantly) and **impermanent loss** (the risk that price divergence between paired assets reduces LP returns below simply holding the tokens).
+
 
 ## Lending and Borrowing
-
 In traditional finance, lending requires a credit check, collateral, an application, and a human approval process. DeFi lending is **peer-to-pool**: you deposit assets into a smart contract that algorithmically determines interest rates based on supply and demand, and anyone who posts collateral can borrow instantly.
 
 ### Overcollateralisation
-
 Because DeFi is pseudonymous — the protocol doesn't know who you are — it can't rely on creditworthiness or legal recourse. Every loan must be **overcollateralised**: you deposit *more* value than you borrow.
 
 **Example.** Aave requires a typical collateralisation ratio of 150% for ETH/USDC positions. If ETH is at $2,000:
@@ -212,7 +274,6 @@ Because DeFi is pseudonymous — the protocol doesn't know who you are — it ca
 Why would anyone borrow $2,000 when they already have $3,000 of collateral? Legitimate reasons include: maintaining ETH exposure while wanting liquidity (and avoiding a taxable sale), using borrowed stablecoins to lever into a yield strategy, or swapping collateral types without selling.
 
 ### Liquidation
-
 If the value of your collateral falls below the protocol's required ratio, a **liquidation** occurs. Third parties called *liquidators* can repay your outstanding loan and receive your collateral at a discount — typically 5–10% — as their reward for keeping the protocol solvent.
 
 **Continuing the example.** Suppose ETH falls from $2,000 to $1,200:
@@ -223,50 +284,11 @@ If the value of your collateral falls below the protocol's required ratio, a **l
 A liquidator steps in, repays the $2,000 USDC, and receives the $1,800 of ETH plus a liquidation bonus paid by the protocol. The borrower loses their collateral position entirely. Liquidations execute in a single transaction, automatically, with no court order or negotiation required. This is one of the genuinely novel properties of DeFi — the enforcement mechanism is the code.
 
 ### Flash Loans
-
 A **flash loan** is a loan with no collateral requirement, subject to one condition: it must be borrowed and repaid within the *same transaction*. If repayment fails, the entire transaction reverts as if nothing happened, so the lender has zero default risk.
 
 Flash loans are a genuine DeFi primitive with no equivalent in traditional finance. Legitimate uses include arbitrage (borrow capital, trade across two DEXs where prices differ, repay the loan, pocket the spread — all atomically) and collateral swaps (replace one form of collateral with another without pausing your position). They have also been used as attack capital — see the Risks section.
 
-### Key Protocols
-
-- **Aave** — the largest lending protocol by TVL (~$19.6B, April 2026). Introduced flash loans and supports dozens of assets across multiple chains.
-- **Compound** — pioneered algorithmic interest rates and was the first protocol to distribute governance tokens (COMP) to users.
-- **Morpho** — a lending optimiser that routes deposits between Aave and Compound to continuously find the better rate.
-
-## Stablecoins
-
-Stablecoins solve a fundamental problem: cryptocurrency prices are volatile, but most financial applications require stability. A stablecoin is a token designed to maintain a fixed value, almost always pegged to $1 USD. There are three main mechanisms:
-
-| Type                      | Examples                    | How Peg Is Maintained                              | Primary Risk                          |
-| :------------------------ | :-------------------------- | :------------------------------------------------- | :------------------------------------ |
-| **Fiat-backed**           | USDC, USDT                  | Issuer holds $1 in a bank for every token          | Counterparty risk; regulatory seizure |
-| **Crypto-collateralised** | DAI                         | Smart contract holds >$1 of crypto for every token | Volatility; liquidation cascades      |
-| **Algorithmic**           | TerraUSD *(collapsed 2022)* | Protocol mechanism; no external collateral         | Death spiral                          |
-
-Fiat-backed stablecoins are the most widely used. USDC (issued by Circle) publishes monthly reserve attestations and is considered the most transparent. USDT (Tether) is the largest by volume but has historically been opaque about reserve composition.
-
-DAI is crypto-collateralised and genuinely non-custodial: you deposit ETH into a MakerDAO vault, lock at least $1.50 of collateral per $1 of DAI minted, and the protocol liquidates your position automatically if collateral falls too far. This decentralisation has costs — DAI is vulnerable to rapid market crashes that cause collateral shortfalls before liquidations can clear.
-
-> **See Appendix** — The Terra/Luna collapse (May 2022) is a detailed case study in algorithmic stablecoin failure and death spirals. [Jump to case study ↓](#the-terraluna-collapse-may-2022)
-
-## Yield Farming and Liquidity Mining
-
-When Compound Finance launched its COMP governance token in June 2020, it made a decision that defined an era: it distributed COMP tokens to anyone who borrowed or lent through the protocol, proportional to their activity. This was **liquidity mining** — using protocol-issued tokens to bootstrap liquidity and user adoption. The results were dramatic: billions of dollars poured into Compound within days as users chased COMP rewards.
-
-**Yield farming** is the broader strategy of actively moving assets between DeFi protocols to maximise return — typically stated as APY (Annual Percentage Yield). A farmer might:
-
-1. Deposit USDC into Aave at 5% interest, receiving aUSDC (an interest-bearing token)
-2. Use aUSDC as collateral to borrow more USDC
-3. Deposit that USDC into Compound to earn 4% + COMP governance tokens
-4. Supply Compound's cUSDC to a Curve pool to earn trading fees + CRV tokens
-
-Each step compounds the yield — but also compounds the risk. Every protocol hop adds smart contract risk, liquidation risk, and the risk that incentive token prices (COMP, AAVE, CRV) fall faster than they are earned.
-
-The economics of liquidity mining follow a predictable arc: high initial APYs attract capital, more capital dilutes yield per dollar, sophisticated capital moves on to the next protocol, and APYs normalise or the protocol fails. The early summers of DeFi (2020–2021) saw APYs in the thousands of percent — almost entirely from token inflation rather than real protocol revenue. Understanding this pattern is essential for evaluating DeFi opportunities honestly.
-
 ## Governance Tokens and DAOs
-
 Most major DeFi protocols are governed by a **Decentralised Autonomous Organisation (DAO)** — a structure where governance decisions are made through on-chain votes by holders of a governance token. Uniswap holders vote on fee structures. MakerDAO holders vote on collateral risk parameters for DAI. Compound holders vote on which assets can be listed.
 
 The appeal is clear: transparent, community-driven governance instead of opaque corporate decision-making. The reality is more complicated. **Token-weighted voting** means one token equals one vote — which sounds democratic, but tokens concentrate quickly. Founders and venture investors receive large allocations at launch. Wealthy participants accumulate tokens over time. Research on Compound found that eight addresses controlled approximately 50% of voting power — closer to plutocracy than democracy — and typical voter turnout in DAO proposals is below 5% of eligible tokens.[^DAOpower]
@@ -275,46 +297,40 @@ The appeal is clear: transparent, community-driven governance instead of opaque 
 
 **On-chain vs. off-chain governance** is another dimension. Some DAOs (including Uniswap) use off-chain signalling (via Snapshot) before executing decisions on-chain, reducing gas costs for votes. Research suggests on-chain voting correlates with higher capital raised — whether this reflects genuine governance quality or investor signalling remains an open question.
 
-
-
+### Governance Attacks
 **Governance attacks** are a real threat. In April 2023, a malicious governance proposal on a Tornado Cash DAO fork granted the attacker 1.2 million votes, giving them full control of the protocol — not through a smart contract exploit, but through the legitimate governance mechanism. This is a design failure, not a bug: if governance can be captured by a sufficiently large token position, then "decentralised governance" is only as secure as the cost of acquiring that position.
 
 ---
 
 # Oracles: Bridging On-Chain and Off-Chain Data
-
-We introduced oracles briefly in [Lecture 06](06-ethereum.md#oracles), noting that smart contracts cannot fetch external data. This section covers the oracle problem in the depth needed to understand DeFi.
-
-A lending protocol needs the current ETH price to decide whether a position should be liquidated. A synthetic asset needs to track a stock price. A parametric insurance contract needs weather data. All of these require a mechanism to bring *trusted* external data on-chain — that mechanism is an oracle.
+We introduced oracles briefly in [Lecture 06](06-ethereum.md#oracles), noting that smart contracts cannot fetch external data. For example, a lending protocol needs the current ETH price to decide whether a position should be liquidated; a synthetic asset needs to track a stock price; a parametric insurance contract needs weather data. All of these require a mechanism to bring *trusted* external up to date data on-chain.
 
 The **oracle problem** is: how do you bring real-world data on-chain without introducing a new point of trust or failure? If a single party controls the price feed, they can manipulate it — causing misdirected liquidations, incorrect settlements, or protocol insolvency.
 
-## Centralised vs. Decentralised Oracles
+> <p align="center"><img width="800" alt="oracles connect data to blockchains chainlink" src="https://user-images.githubusercontent.com/39792005/152075044-48db86bd-da23-4ad2-bfe0-19ddac7d5cf1.PNG"></p>
+> Figure: The oracle problem — blockchains can't natively communicate with real-world data feeds. Source: [Chainlink](https://chain.link/education/blockchain-oracles)
 
-A centralised oracle is a single trusted data provider that posts signed data on-chain. Simple, but creates a single point of failure.
+Centralising the solution is straightforward — the NASDAQ publishes stock quotes, Binance displays bid prices — and a **centralised oracle** follows the same model: a single trusted data provider posts signed data on-chain. Simple to implement, but it reintroduces a single point of failure and a single point of trust.
 
-**Chainlink** addresses this with a decentralised oracle network: multiple independent node operators each fetch price data from multiple sources, independently aggregate their answers, and post a signed median on-chain.[^chainlink] The network uses economic incentives — staked LINK collateral that can be slashed — to punish dishonest operators. As of 2025, Chainlink secures tens of billions of dollars in DeFi value.
+**Chainlink** addresses this with a decentralised oracle network: multiple independent node operators each fetch price data from multiple sources, independently aggregate their answers, and post a signed median on-chain.[^chainlink] The network uses economic incentives — staked LINK collateral that can be slashed — to punish dishonest operators. As of April 2026, Chainlink's Total Value Secured (TVS) exceeds **$100 billion** across DeFi and institutional integrations.
 
 [^chainlink]: Chainlink 2.0 whitepaper. [PDF](https://research.chain.link/whitepaper-v2.pdf)
 
+To avoid situations where a service is unavailable or a feed has been manipulated, protocols can be designed to use multiple oracles — for example, combining Uniswap and Chainlink data, applying a custom weighting function, and publishing the result on-chain.
+
 ## Oracle Attack Vectors
+Despite these protections, oracle manipulation remains a major DeFi attack vector.[^oracles] For example, **AMM-based oracle manipulation:** If a protocol uses the current spot price from a Uniswap pool as its price oracle, an attacker can use a flash loan to temporarily distort the pool price, trigger a protocol action (a favourable liquidation, or minting at an inflated price), and repay the flash loan — all in one transaction. The protocol sees a price that nobody actually traded at in equilibrium. **Time-Weighted Average Price (TWAP)** is the standard defence. Rather than using the current spot price, the protocol reads the average price over many preceding blocks. Sustaining a manipulated price across many blocks requires holding the distortion open, which is expensive and exposes the attacker to arbitrage. Uniswap v3's built-in TWAP oracle has become a widely used reference implementation.
 
-Despite these protections, oracle manipulation remains a major DeFi attack vector.[^oracles]
 
-[^oracles]: Eskandari, S. et al. (2020). A First Look into DeFi Oracles. [PDF](../papers/pdfs/Eskandari-DeFiOracles-2020.pdf) | [arXiv](https://arxiv.org/abs/2005.04377)
+[^oracles]: Zhou, L. et al. (2023). SoK: Decentralized Finance (DeFi) Attacks. *IEEE Symposium on Security and Privacy (S&P)*. [PDF](../papers/pdfs/2208.13035v3.pdf) | [arXiv:2208.13035](https://arxiv.org/abs/2208.13035)
 
-**AMM-based oracle manipulation:** If a protocol uses the current spot price from a Uniswap pool as its price oracle, an attacker can use a flash loan to temporarily distort the pool price, trigger a protocol action (a favourable liquidation, or minting at an inflated price), and repay the flash loan — all in one transaction. The protocol sees a price that nobody actually traded at in equilibrium.
-
-**Time-Weighted Average Price (TWAP)** is the standard defence. Rather than using the current spot price, the protocol reads the average price over many preceding blocks. Sustaining a manipulated price across many blocks requires holding the distortion open, which is expensive and exposes the attacker to arbitrage. Uniswap v3's built-in TWAP oracle has become a widely used reference implementation.
 
 ---
 
 # Risks and Challenges
-
 DeFi's composability is its greatest technical achievement and its greatest risk factor. Because protocols stack on top of each other, a failure anywhere in the stack can cascade through all dependent protocols.
 
 ## Smart Contract Vulnerabilities
-
 Smart contracts are immutable once deployed — bugs cannot be patched the way server software can be. Every major DeFi protocol has undergone extensive security audits, but no audit provides a guarantee. Novel logic errors continue to be the primary source of large-scale losses.
 
 Common vulnerability classes:
@@ -326,7 +342,6 @@ Common vulnerability classes:
 Modern tooling (Slither, MythX, OpenZeppelin's auditing libraries) catches many of these issues at development time, but sophisticated attackers focus on application-layer logic that automated tools can't reason about.
 
 ## Flash Loan Attacks
-
 Flash loans lower the capital barrier for attacks to near zero. Instead of an attacker needing tens of millions of their own capital, a flash loan attack requires only gas fees.
 
 **Example — Platypus Finance (2023):** An attacker borrowed $44M in a flash loan, exploited a logic error in Platypus's emergency withdrawal function to extract ~$8.5M in profit, and repaid the flash loan — all within a single transaction. The attacker's net cost was a few dollars of gas.
@@ -334,13 +349,11 @@ Flash loans lower the capital barrier for attacks to near zero. Instead of an at
 [REKT News](https://rekt.news/) maintains a running post-mortem of DeFi exploits. At time of writing, over $6 billion has been extracted from DeFi protocols through various exploits since 2020.
 
 ## Systemic Risks
-
 **Contagion:** DeFi's composability means failures cascade. When Terra/Luna collapsed in May 2022, it triggered liquidations across Aave and Compound (UST was used as collateral), caused billion-dollar losses at crypto hedge funds like Three Arrows Capital, and contributed to the collapse of centralised lenders (Celsius, Voyager) that were deeply exposed to DeFi yields. A single protocol failure became a multi-sector crisis.
 
 **Regulatory uncertainty:** DeFi exists in an ambiguous regulatory space. The US SEC has argued that many governance tokens are unregistered securities. The EU's MiCA regulation provides a framework for centralised crypto businesses but largely exempts fully decentralised protocols — and very few protocols are fully decentralised. Tax treatment of yield farming rewards, LP fees, and governance token receipts varies by jurisdiction and is largely unsettled.
 
 ## User-Level Risks
-
 - **Private key loss** = permanent loss of funds. No password reset, no recovery phrase email, no customer service.
 - **Phishing via fake frontends** — the smart contract may be entirely sound, but a cloned website can return malicious transaction data that drains your wallet when you sign.
 - **Impermanent loss** — covered above, but it's a material risk for LP positions in volatile markets.
