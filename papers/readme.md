@@ -63,6 +63,18 @@
 * Humiston, I. 2018. *Attacks and Incidents*. In Ethereum Smart Contract Development (pp. 81–94). Apress. <!-- TODO: PDF not downloadable — Apress book chapter behind paywall -->
 * Wood, G. 2014. *Ethereum: A Secure Decentralised Generalised Transaction Ledger* (Yellow Paper). [PDF](./pdfs/Wood-EthereumYellowPaper-2014.pdf) (see also Lecture 1)
 
+## Lecture 8: Decentralisation & DeFi
+* Buterin, V. (2017). *The Meaning of Decentralization*. Medium. [Link](https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274)
+* Eskandari, S. et al. 2020. *A First Look into DeFi Oracles*. arXiv:2005.04377. [PDF](./pdfs/Eskandari-DeFiOracles-2020.pdf) | [arXiv](https://arxiv.org/abs/2005.04377)
+* Halaburda, H. & Bakos, Y. 2025. *The Hidden Danger of Re-centralization in Blockchain Platforms*. Brookings Institution. [Link](https://www.brookings.edu/articles/the-hidden-danger-of-re-centralization-in-blockchain-platforms/)
+* Harvey, C. R., Ramachandran, A. & Santoro, J. 2021. *DeFi and the Future of Finance*. Wiley. (Book)
+* "The Blockchain Trilemma: A Formal Proof." 2024. *Applied Sciences*, 15(1), 19. [Link](https://www.mdpi.com/2076-3417/15/1/19)
+* Cheon, E. 2025. *Centralized Trust in Decentralized Systems*. ACM FAccT. [PDF](./pdfs/Cheon-CentralizedTrust-2025.pdf) | [DOI](https://dl.acm.org/doi/10.1145/3715275.3732130)
+* "Governance of Decentralized Autonomous Organizations." 2024. arXiv:2407.10945. [Link](https://arxiv.org/html/2407.10945v1)
+* Dotan, M. 2023. *The Vulnerable Nature of Decentralized Governance in DeFi*. ACM CCS Workshop. [PDF](./pdfs/Dotan-VulnerableGovernance-2023.pdf) | [DOI](https://dl.acm.org/doi/10.1145/3605768.3623539)
+* Schär, F. 2021. *Decentralized Finance: On Blockchain- and Smart Contract-Based Financial Markets*. Federal Reserve Bank of St. Louis Review, 103(2), 153–174. [PDF](./pdfs/Schar-DeFi-2021.pdf)
+* Zook, M. 2023. *Platforms, Blockchains and the Challenges of Decentralization*. Cambridge Journal of Regions, Economy and Society, 16(2), 367–382. [PDF](./pdfs/Zook-Platforms-2023.pdf) | [DOI](https://academic.oup.com/cjres/article/16/2/367/7148503)
+
 ## Other Papers
 * Al-Bassam, M. 2019. *LazyLedger*. [PDF](./pdfs/AlBassam-LazyLedger-2019.pdf)
 * Bonneau, J. et al. 2015. *SoK: Research Perspectives and Challenges for Bitcoin and Cryptocurrencies*. [PDF](./pdfs/Bonneau-SoKBitcoin-2015.pdf) | [DOI](https://doi.org/10.1109/sp.2015.14)
