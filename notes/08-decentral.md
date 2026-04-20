@@ -40,7 +40,7 @@
 ---
 
 # Decentralisation
-Decentralisation is both a technical property and a political ideology in the blockchain space. Decentralisation means the dispersion of power away from a central authority. But isn't that the same as a distributed system? No, and the distinction matters.
+Decentralisation is both a technical property and a political ideology in the blockchain space. Decentralisation means the dispersion of power and influence away from a central authority and towards the individual. This is distint from a distributed system, yet there is no clear boundary between centralised, distributed, and decentralised, it is more of a spectrum.
 
 - **Centralised systems** have a single point of control. Traditional banks, Google Drive, AWS — all centralised. Someone, somewhere, can flip a switch.
 - **Distributed systems** spread processing across multiple nodes, but decisions may still be centralised. A Content Delivery Network like Cloudflare serves content from hundreds of edge nodes worldwide, but Cloudflare itself decides what gets served. It is distributed but not decentralised.
@@ -50,7 +50,7 @@ Decentralisation is both a technical property and a political ideology in the bl
 > Figure: Network topology spectrum. A centralised system has one decision-making hub; a distributed system spreads processing across many nodes but retains central control; a decentralised system has no hub — every peer is equal.
 
 
-Bitcoin is designed to be both distributed (thousands of nodes worldwide) and decentralised (no company or government controls which transactions are valid). Whether it stays that way in practice is a different question, and one worth asking.
+Bitcoin is designed to be both distributed (thousands of nodes worldwide) and decentralised (no company or government controls which transactions are valid).  Whether it stays that way in practice is a different question, and one worth asking. When deciding on the degree of decentralisation is can be helpful to ask: Who can censor this? or Who may participate? I think these are very important questions to ask and there is no straightforward answer.
 
 The terms "decentralised" and "distributed" cause confusion because computer science already had a long-standing discipline of distributed systems before blockchains arrived. When a blockchain project claims to be "decentralised," they usually mean something closer to "no single entity controls the system" — a specific and meaningful claim, but one that's surprisingly hard to verify.
 
@@ -58,20 +58,18 @@ The terms "decentralised" and "distributed" cause confusion because computer sci
 ## The Decentralisation Spectrum
 Blockchain systems don't exist in binary states of centralised or decentralised — they exist on a spectrum, measurable along several independent dimensions:
 
-- **Network Decentralisation:** How many nodes in total? Are they full nodes?Where are they? In how many jurisdictions?
+- **Network Decentralisation:** How many nodes in total? Are they full nodes? Where are they? In how many jurisdictions?
 - **Mining/Validator Decentralisation:** What fraction of hashpower or stake do the top participants control? Is it plausbile that a group could form that controls 51%? How hard would it be to coordinate such a group?
 - **Dev Decentralisation:** How many independent teams can ship client software? Who/what is funding them?
 - **Governance Decentralisation:** Who can propose and ratify protocol changes? Can they be coerced or bought? Is the messaging clear?
 
-Bitcoin scores well on network and mining dimensions but its development is dominated by a small group of Core developers and the community rarely reaches consensus on significant changes. Ethereum has multiple competing execution clients (Geth, Nethermind, Besu, Erigon) which is excellent for resilience — no single client bug can take down the network — but its validator set is increasingly dominated by liquid staking protocols (Lido alone controls ~30% of staked ETH as of 2025, we talked about this last lecture).
-
-The point is that "decentralised" is not a label you can attach permanently to a protocol. It's a multi-dimensional property that requires ongoing measurement and active maintenance.
+Bitcoin scores well on network and mining dimensions but its development is dominated by a small group of Core developers and the community rarely reaches consensus on significant changes. Ethereum has multiple competing execution clients (Geth, Nethermind, Besu, Erigon) which is excellent for resilience — no single client bug can take down the network — but its validator set is increasingly dominated by liquid staking protocols (Lido alone controls ~30% of staked ETH as of 2025, we talked about this last lecture). The point is that "decentralised" is not a label you can attach permanently to a protocol. It's a multi-dimensional property that requires ongoing measurement and active maintenance.
 
 ## The Blockchain Trilemma
-Vitalik Buterin articulated a fundamental constraint on blockchain design that has become known as the **blockchain trilemma**: it is extremely difficult — possibly impossible — for a blockchain to simultaneously achieve all three of:
+Vitalik Buterin articulated a fundamental constraint on blockchain design that has become known as the blockchain trilemma: it is extremely difficult — possibly impossible — for a blockchain to simultaneously achieve all three of:
 
 1. **Decentralisation** — no single point of control; open participation; censorship resistance
-2. **Security** — resistance to attacks and manipulation
+2. **Security** — resistance to attacks and manipulation and bribery
 3. **Scalability** — high transaction throughput as the network grows
 
 > <img width="400" alt="The blockchain trilemma: pick any two ideal properties at the risk of sacrificing the third." src="https://github.com/millecodex/COMP842/assets/39792005/7489c108-9d92-47c0-8b26-94f8a0920163">\
@@ -85,13 +83,9 @@ The intuition is straightforward: adding more nodes increases decentralisation b
 | **Secure**        |    ✅    |    ✅     |   ✅    |
 | **Scalable**      |    ❌    |    ⚠️     |   ✅    |
 
-Bitcoin handles around seven transactions per second, Ethereum around 15–30 on the base layer[^baseTPS] — compared to Visa's peak of ~24,000 TPS. Solana can process tens of thousands of TPS, but has suffered multiple network outages and its validator set is small enough that critics question its decentralisation credentials. 
+Bitcoin handles around seven transactions per second, Ethereum around 15–30 on the base layer[^baseTPS] — compared to Visa's peak of ~83,000 TPS. Solana can process tens of thousands of TPS, but has suffered multiple network outages and its validator set is small enough that critics question its decentralisation credentials. The trilemma is not proven to be an absolute physical law, but it accurately describes the trade-offs observed in every major blockchain system to date, and it's a useful lens for evaluating claims. The trilemma is not as debated a it used to be, likely due to low blockspace demand, but some have attempted to formalise it. Here is a recent 2024 paper The Blockchain Trilemma: A Formal Proof, *Applied Sciences* (2024). [Link (MDPI)](https://www.mdpi.com/2076-3417/15/1/19)
 
 [^baseTPS]: Layer 1 TPS only. With Layer-2 rollups, Ethereum's effective capacity is far higher — see [Lecture 09: Scaling](09-scaling.md).
-
-The trilemma is not proven to be an absolute physical law[^trilemmaproof], but it accurately describes the trade-offs observed in every major blockchain system to date, and it's a useful lens for evaluating claims.
-
-[^trilemmaproof]: The trilemma is not as debated a it used to be, likely due to low blockspace demand, but some have attempted to formalise it. Here is a recent 2024 paper The Blockchain Trilemma: A Formal Proof, *Applied Sciences* (2024). [Link (MDPI)](https://www.mdpi.com/2076-3417/15/1/19)
 
 ## Mining Concentration and 51% Attacks
 One of the most concrete tests of decentralisation is whether any single entity can gain majority control of the consensus mechanism. In a Proof of Work system, this means >50% of hashrate. In Proof of Stake, it means >33% of staked assets for liveness attacks (halting the chain) or >50% for censorship.
