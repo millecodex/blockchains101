@@ -76,6 +76,14 @@
 * Schär, F. 2021. *Decentralized Finance: On Blockchain- and Smart Contract-Based Financial Markets*. Federal Reserve Bank of St. Louis Review, 103(2), 153–174. [PDF](./pdfs/Schar-DeFi-2021.pdf)
 * Zook, M. 2023. *Platforms, Blockchains and the Challenges of Decentralization*. Cambridge Journal of Regions, Economy and Society, 16(2), 367–382. [PDF](./pdfs/Zook-Platforms-2023.pdf) | [DOI](https://academic.oup.com/cjres/article/16/2/367/7148503)
 
+## Lecture 9: Scaling
+* Al-Bassam, M. 2019. *LazyLedger: A Lazy Blockchain Protocol for Bootstrapping Data Availability*. [PDF](./pdfs/AlBassam-LazyLedger-2019.pdf) *(see also Other Papers)*
+* Buterin, V. 2020. *A Rollup-Centric Ethereum Roadmap*. Ethereum Magicians Forum. [Link](https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698)
+* Corbett, J. C. et al. 2012. *Spanner: Google's Globally-Distributed Database*. OSDI '12. [PDF](./pdfs/Corbett-Spanner-2012.pdf) | [Web](https://research.google/pubs/spanner-googles-globally-distributed-database/) | [DOI](https://doi.org/10.1145/2491245)
+* Gudgeon, L. et al. 2020. *SoK: Layer-Two Blockchain Protocols*. Financial Cryptography and Data Security. [PDF](./pdfs/Gudgeon-SoKLayerTwo-2020.pdf) | [DOI](https://doi.org/10.1007/978-3-030-51280-4_24)
+* Kokoris-Kogias, E. et al. 2018. *OmniLedger: A Secure, Scale-Out, Decentralized Ledger via Sharding*. IEEE Symposium on Security and Privacy. [PDF](./pdfs/KokorisKogias-OmniLedger-2018.pdf) | [DOI](https://doi.org/10.1109/SP.2018.00005)
+* Poon, J. & Dryja, T. 2016. *The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments*. [PDF](./pdfs/Poon-LightningNetwork-2016.pdf) | [Web](https://lightning.network/lightning-network-paper.pdf)
+* Wood, G. 2016. *Polkadot: Vision for a Heterogeneous Multi-chain Framework*. Web3 Foundation. [PDF](./pdfs/Wood-Polkadot-2016.pdf) | [Web](https://github.com/w3f/polkadot-white-paper/blob/master/PolkaDotPaper.pdf)
+
 ## Other Papers
-* Al-Bassam, M. 2019. *LazyLedger*. [PDF](./pdfs/AlBassam-LazyLedger-2019.pdf)
 * Bonneau, J. et al. 2015. *SoK: Research Perspectives and Challenges for Bitcoin and Cryptocurrencies*. [PDF](./pdfs/Bonneau-SoKBitcoin-2015.pdf) | [DOI](https://doi.org/10.1109/sp.2015.14)
