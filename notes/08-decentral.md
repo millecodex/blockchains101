@@ -83,9 +83,9 @@ The intuition is straightforward: adding more nodes increases decentralisation b
 | **Secure**        |    ✅    |    ✅     |   ✅    |
 | **Scalable**      |    ❌    |    ⚠️     |   ✅    |
 
-Bitcoin handles around seven transactions per second, Ethereum around 15–30 on the base layer[^baseTPS] — compared to Visa's peak of ~83,000 TPS. Solana can process tens of thousands of TPS, but has suffered multiple network outages and its validator set is small enough that critics question its decentralisation credentials. The trilemma is not proven to be an absolute physical law, but it accurately describes the trade-offs observed in every major blockchain system to date, and it's a useful lens for evaluating claims. The trilemma is not as debated a it used to be, likely due to low blockspace demand, but some have attempted to formalise it. Here is a recent 2024 paper The Blockchain Trilemma: A Formal Proof, *Applied Sciences* (2024). [Link (MDPI)](https://www.mdpi.com/2076-3417/15/1/19)
+Bitcoin handles around seven transactions per second, Ethereum around 15–30 on the base layer[^baseTPS] — compared to Visa's peak of ~83,000 TPS. Solana can process tens of thousands of TPS, but has suffered multiple network outages and its validator set is small enough that critics question its decentralisation credentials. The trilemma is not proven to be an absolute physical law, but it accurately describes the trade-offs observed in every major blockchain system to date, and it's a useful lens for evaluating claims. The trilemma is not as debated a it used to be, likely due to low blockspace demand, but some have attempted to formalise it. For example, here is a recent 2024 paper: The Blockchain Trilemma: A Formal Proof, *Applied Sciences* (2024). [Link (MDPI)](https://www.mdpi.com/2076-3417/15/1/19)
 
-[^baseTPS]: Layer 1 TPS only. With Layer-2 rollups, Ethereum's effective capacity is far higher — see [Lecture 09: Scaling](09-scaling.md).
+[^baseTPS]: Layer 1 TPS only. With Layer-2 rollups, Ethereum's effective capacity is far higher — see [Lecture 09: Scaling](09-scaling.md); VISA quoted [here](https://coinlaw.io/visa-statistics/) as 83k.
 
 ## Mining Concentration and 51% Attacks
 One of the most concrete tests of decentralisation is whether any single entity can gain majority control of the consensus mechanism. In a Proof of Work system, this means >50% of hashrate. In Proof of Stake, it means >33% of staked assets for liveness attacks (halting the chain) or >50% for censorship.
@@ -156,24 +156,24 @@ It is hard to ignore the growth of stablecoins. In 2021 the total value of stabl
 
 There are three main mechanisms for maintaining a peg:
 
-| Type                      | Examples                    | How Peg Is Maintained                              | Primary Risk                          |
-| :------------------------ | :-------------------------- | :------------------------------------------------- | :------------------------------------ |
-| Fiat-backed          | USDC, USDT                  | Issuer holds $1 in a bank for every token          | Counterparty risk; regulatory seizure |
+| Type                  | Examples                    | How Peg Is Maintained                              | Primary Risk                          |
+| :-------------------- | :-------------------------- | :------------------------------------------------- | :------------------------------------ |
+| Fiat-backed           | USDC, USDT                  | Issuer holds $1 in a bank for every token          | Counterparty risk; regulatory seizure |
 | Crypto-collateralised | DAI                         | Smart contract holds >$1 of crypto for every token | Volatility; liquidation cascades      |
 | Algorithmic           | TerraUSD *(collapsed 2022)* | Protocol mechanism; no external collateral         | Death spiral                          |
 
 Here is a partial listing of stablecoins, the currency they are pegged to, the collateral backing the peg, and the chains they operate on:
 
-| Stablecoin          | Currency Peg | Backing                                                                                                                | Blockchains                                                      |
-| :------------------ | :----------- | :--------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
-| `USDT`              | USD          | [mix of assets](https://www.bloombergquint.com/business/tether-gives-more-details-on-assets-backing-crypto-stablecoin) | Ethereum, Algorand, Tron, BSC, Solana, Fantom, etc.              |
-| `USDC`              | USD          | USD                                                                                                                    | Bitcoin (Liquid), Ethereum, Algorand, BSC, Solana, Stellar, etc. |
-| `AUDD`,`XAUD`              | AUD          | AUD                                                                                                                    | Ethereum, Solana, Stellar, Polygon                                                         |
-| `NZDS`              | NZD          | NZD                                                                                                                    | Ethereum                                                         |
-| `XSGD`              | SGD          | SGD                                                                                                                    | Ethereum, Solana, Polygon, Arbitrum, Hedera, etc.                                                |
-| `EURA`,`EURC`              | EUR          | EUR                                                                                                                    | Ethereum, Polygon, Optimism, Arbitrum, Base, Avalanche, Gnosis, Celo, and BNB Chain, etc.                                      |
-| `DAI`,`USDS`               | USD          | crypto collateral                                                                                                      | Ethereum, Polygon, BSC, Fantom, Gnosis, Base, ZKsync, Metis, Linea, Scroll, etc.                           |
-| `PAXG` — Paxos Gold | 1 oz of gold | physical gold                                                                                                          | Ethereum, Polygon, Optimism, Arbitrum, Base                                                         |
+| Stablecoin          | Currency Peg | Backing                                                                                                                | Blockchains                                                                               |
+| :------------------ | :----------- | :--------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
+| `USDT`              | USD          | [mix of assets](https://www.bloombergquint.com/business/tether-gives-more-details-on-assets-backing-crypto-stablecoin) | Ethereum, Algorand, Tron, BSC, Solana, Fantom, etc.                                       |
+| `USDC`              | USD          | USD                                                                                                                    | Bitcoin (Liquid), Ethereum, Algorand, BSC, Solana, Stellar, etc.                          |
+| `AUDD`,`XAUD`       | AUD          | AUD                                                                                                                    | Ethereum, Solana, Stellar, Polygon                                                        |
+| `NZDS`              | NZD          | NZD                                                                                                                    | Ethereum                                                                                  |
+| `XSGD`              | SGD          | SGD                                                                                                                    | Ethereum, Solana, Polygon, Arbitrum, Hedera, etc.                                         |
+| `EURA`,`EURC`       | EUR          | EUR                                                                                                                    | Ethereum, Polygon, Optimism, Arbitrum, Base, Avalanche, Gnosis, Celo, and BNB Chain, etc. |
+| `DAI`,`USDS`        | USD          | crypto collateral                                                                                                      | Ethereum, Polygon, BSC, Fantom, Gnosis, Base, ZKsync, Metis, Linea, Scroll, etc.          |
+| `PAXG` — Paxos Gold | 1 oz of gold | physical gold                                                                                                          | Ethereum, Polygon, Optimism, Arbitrum, Base                                               |
 
 Fiat-backed stablecoins are the most widely used. USDC (issued by Circle) publishes monthly reserve attestations and is considered the most transparent. USDT (Tether) is the largest by volume but has historically been opaque about reserve composition.
 
