@@ -222,12 +222,12 @@ In this modular world, a Layer 2 processes transactions (execution), bundles the
 ## Supplementary Resources
 * [A Rollup-Centric Ethereum Roadmap](https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698) (2020) — Vitalik Buterin's forum post endorsing the modular approach for the Ethereum ecosystem.
 * [The Limits to Blockchain Scalability](https://vitalik.eth.limo/general/2021/05/23/scaling.html) (2021) — Discusses the constraints of monolithic scaling.
-* **SoK: Layer-Two Blockchain Protocols** (Gudgeon et al., 2020) — A comprehensive Systematization of Knowledge covering payment channels, commit-chains, and state channels. [PDF](../../papers/pdfs/Gudgeon-SoKLayerTwo-2020.pdf) | [DOI](https://doi.org/10.1007/978-3-030-51280-4_24)
-* **OmniLedger: A Secure, Scale-Out, Decentralized Ledger via Sharding** (Kokoris-Kogias et al., 2018) — Foundational research on how to securely partition state and network via sharding. [PDF](../../papers/pdfs/KokorisKogias-OmniLedger-2018.pdf) | [DOI](https://doi.org/10.1109/SP.2018.00005)
-* **The Bitcoin Lightning Network** (Poon & Dryja, 2016) — The original whitepaper that conceptualized state channels for scalable off-chain payments. [PDF](../../papers/pdfs/Poon-LightningNetwork-2016.pdf)
-* **Spanner: Google's Globally-Distributed Database** (Corbett et al., 2012) — Inspiration for database sharding and state partitioning. [PDF](../../papers/pdfs/Corbett-Spanner-2012.pdf) | [DOI](https://doi.org/10.1145/2491245)
-* **Polkadot: Vision for a Heterogeneous Multi-chain Framework** (Wood, 2016) — Early architecture for a modular, interoperable multi-chain ecosystem. [PDF](../../papers/pdfs/Wood-Polkadot-2016.pdf) | [Web](https://github.com/w3f/polkadot-white-paper/blob/master/PolkaDotPaper.pdf)
-* **LazyLedger** (Al-Bassam, 2019) — The academic foundation of Celestia and Data Availability Layers. [PDF](../../papers/pdfs/AlBassam-LazyLedger-2019.pdf)
+* **SoK: Layer-Two Blockchain Protocols** (Gudgeon et al., 2020) — A comprehensive Systematization of Knowledge covering payment channels, commit-chains, and state channels. [PDF](../papers/pdfs/Gudgeon-SoKLayerTwo-2020.pdf) | [DOI](https://doi.org/10.1007/978-3-030-51280-4_12)
+* **OmniLedger: A Secure, Scale-Out, Decentralized Ledger via Sharding** (Kokoris-Kogias et al., 2018) — Foundational research on how to securely partition state and network via sharding. [PDF](../papers/pdfs/KokorisKogias-OmniLedger-2018.pdf) | [DOI](https://doi.org/10.1109/SP.2018.000-5)
+* **The Bitcoin Lightning Network** (Poon & Dryja, 2016) — The original whitepaper that conceptualized state channels for scalable off-chain payments. [PDF](../papers/pdfs/Poon-LightningNetwork-2016.pdf)
+* **Spanner: Google's Globally-Distributed Database** (Corbett et al., 2012) — Inspiration for database sharding and state partitioning. [PDF](../papers/pdfs/Corbett-Spanner-2012.pdf) | [DOI](https://doi.org/10.1145/2491245)
+* **Polkadot: Vision for a Heterogeneous Multi-chain Framework** (Wood, 2016) — Early architecture for a modular, interoperable multi-chain ecosystem. [PDF](../papers/pdfs/Wood-Polkadot-2016.pdf) | [Web](https://github.com/w3f/polkadot-white-paper/blob/master/PolkaDotPaper.pdf)
+* **LazyLedger** (Al-Bassam, 2019) — The academic foundation of Celestia and Data Availability Layers. [PDF](../papers/pdfs/AlBassam-LazyLedger-2019.pdf)
 
 # Exercises
 1. Explain how the modular blockchain model (separating execution, settlement, consensus, and data availability) is an attempt to address the Blockchain Trilemma. Which of the three properties—-Decentralization, Security, or Scalability—-does this model prioritize enhancing the most?
