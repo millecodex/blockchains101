@@ -26,7 +26,7 @@ Students are expected to **create**, and as such there is a large emphasis on th
 | 06   | [Smart Contracts and Ethereum](notes/06-ethereum.md)                | [T06](tutorials/t06.md)                |
 | 07   | Personal Development Week - No Lectures or Tutorials                | -                                      |
 | 08   | [Decentralisation & DeFi](notes/08-decentral.md)                    | [T08](tutorials/t08.md)                |
-| 09   | [Scaling](notes/09-scaling.md)                                      | ⏲️                                      |
+| 09   | [Scaling](notes/09-scaling.md)                                      | [T09](tutorials/t09.md)                |
 | 10   | [Guest Lecture 1]()                                                 | [Privacy Lecture](notes/10-privacy.md) |
 | 11   | [Security](notes/11-security.md)                                    | ⏲️                                      |
 | 12   | [Money Revisited & Future Trends](notes/12-moneyv2.md) - Under 🚧    | ⏲️                                      |
