@@ -3,6 +3,7 @@
 ## Lecture 1: Money & Bitcoin
 * Agha, A. 2017. *Money talk and conduct from cowries to bitcoin*. [PDF](./pdfs/Agha-MoneyTalk-2017.pdf) | [DOI](https://doi.org/10.1086/693775)
 * Back, A. 2002. *Hashcash: A denial of service counter-measure*. [Link](http://www.hashcash.org/)
+* Bonneau, J. et al. 2015. *SoK: Research Perspectives and Challenges for Bitcoin and Cryptocurrencies*. [PDF](./pdfs/Bonneau-SoKBitcoin-2015.pdf) | [DOI](https://doi.org/10.1109/sp.2015.14)
 * Buterin, V. 2013. *Ethereum: A Next-Generation Smart Contract and Decentralized Application Platform*. [PDF](./pdfs/Buterin-Ethereum-2014.pdf)
 * Chaum, D., Fiat, A., Naor, M. 1988. *Untraceable electronic cash*. [Link](http://link.springer.com/10.1007/0-387-34799-2_25) | [DOI](https://doi.org/10.1007/0-387-34799-2_25)
 * Dwork, C., Naor, M. 1993. *Pricing via processing or combatting junk mail*. [PDF](./pdfs/Dwork-PricingViaProcessing-1993.pdf) | [DOI](https://doi.org/10.1007/3-540-48071-4_10)
@@ -66,7 +67,7 @@
 ## Lecture 8: Decentralisation & DeFi
 * Buterin, V. (2017). *The Meaning of Decentralization*. Medium. [Link](https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274)
 * Eskandari, S. et al. 2020. *A First Look into DeFi Oracles*. arXiv:2005.04377. [PDF](./pdfs/Eskandari-DeFiOracles-2020.pdf) | [arXiv](https://arxiv.org/abs/2005.04377) *(superseded — see Zhou et al. 2023)*
-* Zhou, L. et al. 2023. *SoK: Decentralized Finance (DeFi) Attacks*. IEEE Symposium on Security and Privacy (S&P). [PDF](./pdfs/2208.13035v3.pdf) | [arXiv:2208.13035](https://arxiv.org/abs/2208.13035)
+* Zhou, L. et al. 2023. *SoK: Decentralized Finance (DeFi) Attacks*. IEEE Symposium on Security and Privacy (S&P). [PDF](./pdfs/Zhou-SoKDeFiAttacks-2023.pdf) | [arXiv:2208.13035](https://arxiv.org/abs/2208.13035)
 * Halaburda, H. & Bakos, Y. 2025. *The Hidden Danger of Re-centralization in Blockchain Platforms*. Brookings Institution. [Link](https://www.brookings.edu/articles/the-hidden-danger-of-re-centralization-in-blockchain-platforms/)
 * Harvey, C. R., Ramachandran, A. & Santoro, J. 2021. *DeFi and the Future of Finance*. Wiley. (Book)
 * "The Blockchain Trilemma: A Formal Proof." 2024. *Applied Sciences*, 15(1), 19. [Link](https://www.mdpi.com/2076-3417/15/1/19)
@@ -85,5 +86,7 @@
 * Poon, J. & Dryja, T. 2016. *The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments*. [PDF](./pdfs/Poon-LightningNetwork-2016.pdf) | [Web](https://lightning.network/lightning-network-paper.pdf)
 * Wood, G. 2016. *Polkadot: Vision for a Heterogeneous Multi-chain Framework*. Web3 Foundation. [PDF](./pdfs/Wood-Polkadot-2016.pdf) | [Web](https://github.com/w3f/polkadot-white-paper/blob/master/PolkaDotPaper.pdf)
 
-## Other Papers
-* Bonneau, J. et al. 2015. *SoK: Research Perspectives and Challenges for Bitcoin and Cryptocurrencies*. [PDF](./pdfs/Bonneau-SoKBitcoin-2015.pdf) | [DOI](https://doi.org/10.1109/sp.2015.14)
+
+## Lecture 10: Privacy
+* Buterin, V. et al. 2023. *Blockchain Privacy and Regulatory Compliance: Towards a Practical Equilibrium*. SSRN. [PDF](./pdfs/Buterin-Privacy-2023.pdf)
+* Chaum, D. 1988. *The Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability*. Journal of Cryptology. [PDF](./pdfs/Chaum-DiningCryptographers-1988.pdf)

@@ -2,15 +2,30 @@
 
 # Week 10: Privacy
 ## Contents
-1. [What is Privacy?](#what-is-privacy)
-2. [Privacy Laws](#privacy-laws)
-3. [Blockchain Privacy](#blockchain-privacy)
-4. [Mixing](#mixing)
-5. [Zero Knowledge](#zero-knowledge)
-7. [What did we miss?](#what-did-we-miss)
-8. [Further Reading - the very short list](#further-reading---the-very-short-list)
-9. [Exercises](#exercises)
-10. [Video Lecture](#video-lecture)
+- [Week 10: Privacy](#week-10-privacy)
+  - [Contents](#contents)
+  - [What is Privacy?](#what-is-privacy)
+    - [Privacy: A Definition](#privacy-a-definition)
+    - [Privacy: In Context with Security and Anonymity](#privacy-in-context-with-security-and-anonymity)
+    - [Privacy vs Security](#privacy-vs-security)
+    - [Privacy vs Anonymity](#privacy-vs-anonymity)
+    - [Security vs Anonymity](#security-vs-anonymity)
+  - [Privacy Laws](#privacy-laws)
+  - [Blockchain Privacy](#blockchain-privacy)
+    - [Pseudonymous](#pseudonymous)
+    - [Metadata](#metadata)
+    - [Public vs Private Blockchains](#public-vs-private-blockchains)
+    - [Chainalysis](#chainalysis)
+  - [Mixing](#mixing)
+  - [Zero Knowledge](#zero-knowledge)
+    - [Alibaba's Cave](#alibabas-cave)
+    - [Where's Waldo (Wally?)](#wheres-waldo-wally)
+- [Summary](#summary)
+- [What did we miss?](#what-did-we-miss)
+- [Further Reading - the very short list](#further-reading---the-very-short-list)
+- [Exercises](#exercises)
+- [Video Lecture](#video-lecture)
+
 
 
 ## What is Privacy?
@@ -22,7 +37,7 @@ In the digital age, privacy transcends its traditional boundaries to become a cr
 
 And closer to the point of *privacy* as a concept by Eric Hughes written in the [Cypherpunk manifesto](https://activism.net/cypherpunk/manifesto.html) (1993):
 > Privacy is the power to selectively reveal oneself to the world.
-<img width="1920" height="1080" alt="Eric Hughes quote slide Cypherpunk's Manifesto by Jeff Nijsse" src="https://github.com/user-attachments/assets/d006e004-6348-4c66-a378-f2fae04059e8" />
+<img width="1920" height="1080" alt="Eric Hughes quote slide Cypherpunk's Manifesto" src="https://github.com/user-attachments/assets/d006e004-6348-4c66-a378-f2fae04059e8" />
 
 
 ### Privacy: In Context with Security and Anonymity
@@ -34,10 +49,10 @@ And closer to the point of *privacy* as a concept by Eric Hughes written in the 
 Privacy and security, while closely related, serve distinct roles in the digital landscape. Privacy is primarily concerned with the autonomy individuals have over their personal information—what data is collected, how it is used, and with whom it is shared. Security, on the other hand, focuses on safeguarding that data against unauthorized access and breaches. In the context of blockchain technology, the pseudonymous nature of transactions offers a level of privacy, but it is the blockchain's cryptographic security mechanisms that ensure this data cannot be easily tampered with. Both are indispensable in the construction of robust digital systems, but they address different facets of the information management and safeguarding process.
 
 ### Privacy vs Anonymity
-[TBC]
+Privacy and anonymity are often conflated, but they describe fundamentally different relationships between an individual and their information. Privacy is about *control*—the ability to choose what information is disclosed, to whom, and under what conditions. Anonymity, by contrast, is about *identity concealment*—acting or transacting in a way that cannot be traced back to a real-world person at all. You can have privacy without anonymity (a doctor shares your medical record with a specialist under strict confidentiality—your data is shared, but your consent governs it), and you can have anonymity without privacy (posting publicly on an anonymous forum reveals your content to everyone, but not your name). In blockchain systems this distinction is critical: Bitcoin offers a degree of anonymity through pseudonymous addresses, but once an address is linked to an identity—via an exchange's KYC process, for example—all historical privacy is retrospectively lost. True anonymity, as achieved by Monero's ring signatures or Zcash's shielded transactions, goes a step further by making it cryptographically infeasible to link a transaction to its originator.
 
 ### Security vs Anonymity
-[TBC]
+Security and anonymity can appear to pull in opposite directions, which makes their intersection one of the most contested areas in both cryptography and public policy. Security thrives on accountability—audit trails, identity verification, and the ability to attribute and respond to malicious behaviour. Anonymity, by deliberate design, removes that attribution. In blockchain contexts this tension is stark: a fully anonymous network makes it harder to recover stolen funds, enforce sanctions, or prosecute bad actors, yet the same anonymity protects dissidents, journalists, and ordinary users from surveillance. This trade-off is not purely technical—it is a societal negotiation. Protocols like Privacy Pools (the successor proposal to Tornado Cash) attempt to thread this needle by allowing users to cryptographically prove they are *not* associated with a sanctioned set of addresses, without revealing who they actually are. The key insight is that security and anonymity need not be binary opposites; well-designed zero-knowledge systems can provide selective accountability while preserving anonymity for the vast majority of legitimate users.
 
 ## Privacy Laws
 Laws and regulations designed to safeguard individual privacy vary significantly across national and international boundaries. In the digital realm, these legal frameworks dictate how personal data should be collected, stored, processed, and shared. They aim to strike a balance between technological innovation and the protection of individual rights, particularly in areas like e-commerce, social networking, and emerging technologies such as blockchain.
@@ -96,28 +111,35 @@ This is another zero knowledge analogy such that I can prove knowledge of Wally'
 > Figure: Knowledge of Waldo can be proven by pointing him out. This gives up the location *and* Waldo's identity.
 
 # Summary
-| Technology | Primary Goal | Privacy Guarantee | Key Implementations | Primary Trade-offs |
-| :--- | :--- | :--- | :--- | :--- |
-| **Coin Mixing** | Breaking Linkability | Obscures the on-chain link between deposit and withdrawal addresses by pooling funds from many users. | Tornado Cash (historical), various centralized and decentralized mixers. | Can have centralized trust points; anonymity set depends on the number of users; subject to intense regulatory action. |
-| **Ring Signatures** | Sender Anonymity | Plausible deniability; the true sender is hidden within a group (ring) of potential decoys. | Monero | Increases transaction data size; privacy depends on the quality and size of the ring; can attract regulatory scrutiny. |
-| **Stealth Addresses** | Receiver Anonymity | Generates a unique, one-time address for each transaction, preventing public linking of payments to a single recipient. | Monero, RAILGUN, Umbra Protocol | Primarily protects the receiver, not the sender or amount; requires additional cryptographic computation. |
-| **zk-SNARKs** | Transaction Confidentiality | Mathematical proof of transaction validity without revealing sender, receiver, or amount. | Zcash, Ethereum L2s (e.g., Aztec), dApps (e.g., RAILGUN) | High computational cost for proof generation; often requires a "trusted setup" for initial parameter creation. |
+| Technology            | Primary Goal                | Privacy Guarantee                                                                                                       | Key Implementations                                                      | Primary Trade-offs                                                                                                     |
+| :-------------------- | :-------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| **Coin Mixing**       | Breaking Linkability        | Obscures the on-chain link between deposit and withdrawal addresses by pooling funds from many users.                   | Tornado Cash (historical), various centralized and decentralized mixers. | Can have centralized trust points; anonymity set depends on the number of users; subject to intense regulatory action. |
+| **Ring Signatures**   | Sender Anonymity            | Plausible deniability; the true sender is hidden within a group (ring) of potential decoys.                             | Monero                                                                   | Increases transaction data size; privacy depends on the quality and size of the ring; can attract regulatory scrutiny. |
+| **Stealth Addresses** | Receiver Anonymity          | Generates a unique, one-time address for each transaction, preventing public linking of payments to a single recipient. | Monero, RAILGUN, Umbra Protocol                                          | Primarily protects the receiver, not the sender or amount; requires additional cryptographic computation.              |
+| **zk-SNARKs**         | Transaction Confidentiality | Mathematical proof of transaction validity without revealing sender, receiver, or amount.                               | Zcash, Ethereum L2s (e.g., Aztec), dApps (e.g., RAILGUN)                 | High computational cost for proof generation; often requires a "trusted setup" for initial parameter creation.         |
 
 # What did we miss?
-* Tools like **[RAILGUN](https://docs.railgun.org/wiki)** function as a system of smart contracts that create a shielded pool using zk-SNARKs. Users can deposit assets into the RAILGUN contract and then transact privately and interact with other DeFi protocols from within this shielded environment.
+* Tools like [RAILGUN](https://docs.railgun.org/wiki) function as a system of smart contracts that create a shielded pool using zk-SNARKs. Users can deposit assets into the RAILGUN contract and then transact privately and interact with other DeFi protocols from within this shielded environment.
 * Coins like [FIRO](https://firo.org/guide/privacy-coin-comparison.html) (prev. [Zcoin](https://en.wikipedia.org/wiki/Firo_(cryptocurrency))) have been adopted in some real-world use cases (e.g., voting in Thailand's elections), which supports its uptake.
 
 # Further Reading - the very short list
 * Zcash: History, Privacy, and the Future of Web 3 (w/Zooko Wilcox-O'Hearn & Thomas Walton-Pocock) ([YouTube](https://www.youtube.com/watch?v=ibA_4kwd_YI)) 
 * [zk-SNARKs: Under the Hood](https://medium.com/@VitalikButerin/zk-snarks-under-the-hood-b33151a013f6) by Vitalik Buterin: A deep dive into zk-SNARKs and their application in blockchain.
-* Blockchain Privacy and Regulatory Compliance: Towards a Practical Equilibrium by Vitalik Buterin et.al (2023). An exploration of privacy issues and solutions in blockchain. ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4563364)) ([pdf](https://github.com/millecodex/COMP842/blob/master/papers/Buterin-Privacy-SSRN-id4563364.pdf))
-* [The Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability](https://link.springer.com/content/pdf/10.1007/BF00206326.pdf) by David Chaum: Introduces the concept of anonymous communication.
+* Blockchain Privacy and Regulatory Compliance: Towards a Practical Equilibrium by Vitalik Buterin et.al (2023). An exploration of privacy issues and solutions in blockchain. ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4563364)) ([pdf](../papers/pdfs/Buterin-Privacy-2023.pdf))
+* The Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability by David Chaum (1988): Introduces the concept of anonymous communication. ([Springer](https://link.springer.com/content/pdf/10.1007/BF00206326.pdf)) ([pdf](../papers/pdfs/Chaum-DiningCryptographers-1988.pdf))
 * Radiolab Podcast 'The Ceremony' about the ZCash trusted setup https://radiolab.org/podcast/ceremony
 * [Electronic Frontier Foundation](https://www.eff.org/issues/privacy)'s page with resources on digital privacy
+* A Gentle Introduction to Zero-Knowledge Proofs [polygon](https://polygon.technology/blog/a-gentle-introduction-to-zero-knowledge-proofs)
+
 
 # Exercises
-1. a
-2. b
+1. **The Pseudonymity Illusion.** Go to [Etherscan](https://etherscan.io) and look up the address `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045` (Vitalik Buterin's public address). List three pieces of information about this person that you can infer purely from on-chain data—without using any off-chain source. What does this exercise reveal about the difference between *pseudonymous* and *anonymous*?
+
+2. **Pick Your Privacy Tech.** You are building a payment app for a country where government surveillance of financial transactions is common. Using the summary table in these notes, choose *one* privacy technology (Coin Mixing, Ring Signatures, Stealth Addresses, or zk-SNARKs) and write a short paragraph (150–200 words) justifying your choice. Your argument must address: (a) what threat model you are defending against, (b) why the trade-offs of your chosen technology are acceptable, and (c) one real-world implementation you would build on.
+
+3. **The GDPR Paradox.** Blockchain's immutability means data written to a public chain cannot be deleted. The EU's GDPR, however, grants individuals a "right to be forgotten" (Article 17). Identify a specific scenario where these two principles come into direct conflict—for example, consider a healthcare records system, a land registry, or a supply chain provenance tracker built on a public blockchain. In about 1 page, describe the conflict and evaluate at least two proposed technical or legal approaches that attempt to resolve it (e.g., storing hashes only, off-chain storage with on-chain pointers, or data encryption with key destruction).
+
+4. **Zero-Knowledge.** The Alibaba's Cave analogy uses repeated rounds to statistically eliminate the chance of a lucky prover. (a) Calculate the probability that a cheating prover successfully fools the verifier after *n* = 1, 5, 10, and 20 rounds. (b) A zk-SNARK collapses this interactive process into a single, non-interactive proof. Explain in your own words what property makes this possible and why it is significant for blockchain scalability. (c) Tornado Cash was sanctioned by the US Treasury in 2022. Using Buterin et al.'s (2023) *Privacy Pools* proposal as a reference, describe how a privacy protocol could satisfy regulatory compliance requirements without revealing the identity of every user. What is the key cryptographic mechanism that enables this?
 
 # Video Lecture
 * Here's this lecture recorded live September 18, 2023 on [YouTube](https://www.youtube.com/watch?v=1pK6Iiw0fp0)
