@@ -86,7 +86,14 @@
 * Poon, J. & Dryja, T. 2016. *The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments*. [PDF](./pdfs/Poon-LightningNetwork-2016.pdf) | [Web](https://lightning.network/lightning-network-paper.pdf)
 * Wood, G. 2016. *Polkadot: Vision for a Heterogeneous Multi-chain Framework*. Web3 Foundation. [PDF](./pdfs/Wood-Polkadot-2016.pdf) | [Web](https://github.com/w3f/polkadot-white-paper/blob/master/PolkaDotPaper.pdf)
 
-
 ## Lecture 10: Privacy
 * Buterin, V. et al. 2023. *Blockchain Privacy and Regulatory Compliance: Towards a Practical Equilibrium*. SSRN. [PDF](./pdfs/Buterin-Privacy-2023.pdf)
 * Chaum, D. 1988. *The Dining Cryptographers Problem: Unconditional Sender and Recipient Untraceability*. Journal of Cryptology. [PDF](./pdfs/Chaum-DiningCryptographers-1988.pdf)
+
+## Lecture 11: Security
+* Apostolaki, M., Zohar, A. & Vanbever, L. 2017. *Hijacking Bitcoin: Routing Attacks on Cryptocurrencies*. IEEE S&P. [PDF](./pdfs/Apostolaki-HijackingBitcoin-2017.pdf) | [DOI](https://doi.org/10.1109/SP.2017.29)
+* Cai, C. et al. 2024. *A Systematic Literature Review on Blockchain Consensus Mechanisms' Security: Applications and Open Challenges*. Computer Systems Science & Engineering, 48(3). [PDF](./pdfs/Cai-ConsensusSecurityReview-2024.pdf) | [DOI](https://doi.org/10.32604/csse.2024.054556)
+* Eyal, I. & Sirer, E. G. 2014. *Majority Is Not Enough: Bitcoin Mining Is Vulnerable*. FC 2014, Springer LNCS 8437. [PDF](./pdfs/Eyal-MajorityIsNotEnough-2014.pdf) | [DOI](https://doi.org/10.1007/978-3-662-45472-5_28) *(see also Lecture 4)*
+* Leng, J. et al. 2022. *Blockchain Security: A Survey of Techniques and Research Directions*. IEEE Transactions on Services Computing, 15(4). [PDF](./pdfs/Leng-BlockchainSecuritySurvey-2022.pdf) | [DOI](https://doi.org/10.1109/TSC.2020.3038641)
+* Saad, M. et al. 2020. *Exploring the Attack Surface of Blockchain: A Comprehensive Survey*. IEEE Communications Surveys & Tutorials, 22(3), 1977–2008. [PDF](./pdfs/Saad-AttackSurfaceBlockchain-2020.pdf) | [DOI](https://doi.org/10.1109/COMST.2020.2975999)
+* Schwarz-Schilling, C. et al. 2022. *Three Attacks on Proof-of-Stake Ethereum*. Financial Cryptography 2022. [PDF](./pdfs/SchwarzSchilling-ThreeAttacksPoS-2022.pdf) | [DOI](https://doi.org/10.1007/978-3-031-18283-9_28) | [arXiv](https://arxiv.org/abs/2110.10086)
