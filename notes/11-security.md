@@ -1,15 +1,35 @@
 [↰ back](../../..)
 # Week 11 Security
 ## Contents
-1. [Blockchain Security Taxonomy](#blockchain-security-taxonomy)
-2. [I Infrastructure Layer Security](#i-infrastructure-layer-security)
-4. [II Network Layer Attacks](#ii-network-layer-attacks)
-5. [III Protocol (Consensus) Layer Attacks](#iii-protocol-consensus-layer-attacks)
-6. [IV Application Layer Attacks](#iv-application-layer-attacks)
-7. [Case Studies (🏗️ Under Construction 👷‍♀️)](#case-studies-under-construction)
-1. [What did we miss?](#what-did-we-miss)
-1. [Further Reading - the very short list](#further-reading---the-very-short-list)
-1. [Exercises](#exercises)
+- [Week 11 Security](#week-11-security)
+  - [Contents](#contents)
+- [Blockchain Security Taxonomy](#blockchain-security-taxonomy)
+  - [I. Infrastructure Layer Security](#i-infrastructure-layer-security)
+  - [II. Network Layer Attacks](#ii-network-layer-attacks)
+    - [DoS](#dos)
+    - [Sybil](#sybil)
+    - [Routing \& Other](#routing--other)
+  - [III. Protocol (Consensus) Layer Attacks](#iii-protocol-consensus-layer-attacks)
+    - [51% Attack](#51-attack)
+    - [Selfish Mining](#selfish-mining)
+    - [Double Spend Attack](#double-spend-attack)
+    - [Nothing at Stake](#nothing-at-stake)
+    - [Short and Long Range Attacks](#short-and-long-range-attacks)
+    - [Grinding Attack](#grinding-attack)
+  - [IV. Application Layer Attacks](#iv-application-layer-attacks)
+    - [Smart Contracts](#smart-contracts)
+      - [DAO Hack](#dao-hack)
+      - [MEV](#mev)
+    - [Exchanges \& Scams](#exchanges--scams)
+    - [Mining Centralisation](#mining-centralisation)
+- [Case Studies (🏗️ Under Construction 👷‍♀️)](#case-studies-️-under-construction-️)
+  - [Reorgs](#reorgs)
+  - [Double Spends](#double-spends)
+- [What did we miss?](#what-did-we-miss)
+- [Further Reading - the very short list](#further-reading---the-very-short-list)
+  - [Readings](#readings)
+- [Exercises](#exercises)
+- [Video Lecture](#video-lecture)
 
 Divided into four layers, security of a blockchain involves being aware of different attacks from the infrastructure (hardware & physical security) to the social level (applications & phishing). This list is not exhaustive and only represents some of the main security considerations that must be made when evaluating blockchains. Not every attack mentioned will be described, but there is an excellent source for blockchains security considerations [here](https://hackn.gitbook.io/l1-security/).
 
@@ -25,11 +45,11 @@ Taking inspiration from the blockchain tech stack, we will orgnaize the security
 
 ## I. Infrastructure Layer Security
 
-| | Blockchain Infrastructure | General Infrastructure |
-|--|---------------------|--|
-|example component|  Validators (PoS) |  Routers   |
-|ex.|  Nodes  (PoW) | Cloud Services |
-|ex.|  Miners/ASICs (PoW)  | Mobile Services |
+|                   | Blockchain Infrastructure | General Infrastructure |
+| ----------------- | ------------------------- | ---------------------- |
+| example component | Validators (PoS)          | Routers                |
+| ex.               | Nodes  (PoW)              | Cloud Services         |
+| ex.               | Miners/ASICs (PoW)        | Mobile Services        |
 
 The infrastructure layer involves the hardware components that build up the network. For blockchains this could be mining hardware, node hardware, and their secure components, both physical and digital. Mining attacks are discussed below as part of consensus. We will exclude discussions on securing routers, validators, and the communication between them. Any cloud services will have a security policy for their services. Similarly, mobile services that run light clients or wallets will also use inherited security policies. These are not blockchain specific and not discussed here.
 
@@ -37,11 +57,11 @@ The infrastructure layer involves the hardware components that build up the netw
 
 ## II. Network Layer Attacks
 
-| P2P Components  | Data Integrity  | Resource Exhaustion | Routing & IPs  |
-|-----------------|-----------------|---------------------|----------------|
-| Sybil            | Eavesdropping   | Denial of Service   | BGP      |
-| Eclipse         |                 |                       | Alien    |
-|||                                                        | Timejacking     |
+| P2P Components | Data Integrity | Resource Exhaustion | Routing & IPs |
+| -------------- | -------------- | ------------------- | ------------- |
+| Sybil          | Eavesdropping  | Denial of Service   | BGP           |
+| Eclipse        |                |                     | Alien         |
+|                |                |                     | Timejacking   |
 
 ### DoS
 A Denial of Service (DoS) attack aims to disrupt normal functioning by overwhelming the network with excessive requests or traffic. DoS attacks can manifest in various ways, such as flooding the network with invalid transactions, overloading node capacities, or targeting the consensus mechanism.
@@ -73,15 +93,15 @@ An eclipse attack aims to isolate a target by controlling all the traffic direct
 
 ## III. Protocol (Consensus) Layer Attacks
 
-| Proof Mechanisms | Transaction Validation | Chain Manipulation   | Mining-Related      |
-|------------------|------------------------|----------------------|---------------------|
-| 51% (PoW)        | Double Spend            | Long Range         | Selfish Mining      |
-| $>\frac{1}{3}$ (PoS) | Race*               |  Grinding           | Pool Hopping        |
-| Nothing at Stake |  Finney*                | Chain Re-org        |  Bribery            |
-|                  | One-Confirmation*       |                      | Block Discarding    |
-|                  |                         |                      | Block Withholding   |
-|                  |                         |                      | Fork After Withholding |
-|                  |                         |                      | Uncle-Block   |
+| Proof Mechanisms     | Transaction Validation | Chain Manipulation | Mining-Related         |
+| -------------------- | ---------------------- | ------------------ | ---------------------- |
+| 51% (PoW)            | Double Spend           | Long Range         | Selfish Mining         |
+| $>\frac{1}{3}$ (PoS) | Race*                  | Grinding           | Pool Hopping           |
+| Nothing at Stake     | Finney*                | Chain Re-org       | Bribery                |
+|                      | One-Confirmation*      |                    | Block Discarding       |
+|                      |                        |                    | Block Withholding      |
+|                      |                        |                    | Fork After Withholding |
+|                      |                        |                    | Uncle-Block            |
 
 \* A type of double-spend attack
 
@@ -126,13 +146,13 @@ In a grinding attack, the attacker increases their probability of being selected
 
 ## IV. Application Layer Attacks
 
-| User Interface           | Smart Contracts                 | Social  |
-|--------------------------|---------------------------------|--------------------------|
-| Phishing                 | Reentrancy                      | Social Engineering       |
-| Multi-Signature          | Front-Running / MEV             | Rug Pulls                |
-| Weak Randomness          | Uninitialized Storage Pointers  | Decentralisation Risks   |
-|                          | Integer Overflow/Underflow      | Regulatory Risks         |  
-|                          |Timestamp Dependence             |                          |
+| User Interface  | Smart Contracts                | Social                 |
+| --------------- | ------------------------------ | ---------------------- |
+| Phishing        | Reentrancy                     | Social Engineering     |
+| Multi-Signature | Front-Running / MEV            | Rug Pulls              |
+| Weak Randomness | Uninitialized Storage Pointers | Decentralisation Risks |
+|                 | Integer Overflow/Underflow     | Regulatory Risks       |
+|                 | Timestamp Dependence           |                        |
 
 ### Smart Contracts
 As the industry matures and well known SC exploits are learned from a number of best practices emerge. See the [smart contract security field guide](https://scsfg.io/hackers/) for best practices in smart contract development.
@@ -189,21 +209,25 @@ The main practical threat to a single entity controlling the majority of the has
 * Here's a list of on-going Ethereum reorgs on [Etherscan](https://etherscan.io/blocks_forked)
 ## Double Spends
 * Ethereum Classic (ETC) 2019. A transaction of value 600 ETC in orphaned block 7249357 was double spent representing a 57-block-deep reorg. ([Coinbase post-mortem](https://www.coinbase.com/blog/deep-chain-reorganization-detected-on-ethereum-classic-etc))
-* Horizon (ZEN) 2018. "Between blocks 318165 and 318275, the attacker(s) caused multiple reorganizations of the blockchain, reverting 38 blocks in the longest reorganization. In block 318204 and 318234 the attacker(s) performed double-spend attacks." ([Horizon post-mortem]( https://blog.horizen.io/zencash-statement-on-double-spend-attack/)) 
+* Horizon (ZEN) 2018. "Between blocks 318165 and 318275, the attacker(s) caused multiple reorganizations of the blockchain, reverting 38 blocks in the longest reorganization. In block 318204 and 318234 the attacker(s) performed double-spend attacks." ([Horizon post-mortem](https://web.archive.org/web/20250419081706/https://blog.horizen.io/zencash-statement-on-double-spend-attack/))
 
 # What did we miss?
 * There are a number of mining-related attacks; most of which are theoretical for Bitcoin because of its decentralisation and large network hashpower, but could be more practicle for smaller PoW based cryptocurrencies.
 
 # Further Reading - the very short list
+* [Smart Contract Security](https://ethereum.org/developers/docs/smart-contracts/security/) — ethereum.org guide covering reentrancy, integer overflow, and common vulnerabilities with mitigation patterns.
 * Selfish Mining by Ittay Eyal at [Decentralized Thoughts](https://decentralizedthoughts.github.io/2020-02-26-selfish-mining/)
 * Ethereum's [FAQ on Attack and Defense](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/attack-and-defense/)
 * Watch Micah Warren (math professor) lay out the Bitcoin security hashrate concerns ([YouTube](https://www.youtube.com/watch?v=0bUpF0wJrxo))
 * Blockchain Security Vulnerabilities by [Hackn](https://hackn.gitbook.io/l1-security/)
 * Watch Lera Nikolaenko (a16z crypto research partner) given you the deep dive into Proof of Stake blockchain attacks ([YouTube](https://youtu.be/-uxHoEfxXC4))
 
+## Readings
+* Eyal, I. & Sirer, E. G. 2014. *Majority Is Not Enough: Bitcoin Mining Is Vulnerable*. Financial Cryptography. [PDF](../papers/pdfs/Eyal-MajorityIsNotEnough-2014.pdf) | [DOI](https://doi.org/10.1007/978-3-662-45472-5_28)
+
 # Exercises
 1. How do PoW and PoS mitigate Sybil attacks?
-2. Explain the probabalistic nature of an attacker that has 51% of the network's hashpower. Why are they not guaranteed of double spending?
+2. Explain the probabalistic nature of an attacker that has 51% of the network's hashpower. Why are they not guaranteed of being able to double spend? 
 3. Mining blocks in secret, or withholding blocks, can be a mining strategy. What is the benefit to the miner for doing this? How is this harmful to the community?
 
 # Video Lecture 
