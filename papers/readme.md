@@ -97,3 +97,11 @@
 * Leng, J. et al. 2022. *Blockchain Security: A Survey of Techniques and Research Directions*. IEEE Transactions on Services Computing, 15(4). [PDF](./pdfs/Leng-BlockchainSecuritySurvey-2022.pdf) | [DOI](https://doi.org/10.1109/TSC.2020.3038641)
 * Saad, M. et al. 2020. *Exploring the Attack Surface of Blockchain: A Comprehensive Survey*. IEEE Communications Surveys & Tutorials, 22(3), 1977–2008. [PDF](./pdfs/Saad-AttackSurfaceBlockchain-2020.pdf) | [DOI](https://doi.org/10.1109/COMST.2020.2975999)
 * Schwarz-Schilling, C. et al. 2022. *Three Attacks on Proof-of-Stake Ethereum*. Financial Cryptography 2022. [PDF](./pdfs/SchwarzSchilling-ThreeAttacksPoS-2022.pdf) | [DOI](https://doi.org/10.1007/978-3-031-18283-9_28) | [arXiv](https://arxiv.org/abs/2110.10086)
+
+## Lecture 12: Money (Revisited) & Future Trends
+* Auer, R., Cornelli, G. & Frost, J. 2023. *Rise of the central bank digital currencies: drivers, approaches and technologies*. BIS Working Paper No. 880. [PDF](https://www.bis.org/publ/work880.pdf) | [DOI](https://doi.org/10.2139/ssrn.3724070)
+* Babbush, R. et al. 2026. *Securing Elliptic Curve Cryptocurrencies against Quantum Vulnerabilities: Resource Estimates and Mitigations*. arXiv:2603.28846. [arXiv](https://arxiv.org/abs/2603.28846) | [PDF](https://arxiv.org/pdf/2603.28846) — estimates <500k physical qubits sufficient to break ECDSA-256 in minutes on superconducting hardware.
+* Garratt, R. & van Oordt, M. 2021. *Privacy as a Public Good: A Case for Electronic Cash*. BIS Working Paper No. 905. [PDF](https://www.bis.org/publ/work905.pdf)
+* Google Quantum AI. 2024. *Quantum error correction below the surface code threshold*. Nature, 638, 920–926. [DOI](https://doi.org/10.1038/s41586-024-08449-y) | [PDF](https://www.nature.com/articles/s41586-024-08449-y)
+* Shor, P. W. 1994. *Algorithms for quantum computation: discrete logarithms and factoring*. FOCS 1994. [DOI](https://doi.org/10.1109/SFCS.1994.365700)
+* Webber, M. et al. 2022. *The impact of hardware specifications on reaching quantum advantage over classical simulation*. AVS Quantum Science, 4(1). [DOI](https://doi.org/10.1116/5.0073075) — estimates 317×10⁶ physical qubits required to break Bitcoin ECDSA within 1 hour.
