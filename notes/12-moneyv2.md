@@ -1,5 +1,6 @@
 [↰ back](../../..)
 # Week 12: Money (Revisited) & Future Trends
+(Still under constrution 🚧 as of May 2026 ⚠️)
 ## Contents
 - [The Evolution of Money (Revisited)](#the-evolution-of-money-revisited)
 - [Central Bank Digital Currencies (CBDCs)](#central-bank-digital-currencies-cbdcs)
@@ -70,7 +71,11 @@ No instrument scores perfectly across all rows — and critically, different sta
 
 The Bitcoin whitepaper appeared on October 31, 2008 — six weeks after Lehman Brothers collapsed and the U.S. Federal Reserve began the first of several rounds of quantitative easing (QE). QE involves a central bank purchasing financial assets (typically government bonds) with newly created money, expanding the monetary base. Between 2008 and 2022, the U.S. M2 money supply grew from approximately $7.5 trillion to $21.7 trillion — nearly tripling in fourteen years (Federal Reserve, 2023).
 
-> <img width="700" alt="US M2 Money Supply 2006-2024" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Components_of_the_United_States_money_supply2.svg/1280px-Components_of_the_United_States_money_supply2.svg.png">\
+> <img width="1920" height="979" alt="image" src="https://github.com/user-attachments/assets/84f4ed1e-84f7-4cd6-80f1-bf84869be85d" />\
+> Figure: The price of gold in US dollars remained stable until 1971. The inverse is also true: the value of a dollar has decreased against the value of gold. Source: Wikipedia.
+
+M2 Chart Broken, needs attention.
+
 > Figure: U.S. M2 money supply components, 2006–2024. The sharp vertical rise in 2020 corresponds to COVID-era stimulus spending. Source: Federal Reserve / Wikimedia Commons.
 
 > Q: If the supply of money doubles but the supply of goods and services does not, what happens to prices?
