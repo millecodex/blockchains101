@@ -82,6 +82,9 @@ M2 Chart Broken, needs attention.
 
 The consequence is purchasing power erosion: a dollar in 2008 purchased what required approximately $1.55 by 2024 (U.S. Bureau of Labor Statistics CPI data). This is not a bug in the eyes of central banks — a target inflation rate of ~2% per year is considered optimal for encouraging spending and investment over hoarding. Critics, particularly in the Austrian economic tradition, argue that any inflation is a form of taxation on savings, and that monetary expansion disproportionately benefits asset owners (the Cantillon effect: those closest to the money printer see prices rise last).
 
+> <img width="1126" height="1501" alt="image" src="https://github.com/user-attachments/assets/bd2575e7-3fd6-4bce-819a-d702197e10c3" />
+> Figure: Cost of consumer good and services tracked shows a clear trend of inflationary services provisioned by centralised institutions (governments) and deflationary electronics.
+
 ## What Can Governments Do? Three Uncomfortable Options
 
 Governments that have accumulated large debts guaranteed by the voters whose savings are silently eroded by inflation face a narrow set of structural options. None of them are popular:
